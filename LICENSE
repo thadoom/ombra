@@ -1,0 +1,83 @@
+Ombra Freeware License
+Version 1.0, November 2026
+
+Copyright (c) 2026 thadoom. All rights reserved.
+
+Ombra ("the Software") is proprietary software distributed free of charge.
+Its source code is not published. By installing or using the Software you
+accept this license.
+
+1. What you may do
+
+   a. Download, install and use the Software, for free, on any number of your
+      own computers, for personal or commercial purposes (for example
+      streaming, VTubing or making videos).
+   b. Share the official download link
+      (https://github.com/thadoom/ombra/releases) or the official, unmodified
+      installer, free of charge.
+   c. Publish screenshots, videos, reviews and tutorials about the Software.
+   d. Propose features, extensions, translations and fixes through the
+      official repository (issues and discussions at
+      https://github.com/thadoom/ombra).
+
+2. What you may not do
+
+   a. Sell the Software, or bundle it with a paid product, without written
+      permission.
+   b. Distribute modified copies of the Software or of its installer, or
+      distribute it under another name.
+   c. Decompile, disassemble or reverse engineer the Software, except where
+      and only to the extent that applicable law expressly allows it despite
+      this limitation.
+   d. Remove or change copyright notices, this license or
+      THIRD_PARTY_NOTICES.md.
+   e. Use the name "Ombra" or its logo for another product, or in a way that
+      suggests that the author endorses you.
+
+3. Proposals and contributions
+
+   When you send a proposal, an idea, a translation, code, data or any other
+   material through the official repository or to the author, you confirm
+   that you have the right to share it, and you grant the author a
+   perpetual, worldwide, royalty-free, non-exclusive license to use, modify
+   and include it in the Software and in its documentation, with or without
+   credit, without any obligation to you. The author decides what goes into
+   the Software.
+
+4. Third-party components
+
+   The Software contains components made by others. Each one keeps its own
+   license, listed in THIRD_PARTY_NOTICES.md. Nothing in this license limits
+   your rights under those licenses.
+
+5. Hardware and trademarks
+
+   The Software is an independent project. It is not affiliated with,
+   endorsed by or supported by Shiftall Inc., Valve Corporation, VRChat Inc.
+   or the SlimeVR project. HaritoraX, SteamVR, VRChat and SlimeVR are
+   trademarks of their respective owners and are named only to describe
+   compatibility. Firmware for Shiftall devices remains Shiftall's property.
+
+6. No warranty
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. Firmware updates and
+   tracker settings are applied at your own risk.
+
+7. Limitation of liability
+
+   TO THE EXTENT PERMITTED BY LAW, IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+   ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+   OR THE USE OR OTHER DEALINGS IN THE SOFTWARE, INCLUDING DAMAGE TO DEVICES.
+
+8. Termination
+
+   This license ends automatically if you break its terms. You must then stop
+   using the Software and delete your copies.
+
+9. Changes
+
+   New versions of the Software may come with a new version of this license.
+   The version included with a copy of the Software applies to that copy.

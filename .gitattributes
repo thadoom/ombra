@@ -1,0 +1,12 @@
+* text=auto
+*.bat text eol=crlf
+*.iss text eol=crlf
+*.rc text eol=crlf
+*.png binary
+*.webp binary
+*.ico binary
+*.bmp binary
+*.woff2 binary
+*.dll binary
+*.lib binary
+*.nupkg binary
