@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#121110">
-<title>Ombra · Full-body tracking for HaritoraX 2</title>
-<meta name="description" content="Ombra is a free app that drives HaritoraX 2 and 2 Pro trackers straight from the GX dongles and gives SteamVR smooth, predicted full-body tracking. No VR Manager running.">
+<title>Ombra · Full-body tracking for IMU trackers in SteamVR</title>
+<meta name="description" content="Ombra is a free app for HaritoraX, SlimeVR-compatible and other IMU trackers. It builds your body from the sensors and your headset and gives SteamVR smooth, predicted full-body tracking.">
 <link rel="canonical" href="https://thadoom.github.io/ombra/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ombra · Full-body tracking for HaritoraX 2">
-<meta property="og:description" content="Smooth, precise full-body tracking for HaritoraX 2 in SteamVR. Free to download.">
+<meta property="og:title" content="Ombra · Full-body tracking for IMU trackers in SteamVR">
+<meta property="og:description" content="Smooth, precise full-body tracking in SteamVR for HaritoraX, SlimeVR-compatible trackers and more. Free to download.">
 <meta property="og:url" content="https://thadoom.github.io/ombra/">
-<meta property="og:image" content="https://thadoom.github.io/ombra/assets/og.png">
+<meta property="og:image" content="https://thadoom.github.io/ombra/assets/og.png?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://thadoom.github.io/ombra/assets/og.png">
+<meta name="twitter:image" content="https://thadoom.github.io/ombra/assets/og.png?v=2">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -70,9 +70,9 @@
 <section class="hero">
   <div class="wrap hero-in">
     <div class="hero-copy">
-      <p class="eyebrow"><span class="dot"></span>For HaritoraX 2 and 2 Pro · SteamVR</p>
+      <p class="eyebrow"><span class="dot"></span>HaritoraX · SlimeVR-compatible · any IMU tracker in SteamVR</p>
       <h1>Full-body tracking that moves the way <em>you</em> do.</h1>
-      <p class="lede">Ombra reads your trackers straight from the GX dongles, builds your body from the sensors and your headset, and hands SteamVR every pose with its velocity, so each frame lands where you actually are.</p>
+      <p class="lede">Ombra reads your trackers straight from their dongles or receivers, builds your body from the sensors and your headset, and hands SteamVR every pose with its velocity, so each frame lands where you actually are.</p>
       <div class="cta">
         <a class="btn btn-primary" href="https://github.com/thadoom/ombra/releases/latest">
           <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -333,7 +333,7 @@
       <li class="node">
         <span class="n-tag">Hardware</span>
         <b>GX2 / GX6 dongles</b>
-        <span>HaritoraX 2 sensors, ~100 Hz each</span>
+        <span>HaritoraX via GX dongles, SlimeVR-compatible via Wi-Fi or USB receiver</span>
       </li>
       <li class="arrow" aria-hidden="true"><span>USB serial</span></li>
       <li class="node node-main">
@@ -409,7 +409,7 @@
         <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Download Ombra
       </a>
-      <p>Windows 10 or 11, 64-bit. SteamVR. HaritoraX 2 or 2 Pro with a GX2 or GX6 dongle.</p>
+      <p>Windows 10 or 11, 64-bit. SteamVR. HaritoraX 2, 2 Pro or Wireless with a GX dongle, or SlimeVR-compatible trackers.</p>
     </div>
   </div>
 </section>
@@ -428,7 +428,7 @@
       </details>
       <details>
         <summary>Which trackers and dongles are supported?</summary>
-        <p>HaritoraX 2 and HaritoraX 2 Pro, connected through GX2 or GX6 dongles. Ombra sends SteamVR the hip, chest, knees and feet, and you choose which of them each game sees.</p>
+        <p>HaritoraX 2, 2 Pro and Wireless through GX2 or GX6 dongles; SlimeVR-compatible trackers over Wi-Fi or a USB receiver (for example Butterfly and Smol Slime). Ombra's filter and prediction can also smooth any other IMU tracker already in SteamVR. Ombra sends SteamVR the hip, chest, knees, feet and elbows, and you choose which of them each game sees. HaritoraX 1 (wired) is not supported.</p>
       </details>
       <details>
         <summary>Can I run it together with VR Manager?</summary>
@@ -460,7 +460,7 @@
   <div class="wrap foot-in">
     <div class="foot-brand">
       <a class="brand" href="#top"><img src="assets/logo.svg" alt="" width="28" height="28"><span>Ombra</span></a>
-      <p>Smooth, precise full-body tracking for HaritoraX 2 in SteamVR.</p>
+      <p>Smooth, precise full-body tracking for IMU trackers in SteamVR.</p>
     </div>
     <ul class="foot-links">
       <li><a href="https://github.com/thadoom/ombra">GitHub</a></li>
@@ -469,7 +469,7 @@
       <li><a href="https://github.com/thadoom/ombra/issues/new/choose">Propose a feature</a></li>
       <li><a href="https://github.com/thadoom/ombra/blob/main/THIRD_PARTY_NOTICES.md">Third-party notices</a></li>
     </ul>
-    <p class="fine">Free to use, closed source. Not affiliated with or endorsed by Shiftall Inc. or Valve Corporation. HaritoraX, SteamVR and VRChat are trademarks of their respective owners.</p>
+    <p class="fine">Free to use, closed source. Not affiliated with or endorsed by Shiftall Inc. or Valve Corporation. HaritoraX, SlimeVR, SteamVR and VRChat are trademarks of their respective owners.</p>
   </div>
 </footer>
 

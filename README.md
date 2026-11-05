@@ -5,7 +5,7 @@
 <h1 align="center">Ombra</h1>
 
 <p align="center">
-  Smooth, precise full-body tracking for <b>HaritoraX 2 / 2 Pro</b> in SteamVR.<br>
+  Smooth, precise full-body tracking in SteamVR for <b>HaritoraX</b>, <b>SlimeVR-compatible trackers</b> and other IMU trackers.<br>
   One small native app: dongles, body, calibration, drift correction and SteamVR driver.
 </p>
 
@@ -33,9 +33,9 @@
 
 ## What Ombra does
 
-Ombra reads your HaritoraX trackers **straight from the GX dongles**, rebuilds your body from the sensors and your headset, and gives SteamVR trackers that behave like Vive trackers: every pose carries its velocity, so SteamVR predicts it to the exact frame time.
+Ombra reads your trackers **straight from their dongles or receivers**, rebuilds your body from the sensors and your headset, and gives SteamVR trackers that behave like Vive trackers: every pose carries its velocity, so SteamVR predicts it to the exact frame time.
 
-- **Reads the dongles itself.** GX2 and GX6, 50 or 100 Hz per sensor. Pair, unpair, change radio channels and tracker settings inside the app.
+- **Works with most IMU trackers.** HaritoraX 2, 2 Pro and Wireless through GX2/GX6 dongles (50 or 100 Hz per sensor, pairing and tracker settings inside the app); SlimeVR-compatible trackers over Wi-Fi or a USB receiver; and Ombra's filter can smooth any other IMU tracker already in SteamVR.
 - **Smooth without lag.** An adaptive filter that is steady when you stand still and fast when you kick, with latency compensation for the radio link.
 - **Guided calibration in two poses**, about 6 seconds. It finds how each sensor is mounted and tells you which one to fix.
 - **Quick calibration** most days: Ombra remembers how each sensor sits on your body, also after a restart, so you only stand straight.
@@ -45,7 +45,7 @@ Ombra reads your HaritoraX trackers **straight from the GX dongles**, rebuilds y
 - **Ombra inside SteamVR**: a dashboard tab with every tracker, its battery and big buttons for calibrate, quick calibration and reset facing. Voice warnings when a tracker drops out or its battery runs low.
 - **Firmware updates** for trackers (Bluetooth) and dongles (USB), with Shiftall's original signed files, checked before use.
 - **More outputs**: VRChat OSC trackers (VRChat on a standalone Quest) and VMC for VTuber apps.
-- **More trackers**: SlimeVR-compatible trackers over Wi-Fi or a USB receiver, with guided Wi-Fi setup.
+- **Mix trackers**: HaritoraX and SlimeVR-compatible trackers on the same body, with guided Wi-Fi setup for new SlimeVR boards.
 - In **English, Italiano, Deutsch and Français**.
 
 <table>
@@ -62,11 +62,22 @@ Ombra reads your HaritoraX trackers **straight from the GX dongles**, rebuilds y
 ## Install
 
 1. Download `Ombra-Setup.exe` from [Releases](https://github.com/thadoom/ombra/releases/latest).
-2. Close Shiftall VR Manager and SteamVR. Only one app can use the dongles at a time.
+2. Close SteamVR and any other tracker app (Shiftall VR Manager, SlimeVR Server). Only one app can use the dongles or receivers at a time.
 3. Run the setup. It needs no admin rights and registers the SteamVR driver.
 4. Turn on the trackers, start SteamVR (it starts Ombra for you) and press **Calibrate**.
 
-**Requirements:** Windows 10 or 11 (64-bit), SteamVR, HaritoraX 2 or 2 Pro with a GX2 or GX6 dongle.
+**Requirements:** Windows 10 or 11 (64-bit) and SteamVR.
+
+**Supported trackers:**
+
+| Trackers | How they connect |
+|---|---|
+| HaritoraX 2, HaritoraX 2 Pro | GX2 or GX6 dongle |
+| HaritoraX Wireless | GX2 or GX6 dongle |
+| SlimeVR-compatible trackers (DIY boards, Butterfly, Smol Slime, other nRF trackers) | Wi-Fi, or a USB receiver |
+| Any other IMU tracker already in SteamVR | smoothing and prediction only (optional) |
+
+HaritoraX 1 / 1.1 (wired) is not supported yet. Want another tracker? [Propose it](https://github.com/thadoom/ombra/issues/new?template=feature_request.yml).
 
 **Updates:** Ombra tells you when a new version is out and installs it in one click. It never updates while SteamVR is running.
 
@@ -77,13 +88,13 @@ Ombra reads your HaritoraX trackers **straight from the GX dongles**, rebuilds y
 ## How it works
 
 ```
-GX dongles ──USB──▶ Ombra.exe ──shared memory──▶ Ombra driver (inside SteamVR) ──▶ your game
- sensors            body model at 250 Hz,         virtual trackers: hip, chest,
- 50/100 Hz          calibration, drift,           knees, feet (+ elbows),
-                    3D preview, settings          filter, velocity, prediction
+Trackers ─────────▶ Ombra.exe ─────shared memory────▶ Ombra driver (in SteamVR) ──▶ your game
+GX dongles,         body model at 250 Hz,             virtual trackers: hip, chest,
+Wi-Fi, receivers    calibration, drift,               knees, feet (+ elbows),
+                    3D preview, settings              filter, velocity, prediction
 ```
 
-1. **Dongles.** Ombra opens each GX dongle over USB and decodes every sensor's orientation, battery, signal and real update rate. Tracker settings you choose (rate, mode, light, ankle sensor) are written back each time a tracker connects.
+1. **Trackers.** Ombra opens each GX dongle over USB, or receives SlimeVR-compatible trackers over Wi-Fi or a USB receiver, and decodes every sensor's orientation, battery, signal and real update rate. Tracker settings you choose (rate, mode, light, ankle sensor) are written back each time a tracker connects.
 2. **Body.** A core loop at 250 Hz turns the sensor rotations into a body (see [below](#how-ombra-estimates-your-body)) and writes the virtual trackers into shared memory.
 3. **Driver.** Ombra's SteamVR driver creates the trackers with their roles already set (waist, chest, knees, feet), then for every pose:
    - filters it with an adaptive One Euro filter (presets Smooth, Balanced, Responsive, Off, a 0–10 slider, and a separate style per tracker);
