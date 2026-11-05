@@ -89,7 +89,7 @@
     <figure class="hero-shot">
       <div class="window">
         <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>Ombra</span></div>
-        <img src="assets/screens/home.webp" width="1424" height="901" alt="Ombra's Overview page: a live 3D body with eight trackers, the sensor list with battery and update rate, and the quick controls for smoothing, reset facing and calibrate." fetchpriority="high">
+        <img src="assets/screens/home.webp" width="1440" height="900" alt="Ombra's Overview page: a live 3D body with eight trackers, the sensor list with battery and update rate, and the quick controls for smoothing, reset facing and calibrate." fetchpriority="high">
       </div>
       <figcaption>The Overview page, running in demo mode.</figcaption>
     </figure>
@@ -164,7 +164,7 @@
     <header class="section-head">
       <p class="kicker">Tour</p>
       <h2>One window. Every page fits, no scrolling.</h2>
-      <p>These are real screenshots of Ombra running in its built-in demo mode, with eight simulated trackers on one GX2 and one GX6.</p>
+      <p>These are real screenshots of Ombra running in its built-in demo mode, with eight demo trackers on one GX2 and one GX6.</p>
     </header>
 
     <div class="tour">
@@ -182,14 +182,14 @@
       <div class="panel" role="tabpanel" id="p-home" aria-labelledby="t-home">
         <div class="panel-copy">
           <h3>See your body, live</h3>
-          <p>The Overview shows the body Ombra builds from your sensors and headset, in front, side or free 3D view. Each tracker is colour-coded: tracked, estimated, or signal lost.</p>
+          <p>The Overview shows the body Ombra builds from your sensors and headset, in front, side or free 3D view. Each tracker is colour-coded: tracked, simulated (no tracker there), or signal lost.</p>
           <ul class="ticks">
             <li>Sensor list with battery, rate and signal at a glance</li>
             <li>Signal chart: raw steps against what SteamVR receives</li>
             <li>Smoothing, Reset facing and Calibrate are always one click away</li>
           </ul>
         </div>
-        <div class="window"><img loading="lazy" src="assets/screens/home.webp" width="1424" height="901" alt="Overview page with the live 3D body and the sensor list."></div>
+        <div class="window"><img loading="lazy" src="assets/screens/home.webp" width="1440" height="900" alt="Overview page with the live 3D body and the sensor list."></div>
       </div>
 
       <div class="panel" role="tabpanel" id="p-trackers" aria-labelledby="t-trackers" hidden>
@@ -202,7 +202,7 @@
             <li>Identify a tracker, and Ombra remembers each one's settings</li>
           </ul>
         </div>
-        <div class="window"><img loading="lazy" src="assets/screens/trackers.webp" width="1424" height="901" alt="Trackers page with the tracker list and the detail panel for the chest tracker."></div>
+        <div class="window"><img loading="lazy" src="assets/screens/trackers.webp" width="1440" height="900" alt="Trackers page with the tracker list and the detail panel for the chest tracker."></div>
       </div>
 
       <div class="panel" role="tabpanel" id="p-dongles" aria-labelledby="t-dongles" hidden>
@@ -215,20 +215,20 @@
             <li>Find newly plugged-in dongles with one click</li>
           </ul>
         </div>
-        <div class="window"><img loading="lazy" src="assets/screens/dongles.webp" width="1424" height="901" alt="Dongles page showing a GX2 and a GX6 with their modules, slots and channels."></div>
+        <div class="window"><img loading="lazy" src="assets/screens/dongles.webp" width="1440" height="900" alt="Dongles page showing a GX2 and a GX6 with their modules, slots and channels."></div>
       </div>
 
       <div class="panel" role="tabpanel" id="p-calib" aria-labelledby="t-calib" hidden>
         <div class="panel-copy">
           <h3>Calibration in two poses</h3>
-          <p>Stand straight, then bend into a ski pose. About six seconds in total, and Ombra reports each body segment as it aligns.</p>
+          <p>Stand straight, then bend into a ski pose; with foot trackers, rise on your tiptoes too. A few seconds in total, and Ombra reports each body segment as it aligns.</p>
           <ul class="ticks">
             <li>Start it from VR: trigger twice, T-pose, or double-tap a tracker</li>
             <li>Resets facing when VRChat runs its own calibration</li>
-            <li>Measures your height from the headset</li>
+            <li>Measure your body and the real floor by touching them with a controller</li>
           </ul>
         </div>
-        <div class="window"><img loading="lazy" src="assets/screens/calib.webp" width="1424" height="901" alt="Calibration page with the two pose cards, aligned segments and VR start options."></div>
+        <div class="window"><img loading="lazy" src="assets/screens/calib.webp" width="1440" height="900" alt="Calibration page with the pose cards, aligned segments, VR start options and keyboard shortcuts."></div>
       </div>
 
       <div class="panel" role="tabpanel" id="p-smooth" aria-labelledby="t-smooth" hidden>
@@ -241,7 +241,7 @@
             <li>Can also smooth other IMU trackers in SteamVR, if you choose</li>
           </ul>
         </div>
-        <div class="window"><img loading="lazy" src="assets/screens/tuning.webp" width="1424" height="901" alt="Corrections page, Smoothing tab, with presets, sliders and per-tracker styles."></div>
+        <div class="window"><img loading="lazy" src="assets/screens/tuning.webp" width="1440" height="900" alt="Corrections page, Smoothing tab, with presets, sliders and per-tracker styles."></div>
       </div>
 
       <div class="panel" role="tabpanel" id="p-drift" aria-labelledby="t-drift" hidden>
@@ -254,7 +254,7 @@
             <li>Learns from each Reset facing you press</li>
           </ul>
         </div>
-        <div class="window"><img loading="lazy" src="assets/screens/tuning-drift.webp" width="1424" height="901" alt="Corrections page, Drift tab, with drift options and a live per-segment table."></div>
+        <div class="window"><img loading="lazy" src="assets/screens/tuning-drift.webp" width="1440" height="900" alt="Corrections page, Drift tab, with drift options and a live per-segment table."></div>
       </div>
 
       <div class="panel" role="tabpanel" id="p-body" aria-labelledby="t-body" hidden>
@@ -263,11 +263,11 @@
           <p>Corrections on the final body keep it believable: feet stay above the floor, planted feet don't slide, and knees never bend backwards.</p>
           <ul class="ticks">
             <li>Covers short signal dropouts with a smooth estimated pose</li>
-            <li>Bed mode: the mattress becomes the floor</li>
+            <li>Bed mode on the Body page: the mattress becomes the floor</li>
             <li>Choose which trackers SteamVR sees, per game</li>
           </ul>
         </div>
-        <div class="window"><img loading="lazy" src="assets/screens/tuning-body.webp" width="1424" height="901" alt="Corrections page, Body tab, with leg and floor options and bed mode."></div>
+        <div class="window"><img loading="lazy" src="assets/screens/tuning-body.webp" width="1440" height="900" alt="Corrections page, Legs tab, with the leg options, dropout cover and the trackers SteamVR sees."></div>
       </div>
 
       <div class="panel" role="tabpanel" id="p-fw" aria-labelledby="t-fw" hidden>
@@ -280,7 +280,7 @@
             <li>Every file is checked (SHA-256) before it is used</li>
           </ul>
         </div>
-        <div class="window"><img loading="lazy" src="assets/screens/firmware.webp" width="1424" height="901" alt="Firmware page with every tracker and dongle and its firmware version."></div>
+        <div class="window"><img loading="lazy" src="assets/screens/firmware.webp" width="1440" height="900" alt="Firmware page with every tracker and dongle and its firmware version."></div>
       </div>
     </div>
   </div>
@@ -444,7 +444,7 @@
       </details>
       <details>
         <summary>Can I try it without trackers?</summary>
-        <p>Yes. Run <code>Ombra.exe --demo</code> for eight simulated trackers on a GX2 and a GX6. The demo never touches COM ports, Bluetooth, SteamVR or your settings.</p>
+        <p>Yes. Run <code>Ombra.exe --demo</code> for eight demo trackers on a GX2 and a GX6. The demo never touches COM ports, Bluetooth, SteamVR or your settings.</p>
       </details>
       <details>
         <summary>Is it affiliated with Shiftall or Valve?</summary>
