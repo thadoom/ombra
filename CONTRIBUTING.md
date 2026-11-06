@@ -32,4 +32,4 @@ Include your Ombra version (bottom left of the window), dongles, tracker firmwar
 
 ## Be kind
 
-Ombra is maintained in spare time. Be constructive and respectful with everyone.
+Ombra is maintained in spare time. Be constructive and respectful with everyone, as the [code of conduct](CODE_OF_CONDUCT.md) asks. Security problems go through a private report, not an issue: see [SECURITY.md](SECURITY.md).

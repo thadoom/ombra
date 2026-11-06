@@ -6,3 +6,6 @@ contact_links:
   - name: Website and guide
     url: https://thadoom.github.io/ombra/
     about: Features, install steps and FAQ.
+  - name: Security problem
+    url: https://github.com/thadoom/ombra/security/advisories/new
+    about: Report it privately, not as a public issue.
