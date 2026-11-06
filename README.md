@@ -14,6 +14,10 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/thadoom/ombra/releases"><img src="https://img.shields.io/github/downloads/thadoom/ombra/total?style=flat-square&label=downloads&labelColor=0b1f13&color=2f6b50" alt="Total downloads"></a>
+</p>
+
+<p align="center">
   <sub>The button always downloads the latest <code>Ombra-Setup.exe</code>. Windows 10 and 11, 64-bit, no admin rights.<br>
   If Ombra works well for you, a star (top right) helps other people find it.</sub>
 </p>
