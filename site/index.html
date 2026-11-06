@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#121816">
-<title>Ombra · Full-body tracking for IMU trackers in SteamVR</title>
+<title>Ombra, full-body tracking for IMU trackers in SteamVR</title>
 <meta name="description" content="Ombra is a free Windows app for HaritoraX, SlimeVR-compatible and other IMU trackers. It reads the dongles itself, builds your body from the sensors and your headset, and gives SteamVR smooth, predicted full-body tracking.">
 <link rel="canonical" href="https://thadoom.github.io/ombra/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ombra · Full-body tracking for IMU trackers in SteamVR">
+<meta property="og:title" content="Ombra, full-body tracking for IMU trackers in SteamVR">
 <meta property="og:description" content="Smooth, precise full-body tracking in SteamVR for HaritoraX, SlimeVR-compatible trackers and more. Free for Windows.">
 <meta property="og:url" content="https://thadoom.github.io/ombra/">
 <meta property="og:image" content="https://thadoom.github.io/ombra/assets/og.png?v=3">
@@ -22,14 +22,14 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://api.github.com" crossorigin>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 <script>
   // entrance animations hide content until main.js plays them; if it never does, show everything
   document.documentElement.classList.add("js");
   setTimeout(function () { var h = document.documentElement; if (!h.classList.contains("loaded")) h.classList.remove("js"); }, 3000);
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Ombra","operatingSystem":"Windows 10, Windows 11","applicationCategory":"UtilitiesApplication","downloadUrl":"https://github.com/thadoom/ombra/releases/latest/download/Ombra-Setup.exe","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"https://github.com/thadoom/ombra/blob/main/LICENSE","url":"https://thadoom.github.io/ombra/"}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Ombra","operatingSystem":"Windows 10, Windows 11","applicationCategory":"UtilitiesApplication","downloadUrl":"https://github.com/thadoom/ombra/releases/latest/download/Ombra-Setup.exe","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"https://thadoom.github.io/ombra/legal.html#license","url":"https://thadoom.github.io/ombra/"}
 </script>
 </head>
 <body>
@@ -45,7 +45,6 @@
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
         <li><a href="#app">The app</a></li>
-        <li><a href="#smoothing">Smoothing</a></li>
         <li><a href="#install">Install</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -64,7 +63,6 @@
   <div class="mobile-menu" id="mobile-menu" hidden>
     <a href="#features">Features</a>
     <a href="#app">The app</a>
-    <a href="#smoothing">Smoothing</a>
     <a href="#install">Install</a>
     <a href="#faq">FAQ</a>
     <a class="js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">Star on GitHub</a>
@@ -104,35 +102,90 @@
 <section class="section" id="features" aria-labelledby="features-title">
   <div class="wrap">
     <header class="section-head">
-      <h2 id="features-title">Everything between your trackers and SteamVR.</h2>
-      <p>One small native app talks to the dongles, models your body, filters every tracker and feeds SteamVR. Nothing else has to run.</p>
+      <h2 id="features-title">Everything for full-body tracking, in one app.</h2>
+      <p>Your trackers, the calibration, your body, panels in VR and the apps you play with. Ombra does all of it, so nothing else has to run next to SteamVR.</p>
     </header>
-    <dl class="facts">
-      <div>
-        <dt>No VR Manager in the background</dt>
-        <dd>Ombra talks to GX2 and GX6 dongles over USB at about 100 Hz per sensor. Pairing and firmware updates happen inside the app.</dd>
+    <div class="feat-groups">
+      <div class="feat">
+        <h3>Trackers and dongles</h3>
+        <ul class="ticks">
+          <li>HaritoraX 2, 2 Pro and Wireless on GX2 and GX6 dongles, without VR Manager</li>
+          <li>SlimeVR-compatible trackers over Wi-Fi or a USB receiver, with Wi-Fi set up through the cable</li>
+          <li>Pair and unpair trackers, change radio channels</li>
+          <li>Body part, update rate, sensor mode, status light and identify, per tracker</li>
+          <li>Battery, signal and update rate, live</li>
+          <li>Firmware updates for trackers and dongles, with Shiftall's original files</li>
+        </ul>
       </div>
-      <div>
-        <dt>Smoothing that adapts to you</dt>
-        <dd>Steady when you stand still, quick when you kick. Four presets, a fine slider, and a separate style for each tracker.</dd>
+      <div class="feat">
+        <h3>Calibration</h3>
+        <ul class="ticks">
+          <li>Full calibration: stand straight, ski pose, then on your tiptoes with foot trackers</li>
+          <li>Quick calibration (standing only) and Reset facing</li>
+          <li>Walk calibration: a few steps line up your hips, legs and feet</li>
+          <li>Start it from VR with the triggers, a T-pose or a tap on a tracker, or with a keyboard shortcut</li>
+          <li>A panel in VR guides each step, with a voice, tones or in silence</li>
+          <li>Realigns by itself when you put the headset back on</li>
+        </ul>
       </div>
-      <div>
-        <dt>Predicted like a Vive tracker</dt>
-        <dd>Every pose carries its velocity and makes up for the radio delay, so SteamVR places it on the exact frame.</dd>
+      <div class="feat">
+        <h3>Your body</h3>
+        <ul class="ticks">
+          <li>Your body live in 3D: front, side or free view</li>
+          <li>Height and proportions, measured by touching the floor, knees and hips with a controller</li>
+          <li>Sitting and lying down, with a bed mode where the mattress is the floor</li>
+          <li>Elbows from your controllers, without arm trackers</li>
+          <li>Feet stay on the floor without sliding, knees bend the right way</li>
+          <li>Short signal drops are covered smoothly</li>
+        </ul>
       </div>
-      <div>
-        <dt>Drift handled while you play</dt>
-        <dd>Ombra learns how each sensor drifts and pulls it back as you move, so you stop pausing the game to reset.</dd>
+      <div class="feat">
+        <h3>Steady and quick</h3>
+        <ul class="ticks">
+          <li>Smoothing presets (Smooth, Balanced, Responsive, Off) and a fine slider</li>
+          <li>A different style for any tracker, for example calmer feet</li>
+          <li>Drift correction while you play, no pausing to reset</li>
+          <li>Choose which trackers each game sees</li>
+        </ul>
       </div>
-      <div>
-        <dt>Calibration in two poses</dt>
-        <dd>Stand straight, then a ski pose: about six seconds. Start it from VR with a double press of the trigger.</dd>
+      <div class="feat">
+        <h3>Moving around in VR</h3>
+        <ul class="ticks">
+          <li>Space drag: hold a controller button and pull the world</li>
+          <li>Fling and glide when you let go</li>
+          <li>Gravity, to come back down to the ground</li>
+        </ul>
       </div>
-      <div>
-        <dt>Small and native</dt>
-        <dd>Written in Rust, with no browser engine inside. SteamVR starts it for you, and it waits in the tray.</dd>
+      <div class="feat">
+        <h3>Panels in VR</h3>
+        <ul class="ticks">
+          <li>An Ombra tab in the SteamVR dashboard: calibrate, trackers, smoothing, drift and elbows</li>
+          <li>A wrist panel like a watch: time, trackers, calibration buttons</li>
+          <li>PC notifications (Discord and other apps) on your wrist</li>
+          <li>Warnings in VR when a tracker drops or its battery runs low</li>
+        </ul>
       </div>
-    </dl>
+      <div class="feat">
+        <h3>VRChat and VTubing</h3>
+        <ul class="ticks">
+          <li>Ombra's calibration also calibrates VRChat</li>
+          <li>VRChat's recommended full-body settings, applied in one click</li>
+          <li>OSC trackers for VRChat on a Quest, without SteamVR</li>
+          <li>VMC for VSeeFace, Warudo, VNyan and other VTuber apps</li>
+        </ul>
+      </div>
+      <div class="feat">
+        <h3>The app</h3>
+        <ul class="ticks">
+          <li>Small and native: SteamVR starts it, and it waits in the tray</li>
+          <li>A tray panel with the trackers and calibration, without opening the window</li>
+          <li>A quick bar you arrange yourself</li>
+          <li>Updates from inside the app</li>
+          <li>English, Italian, German and French</li>
+          <li>A demo mode to try it without trackers</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -176,8 +229,8 @@
           <p>The body Ombra builds from your sensors and headset, in front, side or free 3D view. Each tracker shows whether it is tracked, simulated or out of signal.</p>
           <ul class="ticks">
             <li>Battery, rate and signal for every sensor at a glance</li>
-            <li>Raw steps against what SteamVR receives, per tracker</li>
-            <li>Smoothing, Reset facing and Calibrate one click away</li>
+            <li>The signal of each tracker, raw and smoothed</li>
+            <li>Calibrate, Quick and Reset facing one click away</li>
           </ul>
         </div>
         <div class="panel" role="tabpanel" id="p-trackers" aria-labelledby="t-trackers" hidden>
@@ -199,11 +252,11 @@
           </ul>
         </div>
         <div class="panel" role="tabpanel" id="p-calib" aria-labelledby="t-calib" hidden>
-          <h3>Calibration in two poses</h3>
-          <p>Stand straight, then bend into a ski pose; with foot trackers, rise on your tiptoes too. Ombra reports each body segment as it aligns.</p>
+          <h3>Calibration in three poses</h3>
+          <p>Stand straight, bend into a ski pose, then rise on your tiptoes with foot trackers. Ombra shows which body part to check when something is off.</p>
           <ul class="ticks">
             <li>Start it from VR, with a voice or tones guiding each step</li>
-            <li>Resets facing when VRChat runs its own calibration</li>
+            <li>Works together with VRChat's own calibration</li>
             <li>Measure your body and the floor by touching them with a controller</li>
           </ul>
         </div>
@@ -211,23 +264,22 @@
           <h3>Smoothing you can tune</h3>
           <p>Smooth, Balanced, Responsive or Off, or any level on a slider. Give a single tracker its own style, for example calmer feet.</p>
           <ul class="ticks">
-            <li>The vertical axis can follow faster, so crouches and jumps stay crisp</li>
-            <li>Latency compensation for the GX radio link</li>
+            <li>Crouches and jumps stay crisp</li>
             <li>Can smooth other IMU trackers in SteamVR too, if you choose</li>
           </ul>
         </div>
         <div class="panel" role="tabpanel" id="p-drift" aria-labelledby="t-drift" hidden>
           <h3>Drift, handled while you play</h3>
-          <p>Automatic yaw-drift correction, with a live table of what it is doing on each segment and the drift it has learned.</p>
+          <p>Drift correction runs while you play, and a live table shows what it is doing on each body part.</p>
           <ul class="ticks">
-            <li>Aligns each segment with its neighbours while you rest</li>
-            <li>Uses walking direction and knee hinges as extra references</li>
-            <li>Learns from every Reset facing you press</li>
+            <li>Fewer resets, also during long sessions</li>
+            <li>Turn each part of it on or off</li>
+            <li>Gets better the more you play</li>
           </ul>
         </div>
         <div class="panel" role="tabpanel" id="p-body" aria-labelledby="t-body" hidden>
           <h3>Legs, feet and floor</h3>
-          <p>Corrections on the final body keep it believable: feet stay above the floor, planted feet don't slide, knees never bend backwards.</p>
+          <p>Your body stays believable: feet stay above the floor, planted feet don't slide, knees never bend backwards.</p>
           <ul class="ticks">
             <li>Covers short signal dropouts with a smooth estimated pose</li>
             <li>Bed mode: the mattress becomes the floor</li>
@@ -243,39 +295,6 @@
             <li>Every file is checked (SHA-256) before it is used</li>
           </ul>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="smoothing" aria-labelledby="smoothing-title">
-  <div class="wrap">
-    <header class="section-head">
-      <h2 id="smoothing-title">Calm when you stand still. Instant when you kick.</h2>
-      <p>A fixed filter makes you choose between jitter and lag. Ombra's filter raises its cutoff with speed, so you get both. This chart runs the same filter and presets as the app, on a simulated foot tracker at 100 Hz.</p>
-    </header>
-
-    <div class="demo">
-      <div class="demo-top">
-        <div class="seg pills" role="radiogroup" aria-label="Smoothing preset">
-          <span class="pill" aria-hidden="true"><i></i><i></i><i></i></span>
-          <button role="radio" aria-checked="false" data-preset="smooth">Smooth</button>
-          <button role="radio" aria-checked="true" data-preset="balanced">Balanced</button>
-          <button role="radio" aria-checked="false" data-preset="responsive">Responsive</button>
-          <button role="radio" aria-checked="false" data-preset="off">Off</button>
-        </div>
-        <div class="legend" aria-hidden="true"><span class="l-raw">Raw sensor</span><span class="l-out">Sent to SteamVR</span></div>
-      </div>
-      <div class="chart">
-        <canvas id="chart" aria-label="Chart of a raw tracker angle and the smoothed angle Ombra sends to SteamVR." role="img"></canvas>
-        <button class="pause" type="button" aria-pressed="false" aria-label="Pause chart">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M8 5v14M16 5v14"/><path class="i-play" d="M8 5.5v13l10.5-6.5Z"/></svg>
-        </button>
-      </div>
-      <div class="demo-stats">
-        <div><span>Jitter at rest</span><b id="m-jitter">–</b></div>
-        <div><span>Lag during a kick</span><b id="m-lag">–</b></div>
-        <p class="demo-note" id="m-note" aria-live="polite">Lower is better for both.</p>
       </div>
     </div>
   </div>
@@ -335,8 +354,8 @@
         <p>The installer is not code-signed yet, so SmartScreen doesn't recognise it. Click <b>More info</b>, then <b>Run anyway</b>. The setup installs into your user folder and needs no admin rights.</p>
       </details>
       <details>
-        <summary>How does Ombra talk to SteamVR?</summary>
-        <p>Two parts work together. Ombra.exe owns the dongles and the body model: calibration, drift correction and the leg corrections. A small SteamVR driver reads the poses from shared memory, filters them and creates the virtual trackers with their roles already set.</p>
+        <summary>How does Ombra show up in SteamVR?</summary>
+        <p>The setup installs Ombra's own SteamVR driver. Your trackers appear in SteamVR with their roles already set (hip, chest, knees, feet, elbows), and SteamVR starts Ombra for you.</p>
       </details>
       <details>
         <summary>Will it touch my headset, controllers or base stations?</summary>
@@ -344,7 +363,7 @@
       </details>
       <details>
         <summary>Does it work with VRChat?</summary>
-        <p>Yes. Ombra can reset facing automatically when VRChat runs its full-body calibration, and it can confirm VRChat's one-handed calibration for you over OSC.</p>
+        <p>Yes. Ombra's calibration also calibrates VRChat, it applies VRChat's recommended full-body settings in one click, and it can send your body to VRChat on a Quest over OSC.</p>
       </details>
       <details>
         <summary>Can I try it without trackers?</summary>
@@ -353,6 +372,10 @@
       <details>
         <summary>Is it affiliated with Shiftall or Valve?</summary>
         <p>No. Ombra is an independent project, free to download and use. The source code is not published; you can propose features, extensions and translations on GitHub.</p>
+      </details>
+      <details>
+        <summary>Does Ombra collect data about me?</summary>
+        <p>No. There is no account and no tracking. Ombra only goes online to check for a new version (you can turn that off) and for tracker firmware, from Shiftall's server. Notifications shown on the wrist panel never leave your PC. Details on the <a href="legal.html#privacy">privacy page</a>.</p>
       </details>
     </div>
   </div>
@@ -370,7 +393,9 @@
       <li><a class="js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">Star on GitHub</a></li>
       <li><a href="https://github.com/thadoom/ombra/releases">Releases</a></li>
       <li><a href="https://github.com/thadoom/ombra/issues/new/choose">Report a bug or propose a feature</a></li>
-      <li><a href="https://github.com/thadoom/ombra/blob/main/THIRD_PARTY_NOTICES.md">Third-party notices</a></li>
+      <li><a href="legal.html#license">License</a></li>
+      <li><a href="legal.html#privacy">Privacy</a></li>
+      <li><a href="legal.html#notices">Third-party notices</a></li>
     </ul>
     <p class="fine">Free to use, closed source. Not affiliated with or endorsed by Shiftall Inc. or Valve Corporation. HaritoraX, SlimeVR, SteamVR and VRChat are trademarks of their respective owners.</p>
   </div>
@@ -391,6 +416,6 @@
   </div>
 </div>
 
-<script src="main.js?v=3" defer></script>
+<script src="main.js?v=4" defer></script>
 </body>
 </html>

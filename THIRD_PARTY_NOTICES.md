@@ -164,11 +164,27 @@ SOFTWARE.
 
 ---
 
+## Dummy 13 (@lucky13toys; VRChat port by DX)
+
+Used for: the body in the 3D view, credited on the view itself (bottom right).
+
+Dummy 13 was created by @lucky13toys and ported to VRChat by DX
+(https://dx30.gumroad.com/l/Dummy13VRChat). It is licensed under the Creative
+Commons Attribution 4.0 International License (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+Changes made for Ombra: the free Dummy 13 model only (not Dummy+); the fingers
+posed into a grip; the mesh cut into rigid parts per body segment; faces hidden
+inside a part removed; decimated from about 40,000 to about 9,300 triangles;
+the right side rebuilt as a mirror of the left; re-encoded in Ombra's own
+format. Neither @lucky13toys nor DX endorses Ombra.
+
+---
+
 ## SlimeVR Server (Eiren Rain and SlimeVR contributors)
 
-Used for: parts of the rest-alignment drift correction and of the leg
-corrections are adapted from this project. Licensed under MIT or Apache-2.0;
-used here under MIT.
+Used for: parts of the body tracking are adapted from this project. Licensed
+under MIT or Apache-2.0; used here under MIT.
 
 ```
 Copyright (c) Eiren Rain and SlimeVR contributors
