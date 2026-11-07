@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!-- Template: texts live in site/i18n/<lang>.json; build with python tools/make_site.py.
+     The page is one story: what Ombra is (hero), the four things it does (chapters, each with its
+     own screenshots), the small things, the privacy promise, install, the questions left. Nothing is
+     said twice. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#121816">
+<title>{{head.title1}}</title>
+<meta name="description" content="{{meta.description}}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://thadoom.github.io/ombra/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ombra">
+<meta property="og:title" content="{{meta.og_title}}">
+<meta property="og:description" content="{{meta.og_description}}">
+<meta property="og:url" content="https://thadoom.github.io/ombra/">
+<meta property="og:image" content="https://thadoom.github.io/ombra/assets/og.png?v=4">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{meta.og_title}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thadoom.github.io/ombra/assets/og.png?v=4">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://api.github.com" crossorigin>
+<link rel="stylesheet" href="style.css?v=13">
+<script>
+  // entrance animations hide content until main.js plays them; if it never does, show everything
+  document.documentElement.classList.add("js");
+  setTimeout(function () { var h = document.documentElement; if (!h.classList.contains("loaded")) h.classList.remove("js"); }, 3000);
+</script>
+<script type="application/ld+json">{}</script>
+</head>
+<body>
+<a class="skip" href="#main">{{page.a1}}</a>
+
+<header class="nav" id="top">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="{{top.aria_label1}}"><img src="assets/logo.svg" alt="" width="30" height="30"><span>Ombra</span></a>
+    <nav aria-label="{{top.aria_label2}}">
+      <ul class="nav-links">
+        <li><a href="#tracking">{{nav.tracking}}</a></li>
+        <li><a href="#vrchat">{{nav.vrchat}}</a></li>
+        <li><a href="#safety">{{nav.safety}}</a></li>
+        <li><a href="#in-vr">{{nav.invr}}</a></li>
+        <li><a href="#privacy">{{nav.privacy}}</a></li>
+        <li><a href="#faq">{{nav.faq}}</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+<!--LANGS-->
+      <a class="btn btn-quiet btn-sm js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">
+        <svg class="i-star" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="m12 3.2 2.7 5.5 6 .9-4.35 4.25 1.03 6-5.38-2.83-5.38 2.83 1.03-6L3.3 9.6l6-.9Z"/></svg>
+        {{top.a1}}<span class="count" hidden></span>
+      </a>
+      <a class="btn btn-primary btn-sm js-download" href="https://github.com/thadoom/ombra/releases/latest/download/Ombra-Setup.exe" download>{{top.a2}}</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="{{top.aria_label3}}"><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="#tracking">{{nav.tracking}}</a>
+    <a href="#vrchat">{{nav.vrchat}}</a>
+    <a href="#safety">{{nav.safety}}</a>
+    <a href="#in-vr">{{nav.invr}}</a>
+    <a href="#privacy">{{nav.privacy}}</a>
+    <a href="#install">{{nav.install}}</a>
+    <a href="#faq">{{nav.faq}}</a>
+    <a class="js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">{{mobile-menu.a6}}</a>
+    <div class="langs-mobile"><!--LANGS_MOBILE--></div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <h1 id="hero-title">{{page.h11}}</h1>
+      <p class="lede">{{hero.lede}}</p>
+      <div class="cta">
+        <a class="btn btn-primary btn-lg js-download" href="https://github.com/thadoom/ombra/releases/latest/download/Ombra-Setup.exe" download>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+          {{page.a2}}
+        </a>
+        <a class="btn btn-quiet btn-lg js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">
+          <svg class="i-star" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="m12 3.2 2.7 5.5 6 .9-4.35 4.25 1.03 6-5.38-2.83-5.38 2.83 1.03-6L3.3 9.6l6-.9Z"/></svg>
+          {{page.a3}}<span class="count" hidden></span>
+        </a>
+      </div>
+      <p class="hero-meta">{{page.p2}}</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg class="figure" viewBox="70 80 400 400" preserveAspectRatio="xMidYMid meet">
+        <g class="echo echo-far"><path class="o"/><circle class="o" r="48"/><path class="f"/><circle class="f" r="38"/></g>
+        <g class="echo echo-near"><path class="o"/><circle class="o" r="48"/><path class="f"/><circle class="f" r="38"/></g>
+        <g class="echo echo-you"><path class="o"/><circle class="o" r="48"/><path class="f"/><circle class="f" r="38"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 1. tracking -->
+<section class="section chapter" id="tracking" aria-labelledby="tracking-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="tracking-title">{{trk.h2}}</h2>
+      <p>{{trk.p}}</p>
+    </header>
+    <div class="tour">
+      <div class="rail pills" role="tablist" aria-label="{{trk.tabs}}" aria-orientation="vertical">
+        <span class="pill" aria-hidden="true"><i></i><i></i><i></i></span>
+        <button role="tab" id="t-home" aria-controls="p-home" aria-selected="true">{{app.button1}}</button>
+        <button role="tab" id="t-calib" aria-controls="p-calib" aria-selected="false" tabindex="-1">{{app.button4}}</button>
+        <button role="tab" id="t-smooth" aria-controls="p-smooth" aria-selected="false" tabindex="-1">{{app.button5}}</button>
+        <button role="tab" id="t-drift" aria-controls="p-drift" aria-selected="false" tabindex="-1">{{app.button6}}</button>
+        <button role="tab" id="t-body" aria-controls="p-body" aria-selected="false" tabindex="-1">{{app.button7}}</button>
+        <button role="tab" id="t-trackers" aria-controls="p-trackers" aria-selected="false" tabindex="-1">{{app.button2}}</button>
+        <button role="tab" id="t-dongles" aria-controls="p-dongles" aria-selected="false" tabindex="-1">{{app.button3}}</button>
+        <button role="tab" id="t-fw" aria-controls="p-fw" aria-selected="false" tabindex="-1">{{app.button8}}</button>
+        <button role="tab" id="t-health" aria-controls="p-health" aria-selected="false" tabindex="-1">{{trk.tab_health}}</button>
+      </div>
+      <div class="stage">
+        <div class="window">
+          <div class="shots">
+            <img src="assets/screens/home.webp" width="1440" height="900" alt="{{app.alt1}}">
+            <img hidden loading="lazy" src="assets/screens/calib.webp" width="1440" height="900" alt="{{app.alt4}}">
+            <img hidden loading="lazy" src="assets/screens/tuning.webp" width="1440" height="900" alt="{{app.alt5}}">
+            <img hidden loading="lazy" src="assets/screens/tuning-drift.webp" width="1440" height="900" alt="{{app.alt6}}">
+            <img hidden loading="lazy" src="assets/screens/tuning-body.webp" width="1440" height="900" alt="{{app.alt7}}">
+            <img hidden loading="lazy" src="assets/screens/trackers.webp" width="1440" height="900" alt="{{app.alt2}}">
+            <img hidden loading="lazy" src="assets/screens/dongles.webp" width="1440" height="900" alt="{{app.alt3}}">
+            <img hidden loading="lazy" src="assets/screens/firmware.webp" width="1440" height="900" alt="{{app.alt8}}">
+            <img hidden loading="lazy" src="assets/screens/health.webp" width="1440" height="900" alt="{{trk.alt_health}}">
+          </div>
+          <div class="sweep" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-home" aria-labelledby="t-home">
+          <h3>{{p-home.h31}}</h3>
+          <p>{{p-home.p1}}</p>
+          <ul class="ticks"><li>{{p-home.li1}}</li><li>{{trk.home_elbows}}</li><li>{{p-home.li3}}</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-calib" aria-labelledby="t-calib" hidden>
+          <h3>{{p-calib.h31}}</h3>
+          <p>{{p-calib.p1}}</p>
+          <ul class="ticks"><li>{{trk.calib_start}}</li><li>{{trk.calib_quick}}</li><li>{{features.li9}}</li><li>{{p-calib.li3}}</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-smooth" aria-labelledby="t-smooth" hidden>
+          <h3>{{p-smooth.h31}}</h3>
+          <p>{{p-smooth.p1}}</p>
+          <ul class="ticks"><li>{{p-smooth.li1}}</li><li>{{trk.smooth_predict}}</li><li>{{p-smooth.li2}}</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-drift" aria-labelledby="t-drift" hidden>
+          <h3>{{p-drift.h31}}</h3>
+          <p>{{p-drift.p1}}</p>
+          <ul class="ticks"><li>{{p-drift.li1}}</li><li>{{p-drift.li2}}</li><li>{{p-drift.li3}}</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-body" aria-labelledby="t-body" hidden>
+          <h3>{{p-body.h31}}</h3>
+          <p>{{p-body.p1}}</p>
+          <ul class="ticks"><li>{{features.li18}}</li><li>{{trk.body_sit}}</li><li>{{p-body.li1}}</li><li>{{p-body.li3}}</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-trackers" aria-labelledby="t-trackers" hidden>
+          <h3>{{p-trackers.h31}}</h3>
+          <p>{{p-trackers.p1}}</p>
+          <ul class="ticks"><li>{{p-trackers.li1}}</li><li>{{p-trackers.li2}}</li><li>{{trk.trackers_slime}}</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-dongles" aria-labelledby="t-dongles" hidden>
+          <h3>{{p-dongles.h31}}</h3>
+          <p>{{p-dongles.p1}}</p>
+          <ul class="ticks"><li>{{p-dongles.li1}}</li><li>{{p-dongles.li2}}</li><li>{{p-dongles.li3}}</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-fw" aria-labelledby="t-fw" hidden>
+          <h3>{{p-fw.h31}}</h3>
+          <p>{{p-fw.p1}}</p>
+          <ul class="ticks"><li>{{p-fw.li1}}</li><li>{{p-fw.li2}}</li><li>{{p-fw.li3}}</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-health" aria-labelledby="t-health" hidden>
+          <h3>{{trk.health_h}}</h3>
+          <p>{{trk.health_p}}</p>
+          <ul class="ticks"><li>{{trk.health_li1}}</li><li>{{trk.health_li2}}</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. vrchat: chatbox, music, heart rate -->
+<section class="section chapter" id="vrchat" aria-labelledby="vrchat-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="vrchat-title">{{vrc.h2}}</h2>
+      <p>{{vrc.p}}</p>
+    </header>
+    <div class="tour flip">
+      <div class="rail pills" role="tablist" aria-label="{{vrc.tabs}}" aria-orientation="vertical">
+        <span class="pill" aria-hidden="true"><i></i><i></i><i></i></span>
+        <button role="tab" id="t-chat" aria-controls="p-chat" aria-selected="true">{{vrc.tab_chat}}</button>
+        <button role="tab" id="t-vrc" aria-controls="p-vrc" aria-selected="false" tabindex="-1">{{vrc.tab_vrc}}</button>
+      </div>
+      <div class="stage">
+        <div class="window">
+          <div class="shots">
+            <img loading="lazy" src="assets/screens/chatbox.webp" width="1440" height="900" alt="{{vrc.alt_chat}}">
+            <img hidden loading="lazy" src="assets/screens/vrchat.webp" width="1440" height="900" alt="{{vrc.alt_vrc}}">
+          </div>
+          <div class="sweep" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-chat" aria-labelledby="t-chat">
+          <h3>{{vrc.chat_h}}</h3>
+          <p>{{vrc.chat_p}}</p>
+          <ul class="ticks"><li>{{vrc.chat_li1}}</li><li>{{vrc.chat_li2}}</li><li>{{vrc.chat_li3}}</li><li>{{vrc.chat_li4}}</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-vrc" aria-labelledby="t-vrc" hidden>
+          <h3>{{vrc.vrc_h}}</h3>
+          <p>{{vrc.vrc_p}}</p>
+          <ul class="ticks"><li>{{features.li42}}</li><li>{{features.li43}}</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. safety: crashers -->
+<section class="section chapter" id="safety" aria-labelledby="safety-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="safety-title">{{safe.h2}}</h2>
+      <p>{{safe.p}}</p>
+    </header>
+    <div class="solo">
+      <div class="window"><div class="shots"><img loading="lazy" src="assets/screens/safety.webp" width="1440" height="900" alt="{{safe.alt}}"></div></div>
+      <ul class="ticks solo-points">
+        <li>{{features.li34}}</li>
+        <li>{{safe.li_report}}</li>
+        <li>{{features.li36}}</li>
+        <li>{{features.li39}}</li>
+        <li>{{safe.li_auto}}</li>
+        <li>{{safe.li_never}}</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4. in VR: wrist and dashboard -->
+<section class="section chapter" id="in-vr" aria-labelledby="invr-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="invr-title">{{invr.h2}}</h2>
+      <p>{{invr.p}}</p>
+    </header>
+    <div class="tour flip">
+      <div class="rail pills" role="tablist" aria-label="{{invr.tabs}}" aria-orientation="vertical">
+        <span class="pill" aria-hidden="true"><i></i><i></i><i></i></span>
+        <button role="tab" id="t-wrist" aria-controls="p-wrist" aria-selected="true">{{invr.tab_wrist}}</button>
+        <button role="tab" id="t-dash" aria-controls="p-dash" aria-selected="false" tabindex="-1">{{invr.tab_dash}}</button>
+      </div>
+      <div class="stage">
+        <div class="window">
+          <div class="shots">
+            <img loading="lazy" src="assets/screens/wrist.webp" width="1440" height="900" alt="{{invr.alt_wrist}}">
+            <img hidden loading="lazy" src="assets/screens/dashboard.webp" width="1440" height="900" alt="{{invr.alt_dash}}">
+          </div>
+          <div class="sweep" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-wrist" aria-labelledby="t-wrist">
+          <h3>{{invr.wrist_h}}</h3>
+          <p>{{invr.wrist_p}}</p>
+          <ul class="ticks"><li>{{invr.wrist_li1}}</li><li>{{features.li53}}</li><li>{{invr.wrist_li3}}</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-dash" aria-labelledby="t-dash" hidden>
+          <h3>{{invr.dash_h}}</h3>
+          <p>{{invr.dash_p}}</p>
+          <ul class="ticks"><li>{{features.li50}}</li><li>{{invr.dash_li2}}</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- the small things -->
+<section class="section more" id="more" aria-labelledby="more-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="more-title">{{more.h2}}</h2>
+    </header>
+    <ul class="more-list">
+      <li><h3>{{more.native_h}}</h3><p>{{more.native_p}}</p></li>
+      <li><h3>{{more.bar_h}}</h3><p>{{more.bar_p}}</p></li>
+      <li><h3>{{more.update_h}}</h3><p>{{more.update_p}}</p></li>
+      <li><h3>{{more.resume_h}}</h3><p>{{more.resume_p}}</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- privacy: the promise and the ledger -->
+<section class="section promise" id="privacy" aria-labelledby="privacy-title">
+  <div class="wrap promise-in">
+    <header class="section-head promise-head">
+      <h2 id="privacy-title"><span class="setup">{{privacy.lead}}</span> {{privacy.h21}}</h2>
+      <p>{{privacy.p1}}</p>
+    </header>
+    <div class="ledger">
+      <div class="ledger-group stay">
+        <h3>{{privacy.stay_h}}</h3>
+        <ul><li>{{privacy.stay1}}</li><li>{{privacy.stay2}}</li><li>{{privacy.stay3}}</li></ul>
+      </div>
+      <div class="ledger-group online">
+        <h3>{{privacy.online_h}}</h3>
+        <ul><li>{{privacy.online1}}</li><li>{{privacy.online2}}</li><li>{{privacy.online3}}</li></ul>
+      </div>
+      <div class="ledger-group none">
+        <h3>{{privacy.none_h}}</h3>
+        <ul><li><span class="x">{{privacy.none1}}</span></li><li><span class="x">{{privacy.none2}}</span></li><li><span class="x">{{privacy.none3}}</span></li><li><span class="x">{{privacy.none4}}</span></li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="install" aria-labelledby="install-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="install-title">{{install.h21}}</h2>
+      <p>{{install.p1}}</p>
+    </header>
+    <ol class="steps">
+      <li><h3>{{install.h31}}</h3><p>{{install.p2}}</p></li>
+      <li><h3>{{install.h32}}</h3><p>{{install.p3}}</p></li>
+      <li><h3>{{install.h33}}</h3><p>{{install.p4b}}</p></li>
+      <li><h3>{{install.h34}}</h3><p>{{install.p5}}</p></li>
+    </ol>
+    <div class="install-cta">
+      <a class="btn btn-primary btn-lg js-download" href="https://github.com/thadoom/ombra/releases/latest/download/Ombra-Setup.exe" download>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+        {{install.a1}}
+      </a>
+      <p>{{install.p6}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-wrap">
+    <header class="section-head">
+      <h2 id="faq-title">{{faq.h21}}</h2>
+      <p>{{faq.p1}}</p>
+    </header>
+    <div class="faq">
+      <details><summary>{{faq.summary1}}</summary><div class="answer"><p>{{faq.vrm}}</p></div></details>
+      <details><summary>{{faq.summary2}}</summary><div class="answer"><p>{{faq.trackers}}</p></div></details>
+      <details><summary>{{faq.quest_q}}</summary><div class="answer"><p>{{faq.quest_a}}</p></div></details>
+      <details><summary>{{faq.summary3}}</summary><div class="answer"><p>{{faq.p4}}</p></div></details>
+      <details><summary>{{faq.summary4}}</summary><div class="answer"><p>{{faq.p5}}</p></div></details>
+      <details><summary>{{faq.summary5}}</summary><div class="answer"><p>{{faq.p6}}</p></div></details>
+      <details><summary>{{faq.summary9}}</summary><div class="answer"><p>{{faq.p10}}</p></div></details>
+      <details><summary>{{faq.summary10}}</summary><div class="answer"><p>{{faq.p11}}</p></div></details>
+      <details><summary>{{faq.summary11}}</summary><div class="answer"><p>{{faq.p12}}</p></div></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <a class="brand" href="#top"><img src="assets/logo.svg" alt="" width="28" height="28"><span>Ombra</span></a>
+      <p>{{foot.tag}}</p>
+    </div>
+    <ul class="foot-links">
+      <li>{{foot.li1}}</li>
+      <li>{{foot.li2}}</li>
+      <li>{{foot.li3}}</li>
+      <li>{{foot.li4}}</li>
+      <li>{{foot.li5}}</li>
+      <li>{{foot.li6}}</li>
+    </ul>
+    <p class="fine">{{foot.p2}}</p>
+  </div>
+</footer>
+
+<div class="dl-toast" id="dl-toast" role="status" aria-live="polite" hidden>
+  <div class="dl-card">
+    <p class="dl-title">{{dl-toast.p1}}</p>
+    <p>{{dl-toast.p2}}</p>
+    <p class="dl-star">{{dl-toast.p3}}</p>
+    <a class="btn btn-quiet btn-sm js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">
+      <svg class="i-star" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="m12 3.2 2.7 5.5 6 .9-4.35 4.25 1.03 6-5.38-2.83-5.38 2.83 1.03-6L3.3 9.6l6-.9Z"/></svg>
+      {{dl-toast.a1}}
+    </a>
+    <button class="dl-close" type="button" aria-label="{{dl-toast.aria_label1}}">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+    </button>
+  </div>
+</div>
+
+<script src="main.js?v=10" defer></script>
+</body>
+</html>

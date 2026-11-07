@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="assets/readme/banner.svg" width="880" alt="Ombra: a walking figure followed by its two shadows, next to the name and the line: full-body tracking that moves like your shadow.">
+  <img src="assets/readme/banner.svg" width="880" alt="Ombra: a walking figure followed by its two shadows, next to the name and the line: everything for VR, in one shadow.">
 </p>
 
 <p align="center">
-  A free Windows app that runs your HaritoraX and SlimeVR-compatible trackers in SteamVR on its own.<br>
-  It reads the dongles, builds your body from the sensors and your headset, and keeps every tracker steady, quick and free of drift.
+  One free Windows app for your whole VR session.<br>
+  Full-body tracking for HaritoraX and SlimeVR-compatible trackers in SteamVR, a VRChat chatbox with your music and heart rate, protection from avatar crashers, and panels on your wrist.
 </p>
 
 <p align="center">
@@ -26,9 +26,14 @@
   <img src="docs/images/home.png" width="880" alt="Ombra's Overview page: a live 3D body with eight trackers, the sensor list with battery and update rate, and the quick controls for smoothing, reset facing and calibrate.">
 </p>
 
-Ombra is Italian for shadow. It is an independent project, free to download and use, with closed source code. It is not affiliated with Shiftall, Valve, VRChat or SlimeVR.
+Ombra is Italian for shadow: one app that follows you through all of VR. It is an independent project, free to download and use, with closed source code. It is not affiliated with Shiftall, Valve, VRChat or SlimeVR.
+
+> **In a world where everything sits behind a paywall, Ombra is free. And it doesn't even keep your data.**
+> No subscription, no account, no server, no tracking. Everything Ombra knows stays on your PC. It only goes online to check for updates, to download tracker firmware, and to the services you connect yourself, like Pulsoid.
 
 ## What it does
+
+### Full-body tracking
 
 - **Reads your trackers directly.** HaritoraX 2, 2 Pro and Wireless through GX2 or GX6 dongles, at 50 or 100 Hz per sensor, with pairing and tracker settings in the app. SlimeVR-compatible trackers over Wi-Fi or a USB receiver. VR Manager and SlimeVR Server can stay closed.
 - **Smooth without lag.** An adaptive filter that is steady when you stand still and quick when you kick, with compensation for the radio delay. Every pose carries its velocity, so SteamVR predicts it to the frame, like a Vive tracker.
@@ -40,7 +45,22 @@ Ombra is Italian for shadow. It is an independent project, free to download and 
 - **Firmware updates** for trackers (Bluetooth) and dongles (USB), with Shiftall's original signed files, checked before use.
 - **More outputs:** VRChat OSC trackers, for VRChat on a standalone Quest, and VMC for VTuber apps.
 - **Mixed sets:** HaritoraX and SlimeVR-compatible trackers on one body, with a guided Wi-Fi setup for new SlimeVR boards.
-- In English, Italiano, Deutsch and Français.
+- **Ankles that bend**, from the HaritoraX 2 distance sensor.
+- **Other trackers lined up:** Vive or other base-station trackers with a Quest. Hold one against a controller, wave them, and Ombra lines them up with the headset.
+
+### VRChat
+
+- **A chatbox of your own.** Build it line by line from modules (song, heart rate, status, time, full body): drag the lines into order, add pieces with a click and see each line as VRChat will show it. Decorators and text styles use only characters VRChat can draw. Save a layout as a theme and share it as a code. When the text is too long it turns the page instead of cutting it; short moments, like a new song, take the bubble for a few seconds. It sends only when the text changes, so no spam and no chatbox timeouts.
+- **Music and heart rate.** What you're playing, from Spotify or any player, without logging in. Heart rate from Pulsoid or straight from a Bluetooth strap or watch, also sent to your avatar's parameters.
+- **Safe from crashers.** Ombra reads VRChat's log on your PC: who is in your instance, which avatar they wear and how heavy it is. After a crash, a report names the likely crasher and how many seconds before; hide that avatar in one click, undo any time. Optional: hide it by itself after two crashes from the same person, and rejoin after a crash with a countdown you can cancel. It never asks for your VRChat password and never touches the game.
+
+### In VR, and the rest
+
+- **Panels in VR:** a tab in the SteamVR dashboard, and a wrist panel like a watch with the time, your trackers, what's playing, your heart rate and PC notifications.
+- **Health page:** is the stutter from the radio or from your PC?
+- **Sleep mode:** a calm body, quiet voice and no surprises while you sleep. **Full body on and off** in one tap, back without recalibrating.
+- **12 colour themes** for the window and the panels in VR.
+- **In 10 languages:** English, Italiano, Deutsch, Français, Español, Português (Brasil), 日本語, 한국어, 简体中文, Русский.
 
 <table>
   <tr>
@@ -173,6 +193,7 @@ Ombra was built by studying how Shiftall VR Manager talks to the trackers and ho
 | SteamVR dashboard tab and voice warnings | Yes | – | – |
 | Firmware updates | Yes | Yes | For its own trackers |
 | VRChat OSC and VMC output | Yes | – | Yes |
+| VRChat chatbox, heart rate and crash reports | Yes | – | – |
 | Automatic body proportions, motion recording | – | – | Yes |
 
 "–" means we found no such feature. If something here is wrong or out of date, [open an issue](https://github.com/thadoom/ombra/issues/new/choose) and it will be fixed.
@@ -196,7 +217,13 @@ The installer isn't code-signed yet, so SmartScreen doesn't recognise it. Click 
 <details>
 <summary><b>Does it work with VRChat?</b></summary>
 <br>
-Yes. Ombra can confirm VRChat's calibration for you as soon as you stand still, and it shows the best VRChat tracking settings for your set (Calibration → VRChat), with one-click apply and undo.
+Yes, and it goes beyond tracking. Ombra can confirm VRChat's calibration for you as soon as you stand still, and it shows the best VRChat tracking settings for your set (Calibration → VRChat), with one-click apply and undo. It also drives your chatbox and shows who is in your instance.
+</details>
+
+<details>
+<summary><b>Can Ombra protect me from crashers?</b></summary>
+<br>
+It helps. Ombra reads VRChat's log on your PC, so after a crash it shows who loaded an avatar in the seconds before, and hides that avatar for you in one click. It can't stop an attack while it happens, and it never touches the game itself.
 </details>
 
 <details>

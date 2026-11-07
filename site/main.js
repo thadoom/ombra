@@ -10,6 +10,18 @@
 
   // ---------- entrances (the styles live in style.css, "motion") ----------
   // Headings are split into words so each one can catch up with its shadows.
+  // Japanese and Chinese have no spaces: the browser's word segmenter finds the words there.
+  const seg = /^(ja|zh)/.test(html.lang) && window.Intl && Intl.Segmenter ? new Intl.Segmenter(html.lang, { granularity: "word" }) : null;
+  // Punctuation (、。！) stays glued to the word before it, so it never starts a line.
+  const parts = (s) => {
+    if (!seg) return s.split(/(\s+)/);
+    const out = [];
+    for (const x of seg.segment(s)) {
+      if (!x.isWordLike && !/^\s+$/.test(x.segment) && out.length) out[out.length - 1] += x.segment;
+      else out.push(x.segment);
+    }
+    return out;
+  };
   function splitWords(el) {
     const words = [];
     const walk = (node) => {
@@ -17,7 +29,7 @@
         if (n.nodeType === 1) { walk(n); continue; }
         if (n.nodeType !== 3) continue;
         const frag = document.createDocumentFragment();
-        for (const part of n.textContent.split(/(\s+)/)) {
+        for (const part of parts(n.textContent)) {
           if (!part) continue;
           if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); continue; }
           const w = document.createElement("span");
@@ -39,8 +51,10 @@
     if (h) head.style.setProperty("--words", splitWords(h));
   });
   // stagger order inside lists
-  [".feat-groups > div", ".rail button", ".steps li", ".faq details", ".foot-in > *", ".mobile-menu a"].forEach((sel) =>
+  [".steps li", ".faq details", ".foot-in > *", ".mobile-menu a", ".solo li", ".more-list li"].forEach((sel) =>
     $$(sel).forEach((el, i) => el.style.setProperty("--i", i)));
+  $$(".rail").forEach((r) => $$("button", r).forEach((b, i) => b.style.setProperty("--i", i)));
+  $$(".ledger ul").forEach((ul) => [...ul.children].forEach((li, i) => li.style.setProperty("--i", i)));
 
   // the page starts once the font is in (or after 600 ms), so words don't jump mid-entrance
   const ready = new Promise((resolve) => {
@@ -53,7 +67,7 @@
   ready.then(() => {
     html.classList.add("loaded");
     if (h1) h1.classList.add("in");
-    const blocks = $$(".section-head, .feat-groups, .tour, .steps, .install-cta, .faq, .foot");
+    const blocks = $$(".section-head, .tour, .solo, .more-list, .ledger, .steps, .install-cta, .faq, .foot");
     const reveal = (el) => { el.classList.add("in"); $$(".split", el).forEach((s) => s.classList.add("in")); };
     if (!("IntersectionObserver" in window)) { blocks.forEach(reveal); return; }
     const io = new IntersectionObserver((entries) => {
@@ -68,28 +82,19 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  // texts in this page's language, from <html data-t-*>; English defaults inline
+  const ds = document.documentElement.dataset;
+  const T = { menuOpen: ds.tMenuOpen || "Open menu", menuClose: ds.tMenuClose || "Close menu", version: ds.tVersion || "Version {v}" };
   const toggle = $(".nav-toggle");
   const menu = $("#mobile-menu");
   const setMenu = (open) => {
     toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    toggle.setAttribute("aria-label", open ? T.menuClose : T.menuOpen);
     menu.hidden = !open;
   };
   toggle.addEventListener("click", () => setMenu(menu.hidden));
   menu.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
   window.matchMedia("(min-width: 961px)").addEventListener("change", (e) => { if (e.matches) setMenu(false); });
-
-  const links = $$(".nav-links a");
-  const byId = new Map(links.map((a) => [a.getAttribute("href").slice(1), a]));
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver((entries) => {
-      for (const en of entries) {
-        if (!en.isIntersecting) continue;
-        links.forEach((a) => a.classList.toggle("active", a === byId.get(en.target.id)));
-      }
-    }, { rootMargin: "-45% 0px -50% 0px" });
-    byId.forEach((_, id) => { const s = document.getElementById(id); if (s) io.observe(s); });
-  }
 
   // ---------- release and stars, from GitHub's public API (cached for 30 min) ----------
   // The download links don't depend on this: releases/latest/download/Ombra-Setup.exe always
@@ -117,10 +122,10 @@
   ghInfo().then((g) => {
     if (g.version) {
       const size = g.size ? `, ${(g.size / 1048576).toFixed(1)} MB` : "";
-      $$(".js-release").forEach((el) => { el.textContent = `Version ${g.version}${size}`; });
+      $$(".js-release").forEach((el) => { el.textContent = T.version.replace("{v}", g.version) + size; });
     }
     if (typeof g.stars === "number" && g.stars >= STAR_MIN) {
-      $$(".js-star .count").forEach((el) => { el.textContent = g.stars.toLocaleString("en"); el.hidden = false; });
+      $$(".js-star .count").forEach((el) => { el.textContent = g.stars.toLocaleString(document.documentElement.lang || "en"); el.hidden = false; });
     }
   });
 
@@ -271,12 +276,12 @@
     }
   }
 
-  // ---------- tour: rail tabs, the shadow sweep between screenshots ----------
-  const rail = $(".rail");
-  if (rail) {
+  // ---------- tours: rail tabs, the shadow sweep between screenshots (one per chapter) ----------
+  $$(".tour").forEach((tour) => {
+    const rail = $(".rail", tour);
     const tabs = $$('[role="tab"]', rail);
-    const shots = $$(".shots img");
-    const bands = $$(".sweep i");
+    const shots = $$(".shots img", tour);
+    const bands = $$(".sweep i", tour);
     let cur = 0, busy = null;
     const show = (i) => {
       shots.forEach((img, j) => { img.hidden = j !== i; });
@@ -323,5 +328,134 @@
       const io = new IntersectionObserver((en) => { if (en[0].isIntersecting) { warm(); io.disconnect(); } }, { rootMargin: "600px 0px" });
       io.observe(rail);
     } else warm();
+  });
+
+  // ---------- nav: a mint mark under the chapter you're reading, its two shadows a step behind ----------
+  const links = $$(".nav-links a");
+  if (links.length && "IntersectionObserver" in window) {
+    const bar = document.createElement("span");
+    bar.className = "nav-mark"; bar.setAttribute("aria-hidden", "true");
+    bar.innerHTML = "<i></i><i></i><i></i>";
+    $(".nav-links").appendChild(bar);
+    const ul = $(".nav-links");
+    let active = null;
+    const mark = (a, instant) => {
+      links.forEach((l) => (l === a ? l.setAttribute("aria-current", "true") : l.removeAttribute("aria-current")));
+      bar.classList.toggle("on", !!a);
+      if (!a) return;
+      const r = a.getBoundingClientRect(), u = ul.getBoundingClientRect();
+      if (instant || reduceMotion) bar.querySelectorAll("i").forEach((i) => (i.style.transition = "none"));
+      bar.style.setProperty("--x", r.left - u.left + 12 + "px");
+      bar.style.setProperty("--w", r.width - 24 + "px");
+      $$("i", bar).forEach((i) => { i.style.setProperty("--x", r.left - u.left + 12 + "px"); i.style.setProperty("--w", r.width - 24 + "px"); });
+      if (instant || reduceMotion) { void bar.offsetWidth; bar.querySelectorAll("i").forEach((i) => (i.style.transition = "")); }
+    };
+    const targets = links.map((a) => document.getElementById(a.getAttribute("href").slice(1))).filter(Boolean);
+    const seen = new Map();
+    const pick = () => {
+      // the chapter covering the line a third down the screen
+      let best = null;
+      for (const s of targets) { const r = s.getBoundingClientRect(); if (r.top <= innerHeight / 3 && r.bottom > innerHeight / 3) best = s; }
+      const a = best ? links[targets.indexOf(best)] : null;
+      if (a !== active) { mark(a, active === null); active = a; }
+    };
+    const io = new IntersectionObserver((en) => { en.forEach((e) => seen.set(e.target, e.isIntersecting)); pick(); }, { rootMargin: "-30% 0px -60% 0px" });
+    targets.forEach((t) => io.observe(t));
+    window.addEventListener("resize", () => active && mark(active, true));
   }
+
+  // ---------- language menu: unfolds from its button, rows land, a pill with echoes follows ----------
+  const langs = $(".langs");
+  if (langs) {
+    const sum = $("summary", langs), list = $(".langs-menu", langs);
+    const rows = $$("a", list);
+    const pill = document.createElement("li");
+    pill.className = "langs-pill"; pill.setAttribute("aria-hidden", "true"); pill.innerHTML = "<i></i><i></i><i></i>";
+    list.prepend(pill);
+    let anim = [], target = null;
+    const movePill = (a, instant) => {
+      if (!a) return;
+      if (instant) list.classList.add("instant");
+      pill.style.setProperty("--y", a.parentElement.offsetTop + "px");
+      $$("i", pill).forEach((i) => { i.style.setProperty("--y", a.parentElement.offsetTop + "px"); i.style.setProperty("--h", a.offsetHeight + "px"); });
+      rows.forEach((r) => r.classList.toggle("on", r === a));
+      target = a;
+      list.classList.add("has-pill");
+      if (instant) { void list.offsetWidth; list.classList.remove("instant"); }
+    };
+    const current = () => rows.find((r) => r.hasAttribute("aria-current")) || rows[0];
+    const stop = () => { anim.forEach((a) => a.cancel()); anim = []; };
+    const open = () => {
+      stop();
+      langs.open = true;
+      sum.setAttribute("aria-expanded", "true");
+      movePill(current(), true);
+      if (reduceMotion || !list.animate) return;
+      const ease = "cubic-bezier(.3,1.3,.5,1)";
+      // first the panel unrolls from the button, then its two shadows spring out to the left
+      const flat = "0 0 0 #2f6b50, 0 0 0 #24443a, 0 24px 48px -12px rgba(0,0,0,.35)";
+      anim.push(list.animate([
+        { clipPath: "inset(0 -40px 100% -40px round 16px)", transform: "translateY(-6px)", boxShadow: flat, easing: "cubic-bezier(.2,.8,.2,1)" },
+        { clipPath: "inset(0 -40px -80px -40px round 16px)", transform: "none", boxShadow: flat, offset: 0.5, easing: "cubic-bezier(.3,1.5,.5,1)" },
+        { clipPath: "inset(0 -40px -80px -40px round 16px)", transform: "none", boxShadow: "-6px 0 0 #2f6b50, -12px 0 0 #24443a, 0 24px 48px -12px rgba(0,0,0,.7)" },
+      ], { duration: 640, easing: "linear" }));
+      rows.forEach((r, i) => {
+        anim.push(r.animate([{ opacity: 0, transform: "translateX(-14px)" }, { opacity: 1, transform: "none" }],
+          { duration: 420, delay: 90 + i * 28, easing: ease, fill: "backwards" }));
+        anim.push($(".flag", r).animate([{ boxShadow: "0 0 0 1px #3a4843, 0 0 0 #2f6b50, 0 0 0 #24443a", transform: "translateX(-4px)" },
+          { boxShadow: "0 0 0 1px #3a4843, -3px 0 0 #2f6b50, -6px 0 0 #24443a", transform: "none", offset: 0.6 },
+          { boxShadow: "0 0 0 1px #3a4843, 0 0 0 #2f6b50, 0 0 0 #24443a", transform: "none" }],
+          { duration: 620, delay: 120 + i * 28, easing: "ease-out", fill: "backwards" }));
+      });
+    };
+    const close = (focusBack) => {
+      if (!langs.open) return;
+      stop();
+      sum.setAttribute("aria-expanded", "false");
+      if (focusBack) sum.focus();
+      if (reduceMotion || !list.animate) { langs.open = false; return; }
+      const a = list.animate([
+        { clipPath: "inset(0 0 0% 0 round 16px)", opacity: 1 },
+        { clipPath: "inset(0 0 100% 0 round 16px)", opacity: 0.4, transform: "translateY(-4px)" },
+      ], { duration: 240, easing: "cubic-bezier(.65,0,.35,1)" });
+      anim.push(a);
+      a.finished.then(() => { langs.open = false; anim = []; }, () => {});
+    };
+    sum.setAttribute("aria-expanded", "false");
+    sum.addEventListener("click", (e) => { e.preventDefault(); langs.open && sum.getAttribute("aria-expanded") === "true" ? close(false) : open(); });
+    list.addEventListener("pointerover", (e) => { const a = e.target.closest("a"); if (a && a !== target) movePill(a); });
+    list.addEventListener("pointerleave", () => movePill(current()));
+    list.addEventListener("focusin", (e) => { const a = e.target.closest("a"); if (a) movePill(a); });
+    list.addEventListener("keydown", (e) => {
+      const i = rows.indexOf(document.activeElement);
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        rows[(i + (e.key === "ArrowDown" ? 1 : -1) + rows.length) % rows.length].focus();
+      }
+    });
+    sum.addEventListener("keydown", (e) => { if (e.key === "ArrowDown") { e.preventDefault(); if (!langs.open) open(); (rows.find((r) => r.hasAttribute("aria-current")) || rows[0]).focus(); } });
+    document.addEventListener("click", (e) => { if (!langs.contains(e.target)) close(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && langs.open) close(true); });
+  }
+
+  // ---------- FAQ: answers open and close smoothly; the + turns into a × ----------
+  $$(".faq details").forEach((d) => {
+    const sum = $("summary", d), ans = $(".answer", d);
+    if (!ans || reduceMotion || !ans.animate) return;
+    let anim = null;
+    sum.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (anim) anim.cancel();
+      const opening = !d.open;
+      const from = d.open ? ans.offsetHeight : 0;
+      if (opening) d.open = true;
+      const to = opening ? ans.scrollHeight : 0;
+      anim = ans.animate(
+        [{ height: from + "px", opacity: opening ? 0 : 1, transform: opening ? "translateY(-6px)" : "none" },
+         { height: to + "px", opacity: opening ? 1 : 0, transform: opening ? "none" : "translateY(-6px)" }],
+        { duration: opening ? 420 : 300, easing: "cubic-bezier(.2,.8,.2,1)" });
+      const mine = anim;
+      mine.finished.then(() => { if (anim !== mine) return; if (!opening) d.open = false; anim = null; }, () => {});
+    });
+  });
 })();

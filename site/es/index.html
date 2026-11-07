@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<!-- Template: texts live in site/i18n/<lang>.json; build with python tools/make_site.py.
+     The page is one story: what Ombra is (hero), the four things it does (chapters, each with its
+     own screenshots), the small things, the privacy promise, install, the questions left. Nothing is
+     said twice. -->
+<html lang="es" data-t-menu-open="Abrir menú" data-t-menu-close="Cerrar menú" data-t-version="Versión {v}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#121816">
+<title>Ombra: full body tracking gratis y app de VRChat en SteamVR</title>
+<meta name="description" content="App gratis para Windows: seguimiento de cuerpo completo (full body) con HaritoraX y SlimeVR en SteamVR, chatbox de VRChat con pulso y anti-crashers.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://thadoom.github.io/ombra/es/">
+<link rel="alternate" hreflang="en" href="https://thadoom.github.io/ombra/">
+<link rel="alternate" hreflang="it" href="https://thadoom.github.io/ombra/it/">
+<link rel="alternate" hreflang="de" href="https://thadoom.github.io/ombra/de/">
+<link rel="alternate" hreflang="fr" href="https://thadoom.github.io/ombra/fr/">
+<link rel="alternate" hreflang="es" href="https://thadoom.github.io/ombra/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://thadoom.github.io/ombra/pt/">
+<link rel="alternate" hreflang="ja" href="https://thadoom.github.io/ombra/ja/">
+<link rel="alternate" hreflang="ko" href="https://thadoom.github.io/ombra/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://thadoom.github.io/ombra/zh/">
+<link rel="alternate" hreflang="ru" href="https://thadoom.github.io/ombra/ru/">
+<link rel="alternate" hreflang="x-default" href="https://thadoom.github.io/ombra/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ombra">
+<meta property="og:title" content="Ombra: todo para la VR, en una sola sombra">
+<meta property="og:description" content="Seguimiento de cuerpo completo, chatbox de VRChat, protección contra crashers y paneles en VR en una sola app. Gratis para Windows y sin cuenta: tus datos se quedan en tu PC.">
+<meta property="og:url" content="https://thadoom.github.io/ombra/es/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:image" content="https://thadoom.github.io/ombra/assets/og.png?v=4">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ombra: todo para la VR, en una sola sombra">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thadoom.github.io/ombra/assets/og.png?v=4">
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://api.github.com" crossorigin>
+<link rel="stylesheet" href="../style.css?v=13">
+<script>
+  // entrance animations hide content until main.js plays them; if it never does, show everything
+  document.documentElement.classList.add("js");
+  setTimeout(function () { var h = document.documentElement; if (!h.classList.contains("loaded")) h.classList.remove("js"); }, 3000);
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Ombra","operatingSystem":"Windows 10, Windows 11","applicationCategory":"UtilitiesApplication","description":"App gratis para Windows: seguimiento de cuerpo completo (full body) con HaritoraX y SlimeVR en SteamVR, chatbox de VRChat con pulso y anti-crashers.","inLanguage":"es","featureList":["Seguimiento de cuerpo completo que se mueve como tu sombra.","Tu cuerpo, en tiempo real","Calibración en tres poses","Suavizado a tu medida","La deriva, bajo control mientras juegas","Piernas, pies y suelo","Cada tracker, al detalle","Dongles y canales de radio","Firmware, desde la misma ventana","¿Es la señal o tu PC?","Tu chatbox de VRChat, con tu música y tus latidos.","Tu propio chatbox","Hecha para VRChat","¿Te crashearon? Ombra te dice quién fue.","Sin quitarte nunca el visor.","Un reloj en tu muñeca","Una pestaña en el panel de SteamVR","Y los pequeños detalles.","Ligera y nativa","Tu barra rápida","Actualizaciones con un clic","Donde lo dejaste"],"downloadUrl":"https://github.com/thadoom/ombra/releases/latest/download/Ombra-Setup.exe","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"screenshot":["https://thadoom.github.io/ombra/assets/screens/home.es.webp","https://thadoom.github.io/ombra/assets/screens/calib.es.webp","https://thadoom.github.io/ombra/assets/screens/tuning.es.webp","https://thadoom.github.io/ombra/assets/screens/tuning-drift.es.webp","https://thadoom.github.io/ombra/assets/screens/tuning-body.es.webp","https://thadoom.github.io/ombra/assets/screens/trackers.es.webp","https://thadoom.github.io/ombra/assets/screens/dongles.es.webp","https://thadoom.github.io/ombra/assets/screens/firmware.es.webp","https://thadoom.github.io/ombra/assets/screens/health.es.webp","https://thadoom.github.io/ombra/assets/screens/chatbox.es.webp","https://thadoom.github.io/ombra/assets/screens/vrchat.es.webp","https://thadoom.github.io/ombra/assets/screens/safety.es.webp","https://thadoom.github.io/ombra/assets/screens/wrist.es.webp","https://thadoom.github.io/ombra/assets/screens/dashboard.es.webp"],"image":"https://thadoom.github.io/ombra/assets/og.png","isAccessibleForFree":true,"author":{"@type":"Person","name":"thadoom","url":"https://github.com/thadoom"},"license":"https://thadoom.github.io/ombra/legal.html#license","url":"https://thadoom.github.io/ombra/es/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Sigo necesitando Shiftall VR Manager?","acceptedAnswer":{"@type":"Answer","text":"No. Ombra lee los dongles por su cuenta, vincula los trackers y actualiza el firmware con los archivos originales de Shiftall. Mantén VR Manager cerrado mientras Ombra esté abierta."}},{"@type":"Question","name":"¿Qué trackers y dongles son compatibles?","acceptedAnswer":{"@type":"Answer","text":"HaritoraX 2, 2 Pro y Wireless con dongles GX2 o GX6, y trackers compatibles con SlimeVR por Wi-Fi o con un receptor USB, por ejemplo Butterfly y Smol Slime. Los trackers de estaciones base como los Vive trackers se pueden alinear con unas Quest, y Ombra también puede suavizar otros trackers IMU que ya estén en SteamVR. HaritoraX 1 (con cables) no es compatible."}},{"@type":"Question","name":"¿Funciona con Quest?","acceptedAnswer":{"@type":"Answer","text":"Sí. Desde tu PC, a través de SteamVR: Link, Air Link, Virtual Desktop o Steam Link. Con VRChat funcionando en el propio Quest, Ombra envía tu cuerpo por OSC desde tu PC, sin SteamVR."}},{"@type":"Question","name":"¿Por qué Windows me avisa sobre el instalador?","acceptedAnswer":{"@type":"Answer","text":"El instalador todavía no tiene firma de código, así que SmartScreen no lo reconoce. Haz clic en Más información y luego en Ejecutar de todas formas. Ombra se instala en tu carpeta de usuario y no necesita permisos de administrador."}},{"@type":"Question","name":"¿Cómo aparece Ombra en SteamVR?","acceptedAnswer":{"@type":"Answer","text":"El instalador configura el driver propio de Ombra para SteamVR. Tus trackers aparecen en SteamVR con sus funciones ya asignadas (cadera, pecho, rodillas, pies, codos), y SteamVR abre Ombra por ti."}},{"@type":"Question","name":"¿Afecta a mi visor, a mis mandos o a mis estaciones base?","acceptedAnswer":{"@type":"Answer","text":"No. Los dispositivos Lighthouse, los visores y los mandos nunca se modifican. El driver solo crea los trackers virtuales de Ombra y, solo si lo activas, suaviza otros trackers IMU."}},{"@type":"Question","name":"¿Puedo probarla sin trackers?","acceptedAnswer":{"@type":"Answer","text":"Sí. Ejecuta Ombra.exe --demo para tener ocho trackers de demostración en un GX2 y un GX6. La demo nunca toca los puertos COM, el Bluetooth, SteamVR ni tu configuración."}},{"@type":"Question","name":"¿En qué idiomas está Ombra?","acceptedAnswer":{"@type":"Answer","text":"La app y esta web están en inglés, italiano, alemán, francés, español, portugués de Brasil, japonés, coreano, chino simplificado y ruso. Ombra usa el idioma de tu Windows y puedes cambiarlo en Configuración."}},{"@type":"Question","name":"¿Tiene relación con Shiftall o con Valve?","acceptedAnswer":{"@type":"Answer","text":"No. Ombra es un proyecto independiente, gratis para descargar y usar. El código fuente no es público; puedes proponer funciones, extensiones y traducciones en GitHub."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="nav" id="top">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Ombra, volver arriba"><img src="../assets/logo.svg" alt="" width="30" height="30"><span>Ombra</span></a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#tracking">Seguimiento</a></li>
+        <li><a href="#vrchat">VRChat</a></li>
+        <li><a href="#safety">Seguridad</a></li>
+        <li><a href="#in-vr">En VR</a></li>
+        <li><a href="#privacy">Privacidad</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+<details class="langs"><summary class="btn btn-quiet btn-sm" aria-label="Idioma"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#aa151b"/><rect y="5" width="30" height="10" fill="#f1bf00"/></svg><span>ES</span><svg aria-hidden="true" class="chev" viewBox="0 0 24 24" width="12" height="12"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></summary><ul class="langs-menu"><li><a href="../" hreflang="en" lang="en"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#012169"/><path d="M0 0L30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0L30 20M30 0L0 20" stroke="#c8102e" stroke-width="1.4"/><path d="M15 0V20M0 10H30" stroke="#fff" stroke-width="6"/><path d="M15 0V20M0 10H30" stroke="#c8102e" stroke-width="3.4"/></svg><span>English</span></a></li><li><a href="../it/" hreflang="it" lang="it"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0.00" y="0" width="10.05" height="20" fill="#009246"/><rect x="10.00" y="0" width="10.05" height="20" fill="#ffffff"/><rect x="20.00" y="0" width="10.05" height="20" fill="#ce2b37"/></svg><span>Italiano</span></a></li><li><a href="../de/" hreflang="de" lang="de"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0" y="0.00" width="30" height="6.72" fill="#000000"/><rect x="0" y="6.67" width="30" height="6.72" fill="#dd0000"/><rect x="0" y="13.33" width="30" height="6.72" fill="#ffce00"/></svg><span>Deutsch</span></a></li><li><a href="../fr/" hreflang="fr" lang="fr"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0.00" y="0" width="10.05" height="20" fill="#0055a4"/><rect x="10.00" y="0" width="10.05" height="20" fill="#ffffff"/><rect x="20.00" y="0" width="10.05" height="20" fill="#ef4135"/></svg><span>Français</span></a></li><li><a href="../es/" hreflang="es" lang="es" aria-current="true"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#aa151b"/><rect y="5" width="30" height="10" fill="#f1bf00"/></svg><span>Español</span></a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt-BR"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#009c3b"/><polygon points="15,2.2 27.6,10 15,17.8 2.4,10" fill="#ffdf00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/></svg><span>Português (Brasil)</span></a></li><li><a href="../ja/" hreflang="ja" lang="ja"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#ffffff"/><circle cx="15" cy="10" r="6" fill="#bc002d"/></svg><span>日本語</span></a></li><li><a href="../ko/" hreflang="ko" lang="ko"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#ffffff"/><g transform="rotate(33.7 15 10)"><path d="M10 10a5 5 0 0 1 10 0a2.5 2.5 0 0 1-5 0a2.5 2.5 0 0 0-5 0z" fill="#cd2e3a"/><path d="M20 10a5 5 0 0 1-10 0a2.5 2.5 0 0 1 5 0a2.5 2.5 0 0 0 5 0z" fill="#0047a0"/></g><g fill="#000"><rect x="3.4" y="3.2" width="4.6" height="1"/><rect x="3.4" y="4.8" width="4.6" height="1"/><rect x="22" y="14.2" width="4.6" height="1"/><rect x="22" y="15.8" width="4.6" height="1"/><rect x="22" y="3.2" width="4.6" height="1"/><rect x="3.4" y="15.8" width="4.6" height="1"/></g></svg><span>한국어</span></a></li><li><a href="../zh/" hreflang="zh-Hans" lang="zh-Hans"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#de2910"/><polygon points="5.00,2.00 5.67,4.07 7.85,4.07 6.09,5.35 6.76,7.43 5.00,6.15 3.24,7.43 3.91,5.35 2.15,4.07 4.33,4.07" fill="#ffde00"/><polygon points="10.39,1.08 10.33,1.80 11.00,2.09 10.29,2.25 10.22,2.97 9.85,2.35 9.14,2.52 9.62,1.97 9.25,1.34 9.91,1.63" fill="#ffde00"/><polygon points="12.71,3.29 12.38,3.94 12.89,4.45 12.17,4.34 11.84,4.99 11.73,4.27 11.01,4.16 11.66,3.83 11.55,3.11 12.06,3.62" fill="#ffde00"/><polygon points="12.94,6.66 12.37,7.11 12.62,7.79 12.01,7.38 11.44,7.83 11.64,7.13 11.04,6.72 11.76,6.70 11.97,6.00 12.21,6.68" fill="#ffde00"/><polygon points="10.34,8.06 10.32,8.79 11.00,9.03 10.30,9.24 10.28,9.96 9.87,9.36 9.17,9.56 9.62,8.99 9.21,8.38 9.89,8.63" fill="#ffde00"/></svg><span>简体中文</span></a></li><li><a href="../ru/" hreflang="ru" lang="ru"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0" y="0.00" width="30" height="6.72" fill="#ffffff"/><rect x="0" y="6.67" width="30" height="6.72" fill="#0039a6"/><rect x="0" y="13.33" width="30" height="6.72" fill="#d52b1e"/></svg><span>Русский</span></a></li></ul></details>
+      <a class="btn btn-quiet btn-sm js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">
+        <svg class="i-star" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="m12 3.2 2.7 5.5 6 .9-4.35 4.25 1.03 6-5.38-2.83-5.38 2.83 1.03-6L3.3 9.6l6-.9Z"/></svg>
+        Estrella<span class="count" hidden></span>
+      </a>
+      <a class="btn btn-primary btn-sm js-download" href="https://github.com/thadoom/ombra/releases/latest/download/Ombra-Setup.exe" download>Descargar</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú"><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="#tracking">Seguimiento</a>
+    <a href="#vrchat">VRChat</a>
+    <a href="#safety">Seguridad</a>
+    <a href="#in-vr">En VR</a>
+    <a href="#privacy">Privacidad</a>
+    <a href="#install">Instalar</a>
+    <a href="#faq">FAQ</a>
+    <a class="js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">Dar estrella en GitHub</a>
+    <div class="langs-mobile"><a href="../" hreflang="en" lang="en"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#012169"/><path d="M0 0L30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0L30 20M30 0L0 20" stroke="#c8102e" stroke-width="1.4"/><path d="M15 0V20M0 10H30" stroke="#fff" stroke-width="6"/><path d="M15 0V20M0 10H30" stroke="#c8102e" stroke-width="3.4"/></svg><span>English</span></a><a href="../it/" hreflang="it" lang="it"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0.00" y="0" width="10.05" height="20" fill="#009246"/><rect x="10.00" y="0" width="10.05" height="20" fill="#ffffff"/><rect x="20.00" y="0" width="10.05" height="20" fill="#ce2b37"/></svg><span>Italiano</span></a><a href="../de/" hreflang="de" lang="de"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0" y="0.00" width="30" height="6.72" fill="#000000"/><rect x="0" y="6.67" width="30" height="6.72" fill="#dd0000"/><rect x="0" y="13.33" width="30" height="6.72" fill="#ffce00"/></svg><span>Deutsch</span></a><a href="../fr/" hreflang="fr" lang="fr"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0.00" y="0" width="10.05" height="20" fill="#0055a4"/><rect x="10.00" y="0" width="10.05" height="20" fill="#ffffff"/><rect x="20.00" y="0" width="10.05" height="20" fill="#ef4135"/></svg><span>Français</span></a><a href="../pt/" hreflang="pt-BR" lang="pt-BR"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#009c3b"/><polygon points="15,2.2 27.6,10 15,17.8 2.4,10" fill="#ffdf00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/></svg><span>Português (Brasil)</span></a><a href="../ja/" hreflang="ja" lang="ja"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#ffffff"/><circle cx="15" cy="10" r="6" fill="#bc002d"/></svg><span>日本語</span></a><a href="../ko/" hreflang="ko" lang="ko"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#ffffff"/><g transform="rotate(33.7 15 10)"><path d="M10 10a5 5 0 0 1 10 0a2.5 2.5 0 0 1-5 0a2.5 2.5 0 0 0-5 0z" fill="#cd2e3a"/><path d="M20 10a5 5 0 0 1-10 0a2.5 2.5 0 0 1 5 0a2.5 2.5 0 0 0 5 0z" fill="#0047a0"/></g><g fill="#000"><rect x="3.4" y="3.2" width="4.6" height="1"/><rect x="3.4" y="4.8" width="4.6" height="1"/><rect x="22" y="14.2" width="4.6" height="1"/><rect x="22" y="15.8" width="4.6" height="1"/><rect x="22" y="3.2" width="4.6" height="1"/><rect x="3.4" y="15.8" width="4.6" height="1"/></g></svg><span>한국어</span></a><a href="../zh/" hreflang="zh-Hans" lang="zh-Hans"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#de2910"/><polygon points="5.00,2.00 5.67,4.07 7.85,4.07 6.09,5.35 6.76,7.43 5.00,6.15 3.24,7.43 3.91,5.35 2.15,4.07 4.33,4.07" fill="#ffde00"/><polygon points="10.39,1.08 10.33,1.80 11.00,2.09 10.29,2.25 10.22,2.97 9.85,2.35 9.14,2.52 9.62,1.97 9.25,1.34 9.91,1.63" fill="#ffde00"/><polygon points="12.71,3.29 12.38,3.94 12.89,4.45 12.17,4.34 11.84,4.99 11.73,4.27 11.01,4.16 11.66,3.83 11.55,3.11 12.06,3.62" fill="#ffde00"/><polygon points="12.94,6.66 12.37,7.11 12.62,7.79 12.01,7.38 11.44,7.83 11.64,7.13 11.04,6.72 11.76,6.70 11.97,6.00 12.21,6.68" fill="#ffde00"/><polygon points="10.34,8.06 10.32,8.79 11.00,9.03 10.30,9.24 10.28,9.96 9.87,9.36 9.17,9.56 9.62,8.99 9.21,8.38 9.89,8.63" fill="#ffde00"/></svg><span>简体中文</span></a><a href="../ru/" hreflang="ru" lang="ru"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0" y="0.00" width="30" height="6.72" fill="#ffffff"/><rect x="0" y="6.67" width="30" height="6.72" fill="#0039a6"/><rect x="0" y="13.33" width="30" height="6.72" fill="#d52b1e"/></svg><span>Русский</span></a></div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <h1 id="hero-title">Todo para la VR, en una sola sombra.</h1>
+      <p class="lede">Una sola app gratis de Windows para toda tu sesión de VR: seguimiento de cuerpo completo para HaritoraX y trackers compatibles con SlimeVR, un chatbox de VRChat con tu música y tu frecuencia cardíaca, protección contra crashers y paneles en tu muñeca.</p>
+      <div class="cta">
+        <a class="btn btn-primary btn-lg js-download" href="https://github.com/thadoom/ombra/releases/latest/download/Ombra-Setup.exe" download>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+          Descargar para Windows
+        </a>
+        <a class="btn btn-quiet btn-lg js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">
+          <svg class="i-star" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="m12 3.2 2.7 5.5 6 .9-4.35 4.25 1.03 6-5.38-2.83-5.38 2.83 1.03-6L3.3 9.6l6-.9Z"/></svg>
+          Dar estrella en GitHub<span class="count" hidden></span>
+        </a>
+      </div>
+      <p class="hero-meta"><span class="js-release">Última versión</span>, gratis. Windows 10 y 11, 64 bits, sin permisos de administrador.</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg class="figure" viewBox="70 80 400 400" preserveAspectRatio="xMidYMid meet">
+        <g class="echo echo-far"><path class="o"/><circle class="o" r="48"/><path class="f"/><circle class="f" r="38"/></g>
+        <g class="echo echo-near"><path class="o"/><circle class="o" r="48"/><path class="f"/><circle class="f" r="38"/></g>
+        <g class="echo echo-you"><path class="o"/><circle class="o" r="48"/><path class="f"/><circle class="f" r="38"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 1. tracking -->
+<section class="section chapter" id="tracking" aria-labelledby="tracking-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="tracking-title">Seguimiento de cuerpo completo que se mueve como tu sombra.</h2>
+      <p>Ombra conecta por sí sola a SteamVR los trackers HaritoraX y los compatibles con SlimeVR, sin VR Manager ni SlimeVR Server. Construye tu cuerpo a partir de los sensores y tu visor, y mantiene cada tracker estable, rápido y sin deriva.</p>
+    </header>
+    <div class="tour">
+      <div class="rail pills" role="tablist" aria-label="Páginas de seguimiento" aria-orientation="vertical">
+        <span class="pill" aria-hidden="true"><i></i><i></i><i></i></span>
+        <button role="tab" id="t-home" aria-controls="p-home" aria-selected="true">Resumen</button>
+        <button role="tab" id="t-calib" aria-controls="p-calib" aria-selected="false" tabindex="-1">Calibración</button>
+        <button role="tab" id="t-smooth" aria-controls="p-smooth" aria-selected="false" tabindex="-1">Suavizado</button>
+        <button role="tab" id="t-drift" aria-controls="p-drift" aria-selected="false" tabindex="-1">Deriva</button>
+        <button role="tab" id="t-body" aria-controls="p-body" aria-selected="false" tabindex="-1">Piernas y suelo</button>
+        <button role="tab" id="t-trackers" aria-controls="p-trackers" aria-selected="false" tabindex="-1">Trackers</button>
+        <button role="tab" id="t-dongles" aria-controls="p-dongles" aria-selected="false" tabindex="-1">Dongles</button>
+        <button role="tab" id="t-fw" aria-controls="p-fw" aria-selected="false" tabindex="-1">Firmware</button>
+        <button role="tab" id="t-health" aria-controls="p-health" aria-selected="false" tabindex="-1">Diagnóstico</button>
+      </div>
+      <div class="stage">
+        <div class="window">
+          <div class="shots">
+            <img src="../assets/screens/home.es.webp" width="1440" height="900" alt="Página Resumen: un cuerpo 3D en tiempo real con ocho trackers, la lista de sensores con batería y frecuencia de actualización, y los controles rápidos de suavizado, Restablecer orientación y Calibrar.">
+            <img hidden loading="lazy" src="../assets/screens/calib.es.webp" width="1440" height="900" alt="Página Calibración con las tarjetas de poses, los segmentos alineados, las opciones de inicio desde la VR y los atajos de teclado.">
+            <img hidden loading="lazy" src="../assets/screens/tuning.es.webp" width="1440" height="900" alt="Página Correcciones, pestaña Suavizado, con preajustes, controles deslizantes y estilos por tracker.">
+            <img hidden loading="lazy" src="../assets/screens/tuning-drift.es.webp" width="1440" height="900" alt="Página Correcciones, pestaña Deriva, con las opciones de deriva y una tabla por segmento en tiempo real.">
+            <img hidden loading="lazy" src="../assets/screens/tuning-body.es.webp" width="1440" height="900" alt="Página Correcciones, pestaña Piernas, con las opciones de piernas, la cobertura de cortes de señal y los trackers que ve SteamVR.">
+            <img hidden loading="lazy" src="../assets/screens/trackers.es.webp" width="1440" height="900" alt="Página Trackers con la lista de trackers y el panel de detalles del tracker del pecho.">
+            <img hidden loading="lazy" src="../assets/screens/dongles.es.webp" width="1440" height="900" alt="Página Dongles con un GX2 y un GX6, sus módulos, ranuras y canales.">
+            <img hidden loading="lazy" src="../assets/screens/firmware.es.webp" width="1440" height="900" alt="Página Firmware con cada tracker y dongle y su versión de firmware.">
+            <img hidden loading="lazy" src="../assets/screens/health.es.webp" width="1440" height="900" alt="Página Diagnóstico: paquetes perdidos, señal y frecuencia de actualización real de cada tracker, junto a los fotogramas perdidos de SteamVR.">
+          </div>
+          <div class="sweep" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-home" aria-labelledby="t-home">
+          <h3>Tu cuerpo, en tiempo real</h3>
+          <p>El cuerpo que Ombra construye a partir de tus sensores y tu visor, en vista 3D frontal, lateral o libre. Cada tracker muestra si tiene seguimiento, si está simulado o si se ha quedado sin señal.</p>
+          <ul class="ticks"><li>Batería, frecuencia y señal de cada sensor, de un vistazo</li><li>Codos a partir de tus mandos, sin trackers en los brazos</li><li>Calibrar, Rápida y Restablecer orientación, a un clic</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-calib" aria-labelledby="t-calib" hidden>
+          <h3>Calibración en tres poses</h3>
+          <p>Ponte recto, flexiona las rodillas en pose de esquí y luego sube de puntillas si tienes trackers en los pies. Ombra te indica qué parte del cuerpo revisar cuando algo no cuadra.</p>
+          <ul class="ticks"><li>Iníciala desde la VR: con los dos gatillos, una pose en T, un toque en un tracker o un atajo de teclado</li><li>La calibración rápida recuerda cómo está colocado cada tracker, incluso después de un reinicio</li><li>Calibración caminando: unos pocos pasos alinean tu cadera, tus piernas y tus pies</li><li>Mide tu cuerpo y el suelo tocándolos con un mando</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-smooth" aria-labelledby="t-smooth" hidden>
+          <h3>Suavizado a tu medida</h3>
+          <p>Suave, Equilibrado, Reactivo o Desactivado, o el nivel que quieras con un control deslizante. Dale a un solo tracker su propio estilo, por ejemplo, unos pies más estables.</p>
+          <ul class="ticks"><li>Al agacharte o saltar, el movimiento sigue siendo ágil</li><li>Cada pose lleva su velocidad, así que SteamVR la predice con precisión de fotograma</li><li>También puede suavizar otros trackers IMU en SteamVR, si quieres</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-drift" aria-labelledby="t-drift" hidden>
+          <h3>La deriva, bajo control mientras juegas</h3>
+          <p>La corrección de deriva funciona mientras juegas, y una tabla en tiempo real muestra lo que hace en cada parte del cuerpo.</p>
+          <ul class="ticks"><li>Menos reinicios, también en sesiones largas</li><li>Activa o desactiva cada una de sus partes</li><li>Mejora cuanto más juegas</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-body" aria-labelledby="t-body" hidden>
+          <h3>Piernas, pies y suelo</h3>
+          <p>Tu cuerpo sigue siendo creíble: los pies quedan por encima del suelo y no se deslizan cuando están apoyados, y las rodillas nunca se doblan hacia atrás.</p>
+          <ul class="ticks"><li>Tobillos que se flexionan, gracias al sensor de distancia de HaritoraX 2</li><li>Sentado y tumbado: Ombra encuentra solo la cama, el sofá o el suelo bajo ti</li><li>Cubre los cortes breves de señal con una pose estimada y fluida</li><li>Elige qué trackers ve SteamVR en cada juego</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-trackers" aria-labelledby="t-trackers" hidden>
+          <h3>Cada tracker, al detalle</h3>
+          <p>Número de serie, firmware, ranura del dongle, voltaje de la batería, señal en ambos extremos, estado del magnetómetro y la frecuencia de actualización real.</p>
+          <ul class="ticks"><li>Cambia la parte del cuerpo, la frecuencia de actualización (100 o 50 Hz) y el modo del sensor</li><li>Apaga la luz de estado cuando te grabes</li><li>Trackers compatibles con SlimeVR por Wi-Fi o con receptor USB, y el Wi-Fi se configura por cable</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-dongles" aria-labelledby="t-dongles" hidden>
+          <h3>Dongles y canales de radio</h3>
+          <p>Un GX2 tiene dos ranuras; un GX6 tiene tres módulos de radio con dos ranuras cada uno. Ombra muestra cada módulo, el tracker de cada ranura y su canal.</p>
+          <ul class="ticks"><li>Vincula y desvincula trackers sin VR Manager</li><li>Cambia de canal, con un aviso si dos módulos entran en conflicto</li><li>Detecta con un clic los dongles recién conectados</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-fw" aria-labelledby="t-fw" hidden>
+          <h3>Firmware, desde la misma ventana</h3>
+          <p>Actualiza los trackers por Bluetooth y los dongles por USB con los archivos de firmware originales de Shiftall, sin modificar.</p>
+          <ul class="ticks"><li>Prueba antes el paso a Bluetooth, sin cambiar nada</li><li>Avisa cuando los trackers tienen versiones de firmware distintas</li><li>Cada archivo se verifica (SHA-256) antes de usarse</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-health" aria-labelledby="t-health" hidden>
+          <h3>¿Es la señal o tu PC?</h3>
+          <p>Cuando el seguimiento da saltos, la página Diagnóstico te muestra de dónde vienen: los paquetes perdidos, la señal y la frecuencia de actualización real de cada tracker, junto a los fotogramas que perdió SteamVR.</p>
+          <ul class="ticks"><li>Los últimos minutos en un gráfico, por tracker</li><li>Una respuesta clara, no solo números</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. vrchat: chatbox, music, heart rate -->
+<section class="section chapter" id="vrchat" aria-labelledby="vrchat-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="vrchat-title">Tu chatbox de VRChat, con tu música y tus latidos.</h2>
+      <p>Crea línea a línea lo que muestra tu chatbox, con valores en vivo. Ombra la mantiene ordenada y nunca la satura.</p>
+    </header>
+    <div class="tour flip">
+      <div class="rail pills" role="tablist" aria-label="Páginas de VRChat" aria-orientation="vertical">
+        <span class="pill" aria-hidden="true"><i></i><i></i><i></i></span>
+        <button role="tab" id="t-chat" aria-controls="p-chat" aria-selected="true">Chatbox</button>
+        <button role="tab" id="t-vrc" aria-controls="p-vrc" aria-selected="false" tabindex="-1">Cuerpo completo en VRChat</button>
+      </div>
+      <div class="stage">
+        <div class="window">
+          <div class="shots">
+            <img loading="lazy" src="../assets/screens/chatbox.es.webp" width="1440" height="900" alt="Sección Chatbox: las líneas del tema en orden, cada una con su vista previa, y la burbuja como la mostrará VRChat.">
+            <img hidden loading="lazy" src="../assets/screens/vrchat.es.webp" width="1440" height="900" alt="Página VRChat con los ajustes de cuerpo completo que Ombra recomienda para tus trackers.">
+          </div>
+          <div class="sweep" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-chat" aria-labelledby="t-chat">
+          <h3>Tu propio chatbox</h3>
+          <p>Líneas para la canción, tu pulso, tu estado y la hora: arrástralas al orden que quieras, añade piezas con un clic y mira cada línea como la mostrará VRChat. Las decoraciones y estilos de texto usan solo caracteres que VRChat puede dibujar. Guarda un diseño como tema y compártelo como código. ¿Demasiado largo para la burbuja? Pasa de página en vez de cortar tu texto.</p>
+          <ul class="ticks"><li>Lo que escuchas en Spotify o en cualquier otro reproductor, sin iniciar sesión, y desde tu muñeca puedes reproducir, pausar y saltar</li><li>Frecuencia cardíaca desde Pulsoid o directamente desde una banda o un reloj Bluetooth, también enviada a tu avatar</li><li>Estados que solo Ombra conoce: ausente, dormido, cuerpo completo activado o desactivado</li><li>Solo envía cuando el texto cambia: sin spam y sin bloqueos temporales del chatbox</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-vrc" aria-labelledby="t-vrc" hidden>
+          <h3>Hecha para VRChat</h3>
+          <p>La calibración de Ombra también calibra VRChat, y los ajustes de cuerpo completo que VRChat recomienda para tus trackers están a un clic, con opción de deshacer.</p>
+          <ul class="ticks"><li>Trackers por OSC para VRChat en Quest, sin SteamVR</li><li>VMC para VSeeFace, Warudo, VNyan y otras apps de VTuber</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. safety: crashers -->
+<section class="section chapter" id="safety" aria-labelledby="safety-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="safety-title">¿Te crashearon? Ombra te dice quién fue.</h2>
+      <p>VRChat anota quién entra y qué avatar carga. Ombra lee ese registro en tu PC, así que tras un crash ves al posible crasher y puedes ocultar su avatar con un clic.</p>
+    </header>
+    <div class="solo">
+      <div class="window"><div class="shots"><img loading="lazy" src="../assets/screens/safety.es.webp" width="1440" height="900" alt="Página Seguridad: un informe de crash con el posible crasher, el avatar que cargó y cuántos segundos antes del crash."></div></div>
+      <ul class="ticks solo-points">
+        <li>Quién está en tu instancia, qué avatar lleva y cuánto pesa</li>
+        <li>Tras un crash: el posible crasher, su avatar y cuántos segundos antes lo cargó</li>
+        <li>Oculta ese avatar con un clic y deshazlo cuando quieras</li>
+        <li>Un aviso en tu muñeca cuando un avatar te baja los FPS</li>
+        <li>Opcional: oculta el avatar automáticamente tras dos crashes de la misma persona y te devuelve a la instancia con un temporizador que puedes cancelar</li>
+        <li>Nunca te pide tu contraseña de VRChat y nunca toca el juego</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4. in VR: wrist and dashboard -->
+<section class="section chapter" id="in-vr" aria-labelledby="invr-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="invr-title">Sin quitarte nunca el visor.</h2>
+      <p>Lo que necesitas mientras juegas está en tu muñeca y en el panel de SteamVR.</p>
+    </header>
+    <div class="tour flip">
+      <div class="rail pills" role="tablist" aria-label="Paneles en VR" aria-orientation="vertical">
+        <span class="pill" aria-hidden="true"><i></i><i></i><i></i></span>
+        <button role="tab" id="t-wrist" aria-controls="p-wrist" aria-selected="true">Muñeca</button>
+        <button role="tab" id="t-dash" aria-controls="p-dash" aria-selected="false" tabindex="-1">Panel de SteamVR</button>
+      </div>
+      <div class="stage">
+        <div class="window">
+          <div class="shots">
+            <img loading="lazy" src="../assets/screens/wrist.es.webp" width="1440" height="900" alt="El panel de muñeca: la hora, los trackers, la canción que suena, la frecuencia cardíaca y botones para calibrar y restablecer la orientación.">
+            <img hidden loading="lazy" src="../assets/screens/dashboard.es.webp" width="1440" height="900" alt="La pestaña de Ombra en el panel de SteamVR, con cada tracker, su batería y botones grandes para calibrar.">
+          </div>
+          <div class="sweep" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-wrist" aria-labelledby="t-wrist">
+          <h3>Un reloj en tu muñeca</h3>
+          <p>Mira tu muñeca y aparece: la hora, tus trackers, lo que suena, tu frecuencia cardíaca y las notificaciones de tu PC. Aparta la mirada y desaparece.</p>
+          <ul class="ticks"><li>Calibrar, Rápida y Restablecer orientación con un toque de la otra mano</li><li>Activa y desactiva el cuerpo completo con un toque, sin recalibrar al volver</li><li>Modo sueño: un cuerpo tranquilo y una voz baja mientras duermes</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-dash" aria-labelledby="t-dash" hidden>
+          <h3>Una pestaña en el panel de SteamVR</h3>
+          <p>Cada tracker con su batería, botones grandes para calibrar y restablecer la orientación, y los interruptores que cambias mientras juegas.</p>
+          <ul class="ticks"><li>Avisos en VR cuando un tracker pierde la conexión o le queda poca batería</li><li>Arrastre del espacio: mantén presionado un botón y arrastra el mundo, con impulso y gravedad</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- the small things -->
+<section class="section more" id="more" aria-labelledby="more-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="more-title">Y los pequeños detalles.</h2>
+    </header>
+    <ul class="more-list">
+      <li><h3>Ligera y nativa</h3><p>Sin navegador dentro, y con 12 temas de color. SteamVR inicia Ombra, que espera en la bandeja con un panel para tus trackers.</p></li>
+      <li><h3>Tu barra rápida</h3><p>Los botones que más usas, en el orden que quieras.</p></li>
+      <li><h3>Actualizaciones con un clic</h3><p>Ombra te avisa cuando sale una versión nueva y nunca se actualiza mientras SteamVR está abierto.</p></li>
+      <li><h3>Donde lo dejaste</h3><p>Opcional: tras un reinicio, Ombra se calibra automáticamente en cuanto dejas de moverte.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- privacy: the promise and the ledger -->
+<section class="section promise" id="privacy" aria-labelledby="privacy-title">
+  <div class="wrap promise-in">
+    <header class="section-head promise-head">
+      <h2 id="privacy-title"><span class="setup">En un mundo donde todo está detrás de un muro de pago,</span> Ombra es gratis. Y ni siquiera se queda con tus datos.</h2>
+      <p>Aquí tienes todo lo que Ombra hace con internet, y todo lo que no hace.</p>
+    </header>
+    <div class="ledger">
+      <div class="ledger-group stay">
+        <h3>Se queda en tu PC</h3>
+        <ul><li>Tu configuración, tu calibración y las medidas de tu cuerpo</li><li>Los informes de crash y lo que Ombra lee del registro de VRChat</li><li>Tu frecuencia cardíaca y la música que escuchas</li></ul>
+      </div>
+      <div class="ledger-group online">
+        <h3>Solo se conecta a internet para</h3>
+        <ul><li>buscar una versión nueva en GitHub, si lo dejas activado</li><li>descargar el firmware de los trackers desde Shiftall, cuando los actualizas</li><li>comunicarse con los servicios que conectas tú, como Pulsoid</li></ul>
+      </div>
+      <div class="ledger-group none">
+        <h3>No hay</h3>
+        <ul><li><span class="x">Una cuenta que crear</span></li><li><span class="x">Servidores de Ombra</span></li><li><span class="x">Anuncios, analíticas y telemetría</span></li><li><span class="x">Nada que pagar, ni ahora ni más adelante</span></li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="install" aria-labelledby="install-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="install-title">Instalación en cuatro pasos.</h2>
+      <p>Windows 10 u 11 (64 bits) y SteamVR. HaritoraX 2, 2 Pro o Wireless con un dongle GX, o trackers compatibles con SlimeVR.</p>
+    </header>
+    <ol class="steps">
+      <li><h3>Descarga el instalador</h3><p>Un solo archivo, <code>Ombra-Setup.exe</code>. El botón de abajo siempre descarga la última versión.</p></li>
+      <li><h3>Cierra VR Manager y SteamVR</h3><p>Solo una app puede usar los dongles a la vez.</p></li>
+      <li><h3>Ejecuta el instalador</h3><p>No necesita permisos de administrador y registra el driver de SteamVR. ¿Windows te muestra un aviso? Mira las preguntas de abajo.</p></li>
+      <li><h3>Calibra</h3><p>Enciende tus trackers, inicia SteamVR, póntelos y presiona <b>Calibrar</b>.</p></li>
+    </ol>
+    <div class="install-cta">
+      <a class="btn btn-primary btn-lg js-download" href="https://github.com/thadoom/ombra/releases/latest/download/Ombra-Setup.exe" download>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+        Descargar Ombra
+      </a>
+      <p><span class="js-release">Última versión</span>. <a href="https://github.com/thadoom/ombra/releases">Todas las versiones y cambios</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-wrap">
+    <header class="section-head">
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+      <p>¿Falta algo? <a href="https://github.com/thadoom/ombra/discussions">Pregunta en GitHub</a>.</p>
+    </header>
+    <div class="faq">
+      <details><summary>¿Sigo necesitando Shiftall VR Manager?</summary><div class="answer"><p>No. Ombra lee los dongles por su cuenta, vincula los trackers y actualiza el firmware con los archivos originales de Shiftall. Mantén VR Manager cerrado mientras Ombra esté abierta.</p></div></details>
+      <details><summary>¿Qué trackers y dongles son compatibles?</summary><div class="answer"><p>HaritoraX 2, 2 Pro y Wireless con dongles GX2 o GX6, y trackers compatibles con SlimeVR por Wi-Fi o con un receptor USB, por ejemplo Butterfly y Smol Slime. Los trackers de estaciones base como los Vive trackers se pueden alinear con unas Quest, y Ombra también puede suavizar otros trackers IMU que ya estén en SteamVR. HaritoraX 1 (con cables) no es compatible.</p></div></details>
+      <details><summary>¿Funciona con Quest?</summary><div class="answer"><p>Sí. Desde tu PC, a través de SteamVR: Link, Air Link, Virtual Desktop o Steam Link. Con VRChat funcionando en el propio Quest, Ombra envía tu cuerpo por OSC desde tu PC, sin SteamVR.</p></div></details>
+      <details><summary>¿Por qué Windows me avisa sobre el instalador?</summary><div class="answer"><p>El instalador todavía no tiene firma de código, así que SmartScreen no lo reconoce. Haz clic en <b>Más información</b> y luego en <b>Ejecutar de todas formas</b>. Ombra se instala en tu carpeta de usuario y no necesita permisos de administrador.</p></div></details>
+      <details><summary>¿Cómo aparece Ombra en SteamVR?</summary><div class="answer"><p>El instalador configura el driver propio de Ombra para SteamVR. Tus trackers aparecen en SteamVR con sus funciones ya asignadas (cadera, pecho, rodillas, pies, codos), y SteamVR abre Ombra por ti.</p></div></details>
+      <details><summary>¿Afecta a mi visor, a mis mandos o a mis estaciones base?</summary><div class="answer"><p>No. Los dispositivos Lighthouse, los visores y los mandos nunca se modifican. El driver solo crea los trackers virtuales de Ombra y, solo si lo activas, suaviza otros trackers IMU.</p></div></details>
+      <details><summary>¿Puedo probarla sin trackers?</summary><div class="answer"><p>Sí. Ejecuta <code>Ombra.exe --demo</code> para tener ocho trackers de demostración en un GX2 y un GX6. La demo nunca toca los puertos COM, el Bluetooth, SteamVR ni tu configuración.</p></div></details>
+      <details><summary>¿En qué idiomas está Ombra?</summary><div class="answer"><p>La app y esta web están en inglés, italiano, alemán, francés, español, portugués de Brasil, japonés, coreano, chino simplificado y ruso. Ombra usa el idioma de tu Windows y puedes cambiarlo en Configuración.</p></div></details>
+      <details><summary>¿Tiene relación con Shiftall o con Valve?</summary><div class="answer"><p>No. Ombra es un proyecto independiente, gratis para descargar y usar. El código fuente no es público; puedes proponer funciones, extensiones y traducciones en GitHub.</p></div></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <a class="brand" href="#top"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>Ombra</span></a>
+      <p>Independiente y gratis, hecha en Italia.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a class="js-star" href="https://github.com/thadoom/ombra" rel="noopener" target="_blank">Dar estrella en GitHub</a></li>
+      <li><a href="https://github.com/thadoom/ombra/releases">Versiones</a></li>
+      <li><a href="https://github.com/thadoom/ombra/issues/new/choose">Reportar un error o proponer una función</a></li>
+      <li><a href="../legal.html#license">Licencia</a></li>
+      <li><a href="../legal.html#privacy">Privacidad</a></li>
+      <li><a href="../legal.html#notices">Avisos de terceros</a></li>
+    </ul>
+    <p class="fine">De uso gratuito y código cerrado. No está afiliada a Shiftall Inc. ni a Valve Corporation, ni cuenta con su respaldo. HaritoraX, SlimeVR, SteamVR y VRChat son marcas comerciales de sus respectivos propietarios.</p>
+  </div>
+</footer>
+
+<div class="dl-toast" id="dl-toast" role="status" aria-live="polite" hidden>
+  <div class="dl-card">
+    <p class="dl-title">Se está descargando Ombra-Setup.exe</p>
+    <p>Cuando Windows diga que protegió tu PC, haz clic en <b>Más información</b> y luego en <b>Ejecutar de todas formas</b>. El instalador aún no tiene firma de código, así que SmartScreen no lo conoce.</p>
+    <p class="dl-star">Si Ombra te funciona bien, una estrella en GitHub ayuda a que otras personas la encuentren.</p>
+    <a class="btn btn-quiet btn-sm js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">
+      <svg class="i-star" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="m12 3.2 2.7 5.5 6 .9-4.35 4.25 1.03 6-5.38-2.83-5.38 2.83 1.03-6L3.3 9.6l6-.9Z"/></svg>
+      Dar estrella en GitHub
+    </a>
+    <button class="dl-close" type="button" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+    </button>
+  </div>
+</div>
+
+<script src="../main.js?v=10" defer></script>
+</body>
+</html>

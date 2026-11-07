@@ -31,6 +31,9 @@
   --muted: #9ca8a2;
   --amber: #ffb547;
 
+  /* corners like the app (gfx.rs, soft brutalism): softened, never pills or discs */
+  --r: 10px;
+  --r-panel: 16px;
   --wrap: 1180px;
   --gutter: clamp(16px, 4vw, 40px);
   --font: "Sora", "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
@@ -54,7 +57,7 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 h1, h2, h3 { margin: 0; text-wrap: balance; }
 p { margin: 0; }
-code { font-family: var(--mono); font-size: .9em; background: var(--raise); border: 1px solid var(--line); padding: .08em .4em; border-radius: 6px; white-space: nowrap; }
+code { font-family: var(--mono); font-size: .9em; background: var(--raise); border: 1px solid var(--line); padding: .08em .4em; border-radius: 4px; white-space: nowrap; }
 :focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; border-radius: 6px; }
 ::selection { background: var(--echo-near); color: var(--cream); }
 
@@ -67,7 +70,7 @@ code { font-family: var(--mono); font-size: .9em; background: var(--raise); bord
   position: relative;
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   min-height: 46px; padding: 0 20px;
-  border-radius: 12px; border: 1px solid transparent;
+  border-radius: var(--r); border: 1px solid transparent;
   font: 600 15px/1 var(--font); text-decoration: none; white-space: nowrap;
   cursor: pointer;
   transition: transform .35s var(--spring), box-shadow .35s var(--spring), background-color .2s ease, border-color .2s ease, color .2s ease;
@@ -82,10 +85,10 @@ code { font-family: var(--mono); font-size: .9em; background: var(--raise); bord
 .btn-primary:active { transform: translateX(-4px); box-shadow: -1px 0 0 var(--echo-near), -2px 0 0 var(--echo-far); transition-duration: .08s; }
 .btn-quiet { background: transparent; color: var(--cream); border-color: var(--line-2); }
 .btn-quiet:hover { background: var(--tile); border-color: var(--muted); }
-.btn-sm { min-height: 36px; padding: 0 14px; font-size: 14px; border-radius: 10px; gap: 8px; }
+.btn-sm { min-height: 36px; padding: 0 14px; font-size: 14px; border-radius: var(--r); gap: 8px; }
 .btn-sm.btn-primary { --e: 4px; }
-.btn-lg { min-height: 54px; padding: 0 24px; font-size: 16px; border-radius: 13px; }
-.i-star { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; transition: fill .2s ease, stroke .2s ease, transform .35s var(--spring); }
+.btn-lg { min-height: 54px; padding: 0 24px; font-size: 16px; border-radius: 12px; }
+.i-star { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: miter; transition: fill .2s ease, stroke .2s ease, transform .35s var(--spring); }
 .js-star:hover .i-star { fill: var(--amber); stroke: var(--amber); transform: rotate(-12deg) scale(1.1); }
 .count { padding-left: 10px; margin-left: 2px; border-left: 1px solid var(--line-2); color: var(--muted); font-weight: 500; font-variant-numeric: tabular-nums; }
 
@@ -106,8 +109,8 @@ code { font-family: var(--mono); font-size: .9em; background: var(--raise); bord
 .nav-links a { display: block; padding: 8px 12px; border-radius: 8px; color: var(--muted); text-decoration: none; font-size: 14.5px; font-weight: 500; transition: color .15s; }
 .nav-links a:hover, .nav-links a.active { color: var(--cream); }
 .nav-actions { display: flex; align-items: center; gap: 10px; margin-left: 12px; }
-.nav-toggle { display: none; margin-left: auto; width: 44px; height: 44px; border-radius: 10px; border: 1px solid var(--line-2); background: transparent; cursor: pointer; position: relative; }
-.nav-toggle span { position: absolute; left: 12px; right: 12px; height: 2px; background: var(--cream); border-radius: 2px; transition: transform .2s ease, top .2s ease; }
+.nav-toggle { display: none; margin-left: auto; width: 44px; height: 44px; border-radius: var(--r); border: 1px solid var(--line-2); background: transparent; cursor: pointer; position: relative; }
+.nav-toggle span { position: absolute; left: 12px; right: 12px; height: 2px; background: var(--cream); border-radius: 0; transition: transform .2s ease, top .2s ease; }
 .nav-toggle span:first-child { top: 17px; }
 .nav-toggle span:last-child { top: 25px; }
 .nav-toggle[aria-expanded="true"] span:first-child { top: 21px; transform: rotate(45deg); }
@@ -116,6 +119,47 @@ code { font-family: var(--mono); font-size: .9em; background: var(--raise); bord
 .mobile-menu[hidden] { display: none; }
 .mobile-menu a { padding: 13px 4px; text-decoration: none; border-bottom: 1px solid var(--line); font-weight: 500; }
 .mobile-menu a:last-child { border-bottom: 0; }
+.langs-mobile { display: flex; flex-wrap: wrap; gap: 6px 14px; padding-top: 12px; }
+.langs-mobile a { padding: 6px 0; border: 0; font-weight: 400; color: var(--muted); font-size: 14px; }
+
+/* ---------- language picker ---------- */
+.langs { position: relative; }
+.langs > summary { list-style: none; cursor: pointer; gap: 6px; }
+.langs > summary::-webkit-details-marker { display: none; }
+.flag { flex: none; display: block; width: 21px; height: 14px; border-radius: 2px; overflow: hidden; box-shadow: 0 0 0 1px var(--line-2); }
+.langs-menu a, .langs-mobile a { display: flex; align-items: center; gap: 10px; }
+.langs .chev { transition: transform .3s var(--spring); }
+.langs[open] .chev { transform: rotate(180deg); }
+/* The menu unfolds from its button the way the mark moves: the panel unrolls downwards while its two
+   shadows spring out, the rows land one by one, and a pill with two echoes follows the pointer
+   (the same elastic pill as the app's rail). main.js drives it; without script it simply opens. */
+.langs-menu { --e: 6px; position: absolute; right: 0; top: calc(100% + 10px); z-index: 30; list-style: none; margin: 0; padding: 6px; min-width: 230px;
+  background: var(--tile); border: 1px solid var(--line-2); border-radius: var(--r-panel); display: grid; isolation: isolate;
+  box-shadow: calc(var(--e) * -1) 0 0 var(--echo-near), calc(var(--e) * -2) 0 0 var(--echo-far), 0 24px 48px -12px rgba(0, 0, 0, .7); }
+.langs-menu li { position: relative; }
+.langs-menu a { position: relative; display: flex; align-items: center; gap: 10px; white-space: nowrap; padding: 8px 12px; border-radius: 8px; text-decoration: none; color: var(--cream); font-size: 14.5px; transition: color .2s; }
+.langs-menu a:focus-visible { outline: none; }
+.langs-menu a[aria-current] { color: var(--mint); }
+.langs-menu .flag { transition: box-shadow .35s var(--spring); }
+.langs-menu a.on .flag { box-shadow: 0 0 0 1px var(--line-2), -3px 0 0 var(--echo-near), -6px 0 0 var(--echo-far); }
+.langs-pill { position: absolute; left: 6px; right: 6px; top: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .2s; }
+.langs-menu.has-pill .langs-pill { opacity: 1; }
+.langs-pill i { position: absolute; left: 0; right: 0; top: 0; height: var(--h, 0); border-radius: 8px; transform: translateY(var(--y, 0));
+  transition: transform .5s var(--spring), height .5s var(--spring); }
+.langs-pill i:nth-child(1) { background: var(--echo-far); transition-delay: .12s; margin-left: -8px; margin-right: 8px; }
+.langs-pill i:nth-child(2) { background: var(--echo-near); transition-delay: .06s; margin-left: -4px; margin-right: 4px; }
+.langs-pill i:nth-child(3) { background: var(--raise); box-shadow: inset 0 0 0 1px var(--line-2); }
+.langs-menu.instant .langs-pill i { transition: none; }
+.no-js .langs-menu a:hover { background: var(--raise); }
+@media (max-width: 860px) { .langs { display: none; } }
+
+/* ---------- scripts Sora doesn't cover: the system's own fonts, no negative tracking ---------- */
+:lang(ja) body { font-family: "Sora", "Yu Gothic UI", "Yu Gothic", Meiryo, "Hiragino Sans", "Noto Sans JP", sans-serif; }
+:lang(ko) body { font-family: "Sora", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; word-break: keep-all; }
+:lang(zh-Hans) body { font-family: "Sora", "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif; }
+:lang(ru) body { font-family: "Sora", "Segoe UI Variable Text", "Segoe UI", Roboto, sans-serif; }
+:lang(ja) :is(h1, h2, h3), :lang(ko) :is(h1, h2, h3), :lang(zh-Hans) :is(h1, h2, h3) { letter-spacing: 0; line-break: strict; }
+:lang(ja) h1, :lang(ko) h1, :lang(zh-Hans) h1 { line-height: 1.2; }
 
 /* ---------- hero: the mark, walking, with its two shadows ---------- */
 .hero { padding: clamp(40px, 7vw, 96px) 0 clamp(56px, 8vw, 112px); }
@@ -157,7 +201,7 @@ h1 { font-size: clamp(40px, 5.6vw, 70px); line-height: 1.03; font-weight: 650; l
 .pill { position: absolute; left: 0; top: 0; z-index: -1; pointer-events: none; }
 .pill i {
   position: absolute; left: 0; top: 0; display: block;
-  width: var(--w, 0); height: var(--h, 0); border-radius: 10px;
+  width: var(--w, 0); height: var(--h, 0); border-radius: var(--r);
   transform: translate(var(--x, 0), var(--y, 0));
   transition: transform .5s var(--spring), width .5s var(--spring), height .5s var(--spring);
 }
@@ -169,7 +213,7 @@ h1 { font-size: clamp(40px, 5.6vw, 70px); line-height: 1.03; font-weight: 650; l
 .rail { display: grid; gap: 2px; padding-left: 8px; position: sticky; top: 96px; }
 .rail button {
   font: 500 15px/1 var(--font); color: var(--muted); background: transparent; text-align: left;
-  border: 0; border-radius: 10px; padding: 12px 14px; cursor: pointer;
+  border: 0; border-radius: var(--r); padding: 12px 14px; cursor: pointer;
   transition: color .25s ease;
 }
 .rail button:hover { color: var(--cream); }
@@ -178,7 +222,7 @@ h1 { font-size: clamp(40px, 5.6vw, 70px); line-height: 1.03; font-weight: 650; l
 .stage { min-width: 0; }
 .window {
   --e: 8px;
-  position: relative; overflow: hidden; border-radius: 12px; background: #121110;
+  position: relative; overflow: hidden; border-radius: var(--r-panel); background: #121110;
   border: 1px solid var(--line-2);
   box-shadow: calc(var(--e) * -1) 0 0 var(--echo-near), calc(var(--e) * -2) 0 0 var(--echo-far);
   margin-left: calc(var(--e) * 2);
@@ -195,17 +239,79 @@ h1 { font-size: clamp(40px, 5.6vw, 70px); line-height: 1.03; font-weight: 650; l
 .panel > p { margin-top: 12px; color: var(--muted); font-size: 16px; }
 .ticks { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 8px; }
 .ticks li { position: relative; padding-left: 26px; font-size: 15px; line-height: 1.5; }
-.ticks li::before { content: ""; position: absolute; left: 4px; top: .7em; width: 12px; height: 2px; border-radius: 2px; background: var(--mint); box-shadow: -3px 0 0 var(--echo-near); }
+.ticks li::before { content: ""; position: absolute; left: 4px; top: .7em; width: 12px; height: 2px; border-radius: 1px; background: var(--mint); box-shadow: -3px 0 0 var(--echo-near); }
 
-/* ---------- feature groups ---------- */
-.feat-groups { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 36px; }
-.feat { position: relative; padding-top: 20px; }
-.feat::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--line-2); }
-.feat h3 { font-size: 18px; font-weight: 600; line-height: 1.35; letter-spacing: -.01em; }
-.feat .ticks { margin-top: 14px; }
-.feat .ticks li { color: var(--muted); font-size: 14.5px; }
-@media (max-width: 1080px) { .feat-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 620px) { .feat-groups { grid-template-columns: 1fr; gap: 32px; } }
+/* ---------- chapters: the four things Ombra does, each with its own screenshots ---------- */
+.chapter + .chapter { border-top: 1px solid var(--line); }
+.chapter .section-head h2 { text-wrap: balance; }
+/* chapters alternate sides, so the eye zig-zags down the page instead of reading one column */
+.tour.flip { grid-template-columns: minmax(0, 1fr) 208px; }
+.tour.flip .rail { order: 2; }
+.tour.flip .stage { order: 1; }
+.solo { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(28px, 4.5vw, 64px); align-items: center; }
+.solo-points { margin: 0; gap: 14px; }
+.solo-points li { font-size: 16px; color: var(--cream); }
+
+/* ---------- the small things ---------- */
+.more-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px 36px; }
+.more-list li { position: relative; padding-top: 20px; }
+.more-list li::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--line-2); transform-origin: left center; }
+.more-list h3 { font-size: 18px; font-weight: 600; line-height: 1.35; letter-spacing: -.01em; }
+.more-list p { margin-top: 8px; color: var(--muted); font-size: 15px; line-height: 1.55; }
+@media (max-width: 1080px) {
+  .more-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .solo { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) { .more-list { grid-template-columns: 1fr; gap: 24px; } }
+
+/* ---------- nav: the section you're reading, marked like the app's rail ---------- */
+.nav-links { position: relative; }
+.nav-links a[aria-current="true"] { color: var(--cream); }
+.nav-mark { position: absolute; left: 0; bottom: -2px; height: 2px; width: 100%; pointer-events: none; opacity: 0; transition: opacity .3s; }
+.nav-mark.on { opacity: 1; }
+.nav-mark i { position: absolute; top: 0; left: 0; height: 2px; border-radius: 0; width: var(--w, 0); transform: translateX(var(--x, 0));
+  transition: transform .55s var(--spring), width .55s var(--spring); }
+.nav-mark i:nth-child(1) { background: var(--echo-far); transition-delay: .12s; margin-left: -6px; }
+.nav-mark i:nth-child(2) { background: var(--echo-near); transition-delay: .06s; margin-left: -3px; }
+.nav-mark i:nth-child(3) { background: var(--mint); }
+
+/* ---------- privacy: the promise, then the ledger of what goes online ----------
+   The memorable moment of the page: what doesn't exist gets struck out, and the strike drags the
+   mark's two shadows behind it until they fold back under the line. */
+.promise { border-block: 1px solid var(--line); background: linear-gradient(180deg, var(--tile) 0%, var(--shade) 70%); overflow: hidden; }
+.promise-in { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(36px, 6vw, 96px); align-items: center; }
+.promise-head { margin-bottom: 0; max-width: none; }
+.promise-head h2 { font-size: clamp(34px, 4.4vw, 58px); line-height: 1.04; letter-spacing: -.035em; text-wrap: balance; }
+.promise-head .setup { display: block; margin-bottom: .45em; font-size: .5em; line-height: 1.3; font-weight: 500; letter-spacing: -.015em; color: var(--muted); }
+.promise-head p { font-size: 17px; max-width: 26em; }
+
+.ledger { --e: 10px; position: relative; padding: clamp(22px, 3vw, 38px); border: 1px solid var(--line-2); border-radius: var(--r-panel); background: var(--tile);
+  box-shadow: calc(var(--e) * -1) 0 0 var(--echo-near), calc(var(--e) * -2) 0 0 var(--echo-far); }
+.ledger-group + .ledger-group { margin-top: clamp(20px, 2.4vw, 28px); padding-top: clamp(20px, 2.4vw, 28px); border-top: 1px solid var(--line); }
+.ledger h3 { font-size: 13.5px; font-weight: 600; letter-spacing: .01em; color: var(--muted); }
+.ledger ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 10px; }
+.ledger li { position: relative; padding-left: 30px; font-size: clamp(15.5px, 1.3vw, 17.5px); line-height: 1.45; color: var(--cream); }
+/* stays: a solid mint square with its two shadows */
+.stay li::before { content: ""; position: absolute; left: 8px; top: .58em; width: 9px; height: 9px; border-radius: 3px; background: var(--mint);
+  box-shadow: -3px 0 0 var(--echo-near), -6px 0 0 var(--echo-far); }
+/* goes online: a hollow square, it leaves only when asked */
+.online li { color: color-mix(in srgb, var(--cream) 88%, var(--muted)); }
+.online li::before { content: ""; position: absolute; left: 6px; top: .5em; width: 11px; height: 11px; border-radius: 3px; border: 2px solid var(--line-2); box-sizing: border-box; }
+/* doesn't exist: struck out, in the mark's colours */
+.none ul { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 14px; }
+.none li { padding-left: 0; font-size: clamp(18px, 1.65vw, 22px); font-weight: 550; letter-spacing: -.015em; line-height: 1.3; color: var(--muted); }
+.none .x { --y: calc(50% + 1px); padding: 0 2px; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  background-image: linear-gradient(var(--mint), var(--mint)), linear-gradient(var(--echo-near), var(--echo-near)), linear-gradient(var(--echo-far), var(--echo-far));
+  background-repeat: no-repeat; background-size: 100% 2px, 100% 2px, 100% 2px; background-position: 0 var(--y), 0 var(--y), 0 var(--y); }
+
+@media (max-width: 1000px) {
+  .promise-in { grid-template-columns: 1fr; }
+  .promise-head p { max-width: 34em; }
+}
+@media (max-width: 520px) {
+  .ledger { --e: 6px; margin-left: 12px; border-radius: 12px; }
+  .none ul { gap: 8px 20px; }
+}
 
 /* ---------- install: a real sequence, so it is numbered ---------- */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 32px; counter-reset: s; }
@@ -224,10 +330,12 @@ h1 { font-size: clamp(40px, 5.6vw, 70px); line-height: 1.03; font-weight: 650; l
 .faq details { border-bottom: 1px solid var(--line-2); }
 .faq summary { list-style: none; cursor: pointer; padding: 20px 48px 20px 0; font-weight: 600; font-size: 17px; line-height: 1.4; position: relative; transition: color .15s; }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: ""; position: absolute; right: 6px; top: 50%; width: 18px; height: 18px; margin-top: -9px; background: var(--muted); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5v14M5 12h14' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5v14M5 12h14' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat; transition: transform .35s var(--spring), background-color .2s; }
+.faq summary::after { content: ""; position: absolute; right: 6px; top: 50%; width: 18px; height: 18px; margin-top: -9px; background: var(--muted); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5v14M5 12h14' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='square'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5v14M5 12h14' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='square'/%3E%3C/svg%3E") center/contain no-repeat; transition: transform .35s var(--spring), background-color .2s; }
 .faq details[open] summary::after { transform: rotate(45deg); background: var(--mint); }
 .faq summary:hover { color: var(--mint); }
 .faq details p { padding: 0 48px 22px 0; color: var(--muted); font-size: 16px; }
+.faq .answer { overflow: hidden; }
+.faq summary:focus-visible { outline: 2px solid var(--mint); outline-offset: 4px; border-radius: 6px; }
 .faq details p b { color: var(--cream); font-weight: 600; }
 
 /* ---------- footer ---------- */
@@ -243,7 +351,7 @@ h1 { font-size: clamp(40px, 5.6vw, 70px); line-height: 1.03; font-weight: 650; l
 .dl-toast { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 80; width: min(400px, calc(100vw - 32px)); }
 .dl-toast[hidden] { display: none; }
 .dl-card {
-  position: relative; padding: 20px 52px 20px 22px; border-radius: 14px;
+  position: relative; padding: 20px 52px 20px 22px; border-radius: var(--r-panel);
   background: var(--tile); border: 1px solid var(--line-2);
   box-shadow: -8px 0 0 var(--echo-near), -16px 0 0 var(--echo-far), 0 24px 60px -20px rgba(0, 0, 0, .8);
   margin-left: 16px;
@@ -252,7 +360,7 @@ h1 { font-size: clamp(40px, 5.6vw, 70px); line-height: 1.03; font-weight: 650; l
 .dl-card p:not(.dl-title) { margin-top: 8px; color: var(--muted); font-size: 14.5px; line-height: 1.55; }
 .dl-card p b { color: var(--cream); font-weight: 600; }
 .dl-card .btn { margin-top: 14px; }
-.dl-close { position: absolute; right: 10px; top: 10px; width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 9px; background: transparent; color: var(--muted); cursor: pointer; }
+.dl-close { position: absolute; right: 10px; top: 10px; width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 8px; background: transparent; color: var(--muted); cursor: pointer; }
 .dl-close:hover { color: var(--cream); background: var(--raise); }
 
 /* ---------- responsive ---------- */
@@ -267,7 +375,8 @@ h1 { font-size: clamp(40px, 5.6vw, 70px); line-height: 1.03; font-weight: 650; l
   .nav-toggle { display: block; margin-left: 0; }
   .hero-in { grid-template-columns: 1fr; }
   .hero-art { order: -1; max-width: 320px; justify-self: center; margin-bottom: -8px; }
-  .tour { grid-template-columns: 1fr; }
+  .tour, .tour.flip { grid-template-columns: 1fr; }
+  .tour.flip .rail, .tour.flip .stage { order: 0; }
   .rail { position: relative; top: 0; display: flex; overflow-x: auto; scrollbar-width: none; margin-inline: calc(var(--gutter) * -1); padding: 4px var(--gutter) 4px calc(var(--gutter) + 8px); }
   .rail::-webkit-scrollbar { display: none; }
   .rail button { flex: none; padding: 11px 14px; }
@@ -311,6 +420,20 @@ h1 { font-size: clamp(40px, 5.6vw, 70px); line-height: 1.03; font-weight: 650; l
   100% { opacity: 1; transform: none; text-shadow: -3px 0 0 var(--echo-near), -6px 0 0 var(--echo-far); }
 }
 
+@keyframes dot {
+  0% { transform: scale(0); box-shadow: 0 0 0 var(--echo-near), 0 0 0 var(--echo-far); }
+  55% { transform: scale(1.3); }
+  100% { transform: none; box-shadow: -3px 0 0 var(--echo-near), -6px 0 0 var(--echo-far); }
+}
+/* the strike: mint leads, the two shadows trail lower and later, then fold back under it */
+@keyframes strike {
+  0%, 30% { color: var(--cream); }
+  0% { background-size: 0% 2px, 0% 2px, 0% 2px; background-position: 0 var(--y), 0 calc(var(--y) + 5px), 0 calc(var(--y) + 10px); }
+  45% { background-size: 100% 2px, 62% 2px, 30% 2px; background-position: 0 var(--y), 0 calc(var(--y) + 5px), 0 calc(var(--y) + 10px); }
+  72% { background-size: 100% 2px, 100% 2px, 100% 2px; background-position: 0 var(--y), 0 calc(var(--y) + 5px), 0 calc(var(--y) + 10px); }
+  100% { background-size: 100% 2px, 100% 2px, 100% 2px; background-position: 0 var(--y), 0 var(--y), 0 var(--y); }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   /* headings: each word slides in and its two shadows fold back under it */
   .split .w { display: inline-block; }
@@ -332,9 +455,13 @@ h1 { font-size: clamp(40px, 5.6vw, 70px); line-height: 1.03; font-weight: 650; l
   .js .section-head:not(.in) p { opacity: 0; }
   .section-head.in p { animation: rise .9s var(--soft) backwards; animation-delay: calc(var(--words, 4) * 60ms + 250ms); }
 
-  .js .feat-groups:not(.in) > div { opacity: 0; }
-  .feat-groups.in > div { animation: arrive .8s var(--soft) backwards; animation-delay: calc(var(--i) * 70ms + 100ms); }
-  .feat-groups.in > div::before { animation: draw 1.2s var(--glide) backwards; animation-delay: calc(var(--i) * 70ms); }
+  .js .more-list:not(.in) li { opacity: 0; }
+  .more-list.in li { animation: arrive .8s var(--soft) backwards; animation-delay: calc(var(--i) * 80ms + 100ms); }
+  .more-list.in li::before { animation: draw 1.2s var(--glide) backwards; animation-delay: calc(var(--i) * 80ms); }
+
+  .js .solo:not(.in) .window, .js .solo:not(.in) li { opacity: 0; }
+  .solo.in .window { animation: echoes-out 1.1s var(--spring) .1s backwards; }
+  .solo.in li { animation: arrive .7s var(--soft) backwards; animation-delay: calc(var(--i) * 80ms + 420ms); }
 
   .js .tour:not(.in) .rail button, .js .tour:not(.in) .pill, .js .tour:not(.in) .window, .js .tour:not(.in) .panel { opacity: 0; }
   .tour.in .rail button { animation: arrive .6s var(--soft) backwards; animation-delay: calc(var(--i) * 45ms); }
@@ -353,9 +480,17 @@ h1 { font-size: clamp(40px, 5.6vw, 70px); line-height: 1.03; font-weight: 650; l
   .install-cta.in .btn-primary { animation: echoes-out 1s var(--spring) .1s backwards; }
   .install-cta.in p { animation: fade .9s ease .4s backwards; }
 
+  /* privacy ledger: the card arrives with its shadows, what stays lands, then the strikes walk */
+  .js .ledger:not(.in), .js .ledger:not(.in) li { opacity: 0; }
+  .ledger.in { animation: echoes-out 1.1s var(--spring) backwards; }
+  .ledger.in .stay li { animation: arrive .7s var(--soft) backwards; animation-delay: calc(380ms + var(--i, 0) * 90ms); }
+  .ledger.in .stay li::before { animation: dot .9s var(--spring) backwards; animation-delay: calc(480ms + var(--i, 0) * 90ms); }
+  .ledger.in .online li { animation: arrive .7s var(--soft) backwards; animation-delay: calc(720ms + var(--i, 0) * 90ms); }
+  .ledger.in .none li { animation: fade .5s ease backwards; animation-delay: calc(1020ms + var(--i, 0) * 130ms); }
+  .ledger.in .none .x { animation: strike 1.15s var(--glide) backwards; animation-delay: calc(1120ms + var(--i, 0) * 130ms); }
+
   .js .faq:not(.in) details { opacity: 0; }
   .faq.in details { animation: arrive .7s var(--soft) backwards; animation-delay: calc(var(--i) * 60ms); }
-  .faq details[open] p { animation: rise .45s var(--soft); }
 
   .js .foot:not(.in) .foot-in > * { opacity: 0; }
   .foot.in .foot-in > * { animation: fade .9s ease backwards; animation-delay: calc(var(--i) * 120ms); }
@@ -374,7 +509,7 @@ h1 { font-size: clamp(40px, 5.6vw, 70px); line-height: 1.03; font-weight: 650; l
 .doc-page .nav-actions { margin-left: auto; }
 .doc-title { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; font-weight: 650; letter-spacing: -.03em; }
 .doc-toc { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-.doc-toc a { color: var(--cream); text-decoration: none; font-size: 14.5px; padding: 8px 14px; border: 1px solid var(--line-2); border-radius: 999px; }
+.doc-toc a { color: var(--cream); text-decoration: none; font-size: 14.5px; padding: 8px 14px; border: 1px solid var(--line-2); border-radius: var(--r); }
 .doc-toc a:hover { border-color: var(--mint); color: var(--mint); }
 .doc section { padding-top: 40px; scroll-margin-top: 88px; }
 .doc section + section { margin-top: 24px; border-top: 1px solid var(--line); }
@@ -387,4 +522,4 @@ h1 { font-size: clamp(40px, 5.6vw, 70px); line-height: 1.03; font-weight: 650; l
 .doc code { font-family: var(--mono); font-size: .92em; color: var(--cream); }
 .doc-meta { color: var(--cream) !important; font-weight: 600; }
 .doc-list { margin: 12px 0 0; padding-left: 1.6em; display: grid; gap: 8px; }
-.doc pre { margin-top: 14px; padding: 16px 18px; background: var(--tile); border: 1px solid var(--line); border-radius: 12px; color: var(--muted); font: 12.5px/1.55 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; max-height: 420px; overflow: auto; }
+.doc pre { margin-top: 14px; padding: 16px 18px; background: var(--tile); border: 1px solid var(--line); border-radius: var(--r); color: var(--muted); font: 12.5px/1.55 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; max-height: 420px; overflow: auto; }
