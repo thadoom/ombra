@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and ideas
+    url: https://github.com/thadoom/ombra/discussions
+    about: Ask a question or discuss an idea before proposing it.
+  - name: Website and guide
+    url: https://thadoom.github.io/ombra/
+    about: Features, install steps and FAQ.
+  - name: Security problem
+    url: https://github.com/thadoom/ombra/security/advisories/new
+    about: Report it privately, not as a public issue.

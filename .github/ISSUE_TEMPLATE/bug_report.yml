@@ -1,0 +1,51 @@
+name: Bug report
+description: Something in Ombra doesn't work as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report this. The more detail, the faster it gets fixed.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start SteamVR
+        2. Press Calibrate
+        3. ...
+  - type: input
+    id: version
+    attributes:
+      label: Ombra version
+      description: Shown at the bottom left of the window.
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: dongles
+    attributes:
+      label: Dongles
+      multiple: true
+      options: [GX2, GX6]
+  - type: input
+    id: trackers
+    attributes:
+      label: Trackers and firmware
+      placeholder: "8× HaritoraX 2, firmware 1.1.1"
+  - type: input
+    id: headset
+    attributes:
+      label: Headset and Windows version
+      placeholder: "Quest 3 over Air Link, Windows 11 24H2"
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots and settings
+      description: Attach the diagnostics file (Settings > Export diagnostics). A screenshot of the Trackers page also helps.

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<!-- Template: texts live in site/i18n/<lang>.json; build with python tools/make_site.py.
+     The page is one story: what Ombra is (hero), the things it does (chapters, each with its
+     own screenshots), the small things, the privacy promise, install, the questions left. Nothing is
+     said twice. -->
+<html lang="ja" data-t-menu-open="メニューを開く" data-t-menu-close="メニューを閉じる" data-t-version="バージョン {v}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#121816">
+<title>Ombra：SteamVR対応の無料フルトラ＆VRChatアプリ</title>
+<meta name="description" content="HaritoraX・SlimeVRトラッカー対応の無料Windowsアプリ。SteamVRでのフルトラ（フルボディトラッキング）、心拍数を表示できるVRChatのチャットボックス、クラッシャー対策。アカウント不要。">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://thadoom.github.io/ombra/ja/">
+<link rel="alternate" hreflang="en" href="https://thadoom.github.io/ombra/">
+<link rel="alternate" hreflang="it" href="https://thadoom.github.io/ombra/it/">
+<link rel="alternate" hreflang="de" href="https://thadoom.github.io/ombra/de/">
+<link rel="alternate" hreflang="fr" href="https://thadoom.github.io/ombra/fr/">
+<link rel="alternate" hreflang="es" href="https://thadoom.github.io/ombra/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://thadoom.github.io/ombra/pt/">
+<link rel="alternate" hreflang="ja" href="https://thadoom.github.io/ombra/ja/">
+<link rel="alternate" hreflang="ko" href="https://thadoom.github.io/ombra/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://thadoom.github.io/ombra/zh/">
+<link rel="alternate" hreflang="ru" href="https://thadoom.github.io/ombra/ru/">
+<link rel="alternate" hreflang="x-default" href="https://thadoom.github.io/ombra/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ombra">
+<meta property="og:title" content="Ombra：VRのすべてを、ひとつの影に">
+<meta property="og:description" content="フルトラ、VRChatのチャットボックス、クラッシャー対策、VR内のパネルをひとつのアプリで。Windows用・無料、アカウント不要、データはあなたのPCの中だけに。">
+<meta property="og:url" content="https://thadoom.github.io/ombra/ja/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:image" content="https://thadoom.github.io/ombra/assets/og.png?v=4">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ombra：VRのすべてを、ひとつの影に">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thadoom.github.io/ombra/assets/og.png?v=4">
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://api.github.com" crossorigin>
+<link rel="stylesheet" href="../style.css?v=22">
+<script>
+  // entrance animations hide content until main.js plays them; if it never does, show everything
+  document.documentElement.classList.add("js");
+  setTimeout(function () { var h = document.documentElement; if (!h.classList.contains("loaded")) h.classList.remove("js"); }, 3000);
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Ombra","operatingSystem":"Windows 10, Windows 11","applicationCategory":"UtilitiesApplication","description":"HaritoraX・SlimeVRトラッカー対応の無料Windowsアプリ。SteamVRでのフルトラ（フルボディトラッキング）、心拍数を表示できるVRChatのチャットボックス、クラッシャー対策。アカウント不要。","inLanguage":"ja","featureList":["影のようについてくる、フルボディトラッキング。","体の動きを、リアルタイムで","3つのポーズでキャリブレーション","自分好みに調整できるスムージング","ドリフトは、プレイしながら補正","脚、足、床","すべてのトラッカーを、詳しく","ドングルと無線チャンネル","ファームウェアも、同じウィンドウから","原因は電波？それともPC？","音楽も心拍も、あなたのVRChatチャットボックスに。","自分だけのチャットボックス","VRChat向けに設計","クラッシュのあと、誰の仕業かをOmbraが教えます。","ヘッドセットは、もう外さなくていい。","手首に、コントロールセンターを","SteamVRダッシュボードにタブ","Ombraを、自分仕様に。","自分だけのサイドバー","自分だけのテーマ","細かなところまで。","軽量でネイティブ","自分だけのクイックバー","ワンクリックでアップデート","再起動しても、元どおり"],"downloadUrl":"https://github.com/thadoom/ombra/releases/latest/download/Ombra-Setup.exe","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"screenshot":["https://thadoom.github.io/ombra/assets/screens/home.ja.webp","https://thadoom.github.io/ombra/assets/screens/calib.ja.webp","https://thadoom.github.io/ombra/assets/screens/tuning.ja.webp","https://thadoom.github.io/ombra/assets/screens/tuning-drift.ja.webp","https://thadoom.github.io/ombra/assets/screens/tuning-body.ja.webp","https://thadoom.github.io/ombra/assets/screens/trackers.ja.webp","https://thadoom.github.io/ombra/assets/screens/dongles.ja.webp","https://thadoom.github.io/ombra/assets/screens/firmware.ja.webp","https://thadoom.github.io/ombra/assets/screens/health.ja.webp","https://thadoom.github.io/ombra/assets/screens/chatbox.ja.webp","https://thadoom.github.io/ombra/assets/screens/vrchat.ja.webp","https://thadoom.github.io/ombra/assets/screens/safety.ja.webp","https://thadoom.github.io/ombra/assets/screens/wrist.ja.webp","https://thadoom.github.io/ombra/assets/screens/dashboard.ja.webp","https://thadoom.github.io/ombra/assets/screens/sidebar.ja.webp","https://thadoom.github.io/ombra/assets/screens/themes.ja.webp"],"image":"https://thadoom.github.io/ombra/assets/og.png","isAccessibleForFree":true,"author":{"@type":"Person","name":"thadoom","url":"https://github.com/thadoom"},"license":"https://thadoom.github.io/ombra/legal.html#license","url":"https://thadoom.github.io/ombra/ja/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ja","mainEntity":[{"@type":"Question","name":"トラッカー用に別のアプリは必要ですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。Ombraはドングルを直接読み取り、トラッカーのペアリングや、Shiftall純正ファイルでのファームウェア更新も行います。Ombraの使用中は、ほかのトラッカーアプリを閉じておいてください。"}},{"@type":"Question","name":"どのトラッカーとドングルに対応していますか？","acceptedAnswer":{"@type":"Answer","text":"GX2またはGX6ドングル経由のHaritoraX 2、2 Pro、Wireless、そしてWi-FiまたはUSBレシーバー経由のSlimeVR互換トラッカー（ButterflyやSmol Slimeなど）。Viveトラッカーなどのベースステーション式トラッカーはQuestに位置合わせでき、SteamVRにある他のIMUトラッカーもなめらかにできます。HaritoraX 1（有線）には対応していません。"}},{"@type":"Question","name":"Questでも使えますか？","acceptedAnswer":{"@type":"Answer","text":"はい。PCにつなぐ場合はSteamVR経由で、有線でも無線でも使えます。Quest単体でVRChatを動かしている場合は、OmbraがPCからOSCで体の動きを送るので、SteamVRは不要です。"}},{"@type":"Question","name":"インストーラーでWindowsの警告が出るのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"インストーラーはまだコード署名されていないため、SmartScreenに認識されません。詳細情報をクリックしてから実行を押してください。セットアップはユーザーフォルダーにインストールされるので、管理者権限は不要です。"}},{"@type":"Question","name":"SteamVRではOmbraはどう表示されますか？","acceptedAnswer":{"@type":"Answer","text":"セットアップでOmbra専用のSteamVRドライバーがインストールされます。トラッカーは役割（腰、胸、ひざ、足、ひじ）が設定済みの状態でSteamVRに表示され、Ombraの起動もSteamVRが自動で行います。"}},{"@type":"Question","name":"ヘッドセットやコントローラー、ベースステーションに影響はありますか？","acceptedAnswer":{"@type":"Answer","text":"ありません。Lighthouseデバイス、ヘッドセット、コントローラーは一切変更しません。ドライバーが作るのはOmbraの仮想トラッカーだけで、ほかのIMUトラッカーのスムージングも、オンにした場合にしか行いません。"}},{"@type":"Question","name":"トラッカーは必要ですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。チャットボックス、VRChat用ツール、ヘッドセットから作る体のためだけにOmbraを使う人もたくさんいます。インストール時にトラッカーなしを選べば、ドングルを求められることはありません。"}},{"@type":"Question","name":"トラッカーなしで試せますか？","acceptedAnswer":{"@type":"Answer","text":"はい。Ombra.exe --demoを実行すると、GX2とGX6につながった8個のデモトラッカーで試せます。デモモードはCOMポート、Bluetooth、SteamVR、設定に一切触れません。"}},{"@type":"Question","name":"Ombraは何語に対応していますか？","acceptedAnswer":{"@type":"Answer","text":"アプリとこのサイトは、英語、イタリア語、ドイツ語、フランス語、スペイン語、ブラジルポルトガル語、日本語、韓国語、簡体字中国語、ロシア語に対応しています。OmbraはWindowsの言語に合わせて表示され、設定から変更することもできます。"}},{"@type":"Question","name":"ShiftallやValveと関係がありますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。Ombraは独立したプロジェクトで、無料でダウンロードして使えます。ソースコードは公開していませんが、機能や拡張、翻訳の提案はGitHubで受け付けています。"}},{"@type":"Question","name":"Ombraの開発にAIは使われていますか？","acceptedAnswer":{"@type":"Answer","text":"はい。Ombraは一人の開発者がAIツール（主にAnthropicのClaude）を使って作っています。用途は調査、コード、テスト、翻訳です。Ombraの機能を決め、すべてのリリースを承認するのは開発者本人です。画像生成AIは使っていません。スクリーンショットはすべて実際のアプリの画面です。Ombraの中でAIを使うのは、オプションの音声チャットボックス入力だけです。Whisperモデルはお使いのPC上で動作し、音声が外部に送られることはありません。"}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="nav" id="top">
+  <div class="nav-bg" aria-hidden="true"></div>
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Ombra、ページの先頭へ"><img src="../assets/logo.svg" alt="" width="30" height="30"><span>Ombra</span></a>
+    <nav aria-label="メイン">
+      <ul class="nav-links">
+        <li><a href="#tracking">トラッキング</a></li>
+        <li><a href="#vrchat">VRChat</a></li>
+        <li><a href="#safety">安全対策</a></li>
+        <li><a href="#in-vr">VR内</a></li>
+        <li><a href="#privacy">プライバシー</a></li>
+        <li><a href="#news">ニュース</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+<details class="langs"><summary class="btn btn-quiet btn-sm" aria-label="言語"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#ffffff"/><circle cx="15" cy="10" r="6" fill="#bc002d"/></svg><span>JA</span><svg aria-hidden="true" class="chev" viewBox="0 0 24 24" width="12" height="12"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter"/></svg></summary><ul class="langs-menu"><li><a href="../" hreflang="en" lang="en"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#012169"/><path d="M0 0L30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0L30 20M30 0L0 20" stroke="#c8102e" stroke-width="1.4"/><path d="M15 0V20M0 10H30" stroke="#fff" stroke-width="6"/><path d="M15 0V20M0 10H30" stroke="#c8102e" stroke-width="3.4"/></svg><span>English</span></a></li><li><a href="../it/" hreflang="it" lang="it"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0.00" y="0" width="10.05" height="20" fill="#009246"/><rect x="10.00" y="0" width="10.05" height="20" fill="#ffffff"/><rect x="20.00" y="0" width="10.05" height="20" fill="#ce2b37"/></svg><span>Italiano</span></a></li><li><a href="../de/" hreflang="de" lang="de"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0" y="0.00" width="30" height="6.72" fill="#000000"/><rect x="0" y="6.67" width="30" height="6.72" fill="#dd0000"/><rect x="0" y="13.33" width="30" height="6.72" fill="#ffce00"/></svg><span>Deutsch</span></a></li><li><a href="../fr/" hreflang="fr" lang="fr"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0.00" y="0" width="10.05" height="20" fill="#0055a4"/><rect x="10.00" y="0" width="10.05" height="20" fill="#ffffff"/><rect x="20.00" y="0" width="10.05" height="20" fill="#ef4135"/></svg><span>Français</span></a></li><li><a href="../es/" hreflang="es" lang="es"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#aa151b"/><rect y="5" width="30" height="10" fill="#f1bf00"/></svg><span>Español</span></a></li><li><a href="../pt/" hreflang="pt-BR" lang="pt-BR"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#009c3b"/><polygon points="15,2.2 27.6,10 15,17.8 2.4,10" fill="#ffdf00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/></svg><span>Português (Brasil)</span></a></li><li><a href="../ja/" hreflang="ja" lang="ja" aria-current="true"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#ffffff"/><circle cx="15" cy="10" r="6" fill="#bc002d"/></svg><span>日本語</span></a></li><li><a href="../ko/" hreflang="ko" lang="ko"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#ffffff"/><g transform="rotate(33.7 15 10)"><path d="M10 10a5 5 0 0 1 10 0a2.5 2.5 0 0 1-5 0a2.5 2.5 0 0 0-5 0z" fill="#cd2e3a"/><path d="M20 10a5 5 0 0 1-10 0a2.5 2.5 0 0 1 5 0a2.5 2.5 0 0 0 5 0z" fill="#0047a0"/></g><g fill="#000"><rect x="3.4" y="3.2" width="4.6" height="1"/><rect x="3.4" y="4.8" width="4.6" height="1"/><rect x="22" y="14.2" width="4.6" height="1"/><rect x="22" y="15.8" width="4.6" height="1"/><rect x="22" y="3.2" width="4.6" height="1"/><rect x="3.4" y="15.8" width="4.6" height="1"/></g></svg><span>한국어</span></a></li><li><a href="../zh/" hreflang="zh-Hans" lang="zh-Hans"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#de2910"/><polygon points="5.00,2.00 5.67,4.07 7.85,4.07 6.09,5.35 6.76,7.43 5.00,6.15 3.24,7.43 3.91,5.35 2.15,4.07 4.33,4.07" fill="#ffde00"/><polygon points="10.39,1.08 10.33,1.80 11.00,2.09 10.29,2.25 10.22,2.97 9.85,2.35 9.14,2.52 9.62,1.97 9.25,1.34 9.91,1.63" fill="#ffde00"/><polygon points="12.71,3.29 12.38,3.94 12.89,4.45 12.17,4.34 11.84,4.99 11.73,4.27 11.01,4.16 11.66,3.83 11.55,3.11 12.06,3.62" fill="#ffde00"/><polygon points="12.94,6.66 12.37,7.11 12.62,7.79 12.01,7.38 11.44,7.83 11.64,7.13 11.04,6.72 11.76,6.70 11.97,6.00 12.21,6.68" fill="#ffde00"/><polygon points="10.34,8.06 10.32,8.79 11.00,9.03 10.30,9.24 10.28,9.96 9.87,9.36 9.17,9.56 9.62,8.99 9.21,8.38 9.89,8.63" fill="#ffde00"/></svg><span>简体中文</span></a></li><li><a href="../ru/" hreflang="ru" lang="ru"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0" y="0.00" width="30" height="6.72" fill="#ffffff"/><rect x="0" y="6.67" width="30" height="6.72" fill="#0039a6"/><rect x="0" y="13.33" width="30" height="6.72" fill="#d52b1e"/></svg><span>Русский</span></a></li></ul></details>
+      <a class="btn btn-quiet btn-sm btn-icon nav-discord" href="https://discord.gg/vFejerFCWA" target="_blank" rel="noopener" aria-label="DiscordのOmbra" title="Discord"><svg class="i-discord" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52.07.07 0 0 0-.08.04c-.21.37-.44.86-.6 1.25a18.3 18.3 0 0 0-5.49 0 12.6 12.6 0 0 0-.62-1.25.08.08 0 0 0-.08-.04 19.7 19.7 0 0 0-4.88 1.52.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 5.99 3.03.08.08 0 0 0 .09-.03c.46-.63.87-1.3 1.22-1.99a.08.08 0 0 0-.04-.1 13.1 13.1 0 0 1-1.87-.9.08.08 0 0 1 0-.12l.37-.3a.07.07 0 0 1 .08 0c3.93 1.8 8.18 1.8 12.06 0a.07.07 0 0 1 .08 0l.37.3a.08.08 0 0 1 0 .12c-.6.35-1.22.65-1.87.9a.08.08 0 0 0-.04.1c.36.7.77 1.36 1.22 1.99a.08.08 0 0 0 .09.03 19.8 19.8 0 0 0 6-3.03.08.08 0 0 0 .03-.05c.5-5.18-.84-9.68-3.55-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.95 2.42-2.16 2.42Z"/></svg></a>
+      <a class="btn btn-quiet btn-sm js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">
+        <svg class="i-star" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="m12 3.2 2.7 5.5 6 .9-4.35 4.25 1.03 6-5.38-2.83-5.38 2.83 1.03-6L3.3 9.6l6-.9Z"/></svg>
+        スター<span class="count" hidden></span>
+      </a>
+      <a class="btn btn-primary btn-sm js-download" href="https://github.com/thadoom/ombra/releases/latest/download/Ombra-Setup.exe" download>ダウンロード</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="#tracking">トラッキング</a>
+    <a href="#vrchat">VRChat</a>
+    <a href="#safety">安全対策</a>
+    <a href="#in-vr">VR内</a>
+    <a href="#privacy">プライバシー</a>
+    <a href="#news">ニュース</a>
+    <a href="#install">インストール</a>
+    <a href="#faq">よくある質問</a>
+    <a class="js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">GitHubでスター</a>
+    <a class="m-discord" href="https://discord.gg/vFejerFCWA" target="_blank" rel="noopener"><svg class="i-discord" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52.07.07 0 0 0-.08.04c-.21.37-.44.86-.6 1.25a18.3 18.3 0 0 0-5.49 0 12.6 12.6 0 0 0-.62-1.25.08.08 0 0 0-.08-.04 19.7 19.7 0 0 0-4.88 1.52.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 5.99 3.03.08.08 0 0 0 .09-.03c.46-.63.87-1.3 1.22-1.99a.08.08 0 0 0-.04-.1 13.1 13.1 0 0 1-1.87-.9.08.08 0 0 1 0-.12l.37-.3a.07.07 0 0 1 .08 0c3.93 1.8 8.18 1.8 12.06 0a.07.07 0 0 1 .08 0l.37.3a.08.08 0 0 1 0 .12c-.6.35-1.22.65-1.87.9a.08.08 0 0 0-.04.1c.36.7.77 1.36 1.22 1.99a.08.08 0 0 0 .09.03 19.8 19.8 0 0 0 6-3.03.08.08 0 0 0 .03-.05c.5-5.18-.84-9.68-3.55-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.95 2.42-2.16 2.42Z"/></svg>Discordに参加</a>
+    <div class="langs-mobile"><a href="../" hreflang="en" lang="en"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#012169"/><path d="M0 0L30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0L30 20M30 0L0 20" stroke="#c8102e" stroke-width="1.4"/><path d="M15 0V20M0 10H30" stroke="#fff" stroke-width="6"/><path d="M15 0V20M0 10H30" stroke="#c8102e" stroke-width="3.4"/></svg><span>English</span></a><a href="../it/" hreflang="it" lang="it"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0.00" y="0" width="10.05" height="20" fill="#009246"/><rect x="10.00" y="0" width="10.05" height="20" fill="#ffffff"/><rect x="20.00" y="0" width="10.05" height="20" fill="#ce2b37"/></svg><span>Italiano</span></a><a href="../de/" hreflang="de" lang="de"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0" y="0.00" width="30" height="6.72" fill="#000000"/><rect x="0" y="6.67" width="30" height="6.72" fill="#dd0000"/><rect x="0" y="13.33" width="30" height="6.72" fill="#ffce00"/></svg><span>Deutsch</span></a><a href="../fr/" hreflang="fr" lang="fr"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0.00" y="0" width="10.05" height="20" fill="#0055a4"/><rect x="10.00" y="0" width="10.05" height="20" fill="#ffffff"/><rect x="20.00" y="0" width="10.05" height="20" fill="#ef4135"/></svg><span>Français</span></a><a href="../es/" hreflang="es" lang="es"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#aa151b"/><rect y="5" width="30" height="10" fill="#f1bf00"/></svg><span>Español</span></a><a href="../pt/" hreflang="pt-BR" lang="pt-BR"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#009c3b"/><polygon points="15,2.2 27.6,10 15,17.8 2.4,10" fill="#ffdf00"/><circle cx="15" cy="10" r="4.6" fill="#002776"/></svg><span>Português (Brasil)</span></a><a href="../ko/" hreflang="ko" lang="ko"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#ffffff"/><g transform="rotate(33.7 15 10)"><path d="M10 10a5 5 0 0 1 10 0a2.5 2.5 0 0 1-5 0a2.5 2.5 0 0 0-5 0z" fill="#cd2e3a"/><path d="M20 10a5 5 0 0 1-10 0a2.5 2.5 0 0 1 5 0a2.5 2.5 0 0 0 5 0z" fill="#0047a0"/></g><g fill="#000"><rect x="3.4" y="3.2" width="4.6" height="1"/><rect x="3.4" y="4.8" width="4.6" height="1"/><rect x="22" y="14.2" width="4.6" height="1"/><rect x="22" y="15.8" width="4.6" height="1"/><rect x="22" y="3.2" width="4.6" height="1"/><rect x="3.4" y="15.8" width="4.6" height="1"/></g></svg><span>한국어</span></a><a href="../zh/" hreflang="zh-Hans" lang="zh-Hans"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect width="30" height="20" fill="#de2910"/><polygon points="5.00,2.00 5.67,4.07 7.85,4.07 6.09,5.35 6.76,7.43 5.00,6.15 3.24,7.43 3.91,5.35 2.15,4.07 4.33,4.07" fill="#ffde00"/><polygon points="10.39,1.08 10.33,1.80 11.00,2.09 10.29,2.25 10.22,2.97 9.85,2.35 9.14,2.52 9.62,1.97 9.25,1.34 9.91,1.63" fill="#ffde00"/><polygon points="12.71,3.29 12.38,3.94 12.89,4.45 12.17,4.34 11.84,4.99 11.73,4.27 11.01,4.16 11.66,3.83 11.55,3.11 12.06,3.62" fill="#ffde00"/><polygon points="12.94,6.66 12.37,7.11 12.62,7.79 12.01,7.38 11.44,7.83 11.64,7.13 11.04,6.72 11.76,6.70 11.97,6.00 12.21,6.68" fill="#ffde00"/><polygon points="10.34,8.06 10.32,8.79 11.00,9.03 10.30,9.24 10.28,9.96 9.87,9.36 9.17,9.56 9.62,8.99 9.21,8.38 9.89,8.63" fill="#ffde00"/></svg><span>简体中文</span></a><a href="../ru/" hreflang="ru" lang="ru"><svg class="flag" aria-hidden="true" viewBox="0 0 30 20" width="21" height="14"><rect x="0" y="0.00" width="30" height="6.72" fill="#ffffff"/><rect x="0" y="6.67" width="30" height="6.72" fill="#0039a6"/><rect x="0" y="13.33" width="30" height="6.72" fill="#d52b1e"/></svg><span>Русский</span></a></div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <a class="hero-new" href="#news"><span class="hero-new-tag">新着</span><span class="hero-new-text">最新バージョンの新機能を見る</span><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h13m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></svg></a>
+      <h1 id="hero-title">VRのすべてを、ひとつの影に。</h1>
+      <p class="lede">VRで過ごす時間をまるごと支える、Windows用の無料アプリ。HaritoraXやSlimeVR互換トラッカーでのフルボディトラッキング、音楽や心拍数を表示できるVRChatのチャットボックス、クラッシャー対策、そして手首のパネル。</p>
+      <div class="cta">
+        <a class="btn btn-primary btn-lg js-download" href="https://github.com/thadoom/ombra/releases/latest/download/Ombra-Setup.exe" download>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+          Windows版をダウンロード
+        </a>
+        <a class="btn btn-quiet btn-lg js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">
+          <svg class="i-star" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="m12 3.2 2.7 5.5 6 .9-4.35 4.25 1.03 6-5.38-2.83-5.38 2.83 1.03-6L3.3 9.6l6-.9Z"/></svg>
+          GitHubでスター<span class="count" hidden></span>
+        </a>
+        <!-- without script this link simply opens the video; with it, the video plays in the page -->
+        <a class="watch js-watch" href="../assets/video/showcase.mp4">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M7 4.5v15l12-7.5Z" fill="currentColor"/></svg>
+          動画を見る
+        </a>
+      </div>
+      <p class="hero-meta"><span class="js-release">最新バージョン</span>、無料。Windows 10・11（64ビット）対応、管理者権限は不要です。 <a href="../vt/" target="_blank" rel="noopener">VirusTotalのレポート</a></p>
+    </div>
+    <!-- the real app, recorded in demo mode (tools/shots/record.ps1); the screenshot is what shows until
+         the video plays, and all there is with reduced motion. The same screen is described in the tour below. -->
+    <div class="hero-art" aria-hidden="true">
+      <div class="hero-stage">
+        <i class="plane plane-far"></i><i class="plane plane-near"></i>
+        <div class="hero-window">
+          <img src="../assets/screens/home.ja.webp" width="1440" height="900" alt="">
+          <video muted loop playsinline preload="none" width="1440" height="900" tabindex="-1"></video>
+        </div>
+        <svg class="figure" viewBox="70 80 400 400" preserveAspectRatio="xMidYMid meet">
+          <g class="echo echo-far"><path class="o"/><circle class="o" r="48"/><path class="f"/><circle class="f" r="38"/></g>
+          <g class="echo echo-near"><path class="o"/><circle class="o" r="48"/><path class="f"/><circle class="f" r="38"/></g>
+          <g class="echo echo-you"><path class="o"/><circle class="o" r="48"/><path class="f"/><circle class="f" r="38"/></g>
+          <rect class="hit" x="222" y="92" width="128" height="374" rx="56"><title>つかんで、投げて、3回つついてみて。</title></rect>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1. tracking -->
+<section class="section chapter" id="tracking" aria-labelledby="tracking-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="tracking-title">影のようについてくる、フルボディトラッキング。</h2>
+      <p>Ombraは、HaritoraXとSlimeVR互換トラッカーを単独でSteamVRにつなぎます。ほかのアプリは不要です。センサーとヘッドセットから体を組み立て、すべてのトラッカーをなめらかにし、プレイ中にドリフトを補正します。</p>
+    </header>
+    <div class="tour">
+      <div class="rail pills" role="tablist" aria-label="トラッキングのページ" aria-orientation="vertical">
+        <span class="pill" aria-hidden="true"><i></i><i></i><i></i></span>
+        <button role="tab" id="t-home" aria-controls="p-home" aria-selected="true">概要</button>
+        <button role="tab" id="t-calib" aria-controls="p-calib" aria-selected="false" tabindex="-1">キャリブレーション</button>
+        <button role="tab" id="t-smooth" aria-controls="p-smooth" aria-selected="false" tabindex="-1">スムージング</button>
+        <button role="tab" id="t-drift" aria-controls="p-drift" aria-selected="false" tabindex="-1">ドリフト</button>
+        <button role="tab" id="t-body" aria-controls="p-body" aria-selected="false" tabindex="-1">脚と床</button>
+        <button role="tab" id="t-trackers" aria-controls="p-trackers" aria-selected="false" tabindex="-1">トラッカー</button>
+        <button role="tab" id="t-dongles" aria-controls="p-dongles" aria-selected="false" tabindex="-1">ドングル</button>
+        <button role="tab" id="t-fw" aria-controls="p-fw" aria-selected="false" tabindex="-1">ファームウェア</button>
+        <button role="tab" id="t-health" aria-controls="p-health" aria-selected="false" tabindex="-1">診断</button>
+      </div>
+      <div class="stage">
+        <div class="window">
+          <div class="shots">
+            <!-- data-clip: a recording of that page plays over its screenshot (tools/showcase/record_all.ps1) -->
+            <img data-clip="hero" src="../assets/screens/home.ja.webp" width="1440" height="900" alt="概要ページ：トラッカー8個で動く体のリアルタイム3D表示、バッテリーと更新レート付きのセンサー一覧、スムージング・正面リセット・キャリブレーションのクイック操作。">
+            <img data-clip="calib" hidden loading="lazy" src="../assets/screens/calib.ja.webp" width="1440" height="900" alt="キャリブレーションページ：ポーズのカード、位置合わせ済みの部位、VR内での開始オプション、キーボードショートカット。">
+            <img data-clip="tuning" hidden loading="lazy" src="../assets/screens/tuning.ja.webp" width="1440" height="900" alt="補正ページのスムージングタブ：プリセット、スライダー、トラッカーごとのスタイル。">
+            <img hidden loading="lazy" src="../assets/screens/tuning-drift.ja.webp" width="1440" height="900" alt="補正ページのドリフトタブ：ドリフトの設定と、部位ごとのライブ表。">
+            <img hidden loading="lazy" src="../assets/screens/tuning-body.ja.webp" width="1440" height="900" alt="補正ページの脚タブ：脚の設定、途切れ補完、SteamVRに認識させるトラッカー。">
+            <img data-clip="trackers" hidden loading="lazy" src="../assets/screens/trackers.ja.webp" width="1440" height="900" alt="トラッカーページ：トラッカー一覧と、胸のトラッカーの詳細パネル。">
+            <img hidden loading="lazy" src="../assets/screens/dongles.ja.webp" width="1440" height="900" alt="ドングルページ：GX2とGX6、そのモジュール、スロット、チャンネル。">
+            <img hidden loading="lazy" src="../assets/screens/firmware.ja.webp" width="1440" height="900" alt="ファームウェアページ：すべてのトラッカーとドングル、それぞれのファームウェアバージョン。">
+            <img hidden loading="lazy" src="../assets/screens/health.ja.webp" width="1440" height="900" alt="診断ページ：トラッカーごとのパケットロス、電波、実際の更新レートと、SteamVRのフレーム落ち。">
+          </div>
+          <div class="sweep" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-home" aria-labelledby="t-home">
+          <h3>体の動きを、リアルタイムで</h3>
+          <p>センサーとヘッドセットからOmbraが組み立てた体を、正面・側面・自由視点の3Dで表示します。各トラッカーがトラッキング中か、推定か、圏外かもわかります。</p>
+          <ul class="ticks"><li>全センサーのバッテリー、更新レート、電波がひと目でわかる</li><li>腕のトラッカーなしで、コントローラーからひじを推定</li><li>キャリブレーション、クイック、正面リセットがワンクリック</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-calib" aria-labelledby="t-calib" hidden>
+          <h3>3つのポーズでキャリブレーション</h3>
+          <p>まっすぐ立ち、スキーポーズでかがみ、足のトラッカーがあればつま先立ちに。うまくいかないときは、どの部位を確認すればいいかをOmbraが表示します。</p>
+          <ul class="ticks"><li>VR内から開始：両方のトリガー、Tポーズ、トラッカーのタップ、キーボードショートカット</li><li>クイックキャリブレーションは各トラッカーの装着具合を記憶。再起動後もそのまま</li><li>歩行キャリブレーション：数歩歩くだけで腰・脚・足の位置を合わせる</li><li>コントローラーで触れて、体と床を計測</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-smooth" aria-labelledby="t-smooth" hidden>
+          <h3>自分好みに調整できるスムージング</h3>
+          <p>なめらか、バランス、反応重視、オフから選ぶか、スライダーで好きなレベルに。トラッカー1個だけに別のスタイルを設定することもできます（例：足だけ落ち着いた動きに）。</p>
+          <ul class="ticks"><li>しゃがみやジャンプは、キレのある動きのまま</li><li>すべてのポーズに速度を付けて送るので、SteamVRがフレーム単位で予測</li><li>希望すれば、SteamVR内のほかのIMUトラッカーもスムージング</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-drift" aria-labelledby="t-drift" hidden>
+          <h3>ドリフトは、プレイしながら補正</h3>
+          <p>ドリフト補正はプレイ中に動作し、各部位で何をしているかをライブ表で確認できます。</p>
+          <ul class="ticks"><li>長時間のプレイでも、リセットの回数が減る</li><li>機能ごとに個別にオン／オフ</li><li>プレイするほど精度が上がる</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-body" aria-labelledby="t-body" hidden>
+          <h3>脚、足、床</h3>
+          <p>体の動きは自然なまま。足は床に沈まず、接地した足は滑らず、ひざが逆向きに曲がることもありません。</p>
+          <ul class="ticks"><li>HaritoraX 2の距離センサーで、足首も曲がる</li><li>座っても寝転んでも：下にあるベッド、ソファ、床をOmbraが自動で見つけます</li><li>短い電波の途切れは、なめらかな推定ポーズで補完</li><li>SteamVRに認識させるトラッカーを、ゲームごとに選択</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-trackers" aria-labelledby="t-trackers" hidden>
+          <h3>すべてのトラッカーを、詳しく</h3>
+          <p>シリアル番号、ファームウェア、ドングルのスロット、バッテリー電圧、双方向の電波強度、地磁気センサーの状態、実際の更新レート。</p>
+          <ul class="ticks"><li>装着部位、更新レート（100 Hzまたは50 Hz）、センサーモードを変更</li><li>自分を撮影するときは、ステータスランプをオフに</li><li>Wi-FiまたはUSBレシーバーで接続するSlimeVR互換トラッカー。つながるのは自分のトラッカーだけ、ファイアウォールのブロックもワンクリックで解除</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-dongles" aria-labelledby="t-dongles" hidden>
+          <h3>ドングルと無線チャンネル</h3>
+          <p>GX2にはスロットが2つ。GX6には無線モジュールが3つあり、それぞれにスロットが2つあります。Ombraはすべてのモジュールと、各スロットのトラッカー、そのチャンネルを表示します。</p>
+          <ul class="ticks"><li>アプリ内でトラッカーをペアリング・解除</li><li>チャンネルを変更。2つのモジュールが干渉するときは警告</li><li>新しく挿したドングルをワンクリックで検出</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-fw" aria-labelledby="t-fw" hidden>
+          <h3>ファームウェアも、同じウィンドウから</h3>
+          <p>トラッカーはBluetooth、ドングルはUSBで、Shiftall純正のファームウェアファイルを改変せずにそのまま使って更新します。</p>
+          <ul class="ticks"><li>まずは何も変更せずに、Bluetoothへの切り替えをテスト</li><li>トラッカー間でファームウェアのバージョンが混在していると警告</li><li>すべてのファイルを使用前に検証（SHA-256）</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-health" aria-labelledby="t-health" hidden>
+          <h3>原因は電波？それともPC？</h3>
+          <p>トラッキングがカクつくときは、診断ページで原因がわかります。トラッカーごとのパケットロス、電波、実際の更新レートを、SteamVRのフレーム落ちと並べて表示します。</p>
+          <ul class="ticks"><li>直近数分間を、トラッカーごとにグラフで表示</li><li>数字とあわせて、考えられる原因を言葉で表示</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. vrchat: chatbox, music, heart rate -->
+<section class="section chapter" id="vrchat" aria-labelledby="vrchat-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="vrchat-title">音楽も心拍も、あなたのVRChatチャットボックスに。</h2>
+      <p>見た目を選び、表示する内容と順番を決めるだけ。Ombraが吹き出しに収めて、あふれさせません。</p>
+    </header>
+    <div class="tour flip">
+      <div class="rail pills" role="tablist" aria-label="VRChatのページ" aria-orientation="vertical">
+        <span class="pill" aria-hidden="true"><i></i><i></i><i></i></span>
+        <button role="tab" id="t-chat" aria-controls="p-chat" aria-selected="true">チャットボックス</button>
+        <button role="tab" id="t-vrc" aria-controls="p-vrc" aria-selected="false" tabindex="-1">VRChatでフルトラ</button>
+      </div>
+      <div class="stage">
+        <div class="window">
+          <div class="shots">
+            <img loading="lazy" src="../assets/screens/chatbox.ja.webp" width="1440" height="900" alt="チャットボックス画面：VRChatの吹き出しとして描いた8つの見た目、区切りの一覧、右側にはVRChatでの表示と「すべて収まる」の表示。">
+            <img hidden loading="lazy" src="../assets/screens/vrchat.ja.webp" width="1440" height="900" alt="VRChatページ：Ombraがあなたのトラッカーに合わせて推奨するフルトラ設定。">
+          </div>
+          <div class="sweep" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-chat" aria-labelledby="t-chat">
+          <h3>自分だけのチャットボックス</h3>
+          <p>まずは見た目から。あなたの行で描いた本物のVRChat吹き出しが8種類、シンプルからかわいい系まで。モジュールをオン・オフし、上下に並べ替え、VRChatで本当に表示できる12種類の区切りから選ぶか、全部を1行にまとめられます。</p>
+          <ul class="ticks"><li>Spotifyなど、どのプレーヤーで再生中の曲も表示（ログイン不要）。手首から再生・一時停止・スキップ</li><li>心拍数はPulsoid経由、またはBluetoothの心拍ベルトやウォッチから直接取得。アバターにも送信</li><li>収まらないときは、テキストを切らずにそう伝えて、ワンクリックの直し方を提案</li><li><code>T7RK-1J85-6</code>のような9文字のコードで共有。間にサーバーはありません</li><li>テキストが変わったときだけ送信。オフにすると吹き出しも消えます</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-vrc" aria-labelledby="t-vrc" hidden>
+          <h3>VRChat向けに設計</h3>
+          <p>OmbraでキャリブレーションするとVRChatのキャリブレーションも完了。VRChatがあなたのトラッカーに推奨するフルトラ設定もワンクリックで適用でき、元に戻すこともできます。</p>
+          <ul class="ticks"><li>Quest版VRChat向けのOSCトラッカー（SteamVR不要）</li><li>VSeeFace、Warudo、VNyanなどのVTuberアプリへVMCで送信</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. safety: crashers -->
+<section class="section chapter" id="safety" aria-labelledby="safety-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="safety-title">クラッシュのあと、誰の仕業かをOmbraが教えます。</h2>
+      <p>VRChatは、誰が入ってきて、どのアバターを読み込んだかを記録しています。OmbraはそのログをPC上で読み取るので、クラッシュ後には原因と思われるユーザーがわかり、そのアバターもワンクリックで非表示にできます。</p>
+    </header>
+    <div class="solo">
+      <div class="window"><div class="shots"><img loading="lazy" src="../assets/screens/safety.ja.webp" width="1440" height="900" alt="安全対策ページ：原因と思われるユーザー、読み込まれたアバター、クラッシュの何秒前だったかを示すクラッシュレポート。"></div></div>
+      <ul class="ticks solo-points">
+        <li>インスタンスにいるユーザー、使用中のアバターとその重さを表示</li>
+        <li>クラッシュ後：原因と思われるユーザー、そのアバター、クラッシュの何秒前だったか</li>
+        <li>そのアバターをワンクリックで非表示。いつでも元に戻せる</li>
+        <li>アバターのせいでフレームレートが落ちたら、手首に警告</li>
+        <li>オプション：同じ人に2回落とされたら自動で非表示。キャンセルできるカウントダウン付きで再参加も</li>
+        <li>VRChatのパスワードを求めることも、ゲームに手を加えることもありません</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4. in VR: wrist and dashboard -->
+<section class="section chapter" id="in-vr" aria-labelledby="invr-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="invr-title">ヘッドセットは、もう外さなくていい。</h2>
+      <p>プレイ中に必要なものは、手首とSteamVRダッシュボードにそろっています。</p>
+    </header>
+    <div class="tour flip">
+      <div class="rail pills" role="tablist" aria-label="VR内のパネル" aria-orientation="vertical">
+        <span class="pill" aria-hidden="true"><i></i><i></i><i></i></span>
+        <button role="tab" id="t-wrist" aria-controls="p-wrist" aria-selected="true">手首</button>
+        <button role="tab" id="t-dash" aria-controls="p-dash" aria-selected="false" tabindex="-1">SteamVRダッシュボード</button>
+      </div>
+      <div class="stage">
+        <div class="window">
+          <div class="shots">
+            <img loading="lazy" src="../assets/screens/wrist.ja.webp" width="1440" height="900" alt="手首のパネル：大きな時計、8台中8台のトラッカーが稼働中、警告付きの一番少ないバッテリー、フルトラ・睡眠・スクリーン・ミラーのスイッチ、音楽、そして隣にキャリブレーションのページ。">
+            <img hidden loading="lazy" src="../assets/screens/dashboard.ja.webp" width="1440" height="900" alt="SteamVRダッシュボードのOmbraタブ：すべてのトラッカーとバッテリー、オレンジで表示されたオフの右足、大きなキャリブレーションボタン、プレイ中に切り替えるスイッチ。">
+          </div>
+          <div class="sweep" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-wrist" aria-labelledby="t-wrist">
+          <h3>手首に、コントロールセンターを</h3>
+          <p>手首を見るとふわっと現れます。大きな時計、動いているトラッカーの数と一番少ないバッテリー、キャリブレーションの状態、名前付きの4つのスイッチ（フルトラ、睡眠、スクリーン、ミラー）、そして音楽。PCの通知もここに届きます。目をそらすと消えます。</p>
+          <ul class="ticks"><li>キャリブレーションとオプションのページ：キャリブレーション、クイック、正面リセット、なめらかさ、ドリフト補正、ひじを、ダッシュボードなしで</li><li>誤タップなし：ボタンはパネルがしっかり見えるまで待ち、トリガーは離したときに反応。グレーのボタンは理由を教えてくれます</li><li>フルトラのオン／オフはワンタップ。戻すときも再キャリブレーション不要</li><li>睡眠モード：体の動きは穏やかに、音声は控えめに、ヘッドセットはゆっくり暗く</li><li>Twitch、YouTube、TikTok LIVEのライブチャット。メッセージごとにプラットフォームのアイコン付き</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-dash" aria-labelledby="t-dash" hidden>
+          <h3>SteamVRダッシュボードにタブ</h3>
+          <p>すべてのトラッカーとバッテリー残量、キャリブレーションと正面リセットの大きなボタン、そしてプレイ中に切り替えるスイッチ。</p>
+          <ul class="ticks"><li>キャリブレーションをVRの中から中止。オフのトラッカーはオレンジで表示</li><li>トラッカーの切断やバッテリー低下をVR内で警告</li><li>スペースドラッグ：ボタンを押したまま世界を引っぱる。慣性と重力にも対応</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. yours: the sidebar and the theme -->
+<section class="section chapter" id="yours" aria-labelledby="yours-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="yours-title">Ombraを、自分仕様に。</h2>
+      <p>サイドバーを並べ替えて、好きな色を選べます。元に戻すのはワンクリック。</p>
+    </header>
+    <div class="tour">
+      <div class="rail pills" role="tablist" aria-label="カスタマイズ" aria-orientation="vertical">
+        <span class="pill" aria-hidden="true"><i></i><i></i><i></i></span>
+        <button role="tab" id="t-rail" aria-controls="p-rail" aria-selected="true">サイドバー</button>
+        <button role="tab" id="t-theme" aria-controls="p-theme" aria-selected="false" tabindex="-1">自分のテーマ</button>
+      </div>
+      <div class="stage">
+        <div class="window">
+          <div class="shots">
+            <img loading="lazy" src="../assets/screens/sidebar.ja.webp" width="1440" height="900" alt="整理中のサイドバー：新しいフォルダーのボタン、項目の入ったフォルダー「メイン」と「OSC」、閉じたフォルダー、各項目の横のつまみ。">
+            <img hidden loading="lazy" src="../assets/screens/themes.ja.webp" width="1440" height="900" alt="設定のテーマタブ：内蔵テーマと、背景・文字・メインカラー、16進コード、色相・彩度・明るさのバーがある自分のテーマのエディター。">
+          </div>
+          <div class="sweep" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-rail" aria-labelledby="t-rail">
+          <h3>自分だけのサイドバー</h3>
+          <p>サイドバー下の鉛筆を押すと整理できます。フォルダーを作って名前を付け、項目やフォルダーごと好きな場所へドラッグ。</p>
+          <ul class="ticks"><li>Discordと同じ：項目を別の項目の上で少し止めて離すと、2つが新しいフォルダーに。名前はすぐ入力できます</li><li>フォルダーの見出しをクリックすると閉じて、使うものだけが見えます</li><li>設定はいつも一番下。ボタンひとつで元のサイドバーに戻せます</li></ul>
+        </div>
+        <div class="panel" role="tabpanel" id="p-theme" aria-labelledby="t-theme" hidden>
+          <h3>自分だけのテーマ</h3>
+          <p>設定 → テーマ → 自分のテーマ：背景、文字色、メインカラーをバーか16進コードで選ぶだけ。残りはOmbraが計算します。アプリ全体とVR内のパネルにその場で反映。保存するか、キャンセルで元に戻せます。</p>
+          <ul class="ticks"><li>必要ならステータスの色も。読みにくくなると警告が出ます</li><li>コードをコピーしてDiscordに投稿。友だちが貼り付けるとその場で試せて、気に入ればそのまま使えます</li><li>設定はタブ式に（一般、SteamVRと手首、テーマ）。小さなウィンドウでもはみ出しません</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- the small things -->
+<section class="section more" id="more" aria-labelledby="more-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="more-title">細かなところまで。</h2>
+    </header>
+    <ul class="more-list">
+      <li><h3>軽量でネイティブ</h3><p>ブラウザは内蔵せず、カラーテーマは12種類と自分のテーマ。SteamVRがOmbraを起動し、トレイでトラッカー用パネルとともに待機します。</p></li>
+      <li><h3>自分だけのクイックバー</h3><p>よく使うボタンを、好きな順番に。</p></li>
+      <li><h3>ワンクリックでアップデート</h3><p>新しいバージョンが出るとお知らせします。SteamVRの実行中にアップデートすることはありません。</p></li>
+      <li><h3>再起動しても、元どおり</h3><p>オプション：再起動後、じっと立つとOmbraが自動でキャリブレーションします。</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- privacy: the promise and the ledger -->
+<section class="section promise" id="privacy" aria-labelledby="privacy-title">
+  <div class="wrap promise-in">
+    <header class="section-head promise-head">
+      <h2 id="privacy-title"><span class="setup">無料で、アカウントも不要。</span> Ombraはあなたのデータを預かりません。</h2>
+      <p>Ombraがインターネットでしていること、していないことを、すべてここにまとめました。</p>
+    </header>
+    <div class="ledger">
+      <div class="ledger-group stay">
+        <h3>PCの中にとどまるもの</h3>
+        <ul><li>設定、キャリブレーション、体の計測値</li><li>クラッシュレポートと、OmbraがVRChatのログから読み取る内容</li><li>心拍数と、再生している音楽</li></ul>
+      </div>
+      <div class="ledger-group online">
+        <h3>インターネットに接続するのは次のときだけ</h3>
+        <ul><li>GitHubで新しいバージョンを確認するとき（オンにしている場合）</li><li>アップデート時に、Shiftallからトラッカーのファームウェアをダウンロードするとき</li><li>Pulsoidなど、自分で接続したサービスにアクセスするとき</li></ul>
+      </div>
+      <div class="ledger-group none">
+        <h3>存在しないもの</h3>
+        <ul><li><span class="x">作成が必要なアカウント</span></li><li><span class="x">Ombraのサーバー</span></li><li><span class="x">広告、解析、テレメトリー</span></li><li><span class="x">料金（今もこれからも）</span></li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- news: the latest release, read live from GitHub's release notes (main.js); without script, a link to them -->
+<section class="section news" id="news" aria-labelledby="news-title" data-t-latest="最新" data-t-more="すべての変更を表示" data-t-less="閉じる" data-t-english="リリースノートは英語です。">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="news-title">最新情報。</h2>
+      <p>Ombraはよく更新されます。最新バージョンの内容をリリースノートからそのままお届けします。以前のバージョンもどうぞ。</p>
+    </header>
+    <div class="news-in">
+      <article class="rel">
+        <header class="rel-head">
+          <p class="rel-v"><span class="rel-num">Ombra</span></p>
+          <p class="rel-meta"><span class="rel-tag">最新</span></p>
+        </header>
+        <p class="rel-lead">各バージョンには、変更点と更新方法をまとめたノートがあります。</p>
+        <div class="rel-body"></div>
+        <p class="rel-links">
+          <a class="rel-full" href="https://github.com/thadoom/ombra/releases/latest">GitHubでノートをすべて読む<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h13m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg></a>
+          <a class="rel-all" href="https://github.com/thadoom/ombra/releases">すべてのバージョン</a>
+        </p>
+      </article>
+      <aside class="news-side">
+        <div class="past" hidden>
+          <h3>それ以前</h3>
+          <ol class="past-list"></ol>
+        </div>
+        <div class="discord-card">
+          <span class="dc-mark" aria-hidden="true"><svg class="i-discord" aria-hidden="true" viewBox="0 0 24 24" width="44" height="44"><path fill="currentColor" d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52.07.07 0 0 0-.08.04c-.21.37-.44.86-.6 1.25a18.3 18.3 0 0 0-5.49 0 12.6 12.6 0 0 0-.62-1.25.08.08 0 0 0-.08-.04 19.7 19.7 0 0 0-4.88 1.52.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 5.99 3.03.08.08 0 0 0 .09-.03c.46-.63.87-1.3 1.22-1.99a.08.08 0 0 0-.04-.1 13.1 13.1 0 0 1-1.87-.9.08.08 0 0 1 0-.12l.37-.3a.07.07 0 0 1 .08 0c3.93 1.8 8.18 1.8 12.06 0a.07.07 0 0 1 .08 0l.37.3a.08.08 0 0 1 0 .12c-.6.35-1.22.65-1.87.9a.08.08 0 0 0-.04.1c.36.7.77 1.36 1.22 1.99a.08.08 0 0 0 .09.03 19.8 19.8 0 0 0 6-3.03.08.08 0 0 0 .03-.05c.5-5.18-.84-9.68-3.55-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.95 2.42-2.16 2.42Z"/></svg><svg class="i-discord" aria-hidden="true" viewBox="0 0 24 24" width="44" height="44"><path fill="currentColor" d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52.07.07 0 0 0-.08.04c-.21.37-.44.86-.6 1.25a18.3 18.3 0 0 0-5.49 0 12.6 12.6 0 0 0-.62-1.25.08.08 0 0 0-.08-.04 19.7 19.7 0 0 0-4.88 1.52.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 5.99 3.03.08.08 0 0 0 .09-.03c.46-.63.87-1.3 1.22-1.99a.08.08 0 0 0-.04-.1 13.1 13.1 0 0 1-1.87-.9.08.08 0 0 1 0-.12l.37-.3a.07.07 0 0 1 .08 0c3.93 1.8 8.18 1.8 12.06 0a.07.07 0 0 1 .08 0l.37.3a.08.08 0 0 1 0 .12c-.6.35-1.22.65-1.87.9a.08.08 0 0 0-.04.1c.36.7.77 1.36 1.22 1.99a.08.08 0 0 0 .09.03 19.8 19.8 0 0 0 6-3.03.08.08 0 0 0 .03-.05c.5-5.18-.84-9.68-3.55-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.95 2.42-2.16 2.42Z"/></svg><svg class="i-discord" aria-hidden="true" viewBox="0 0 24 24" width="44" height="44"><path fill="currentColor" d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52.07.07 0 0 0-.08.04c-.21.37-.44.86-.6 1.25a18.3 18.3 0 0 0-5.49 0 12.6 12.6 0 0 0-.62-1.25.08.08 0 0 0-.08-.04 19.7 19.7 0 0 0-4.88 1.52.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 5.99 3.03.08.08 0 0 0 .09-.03c.46-.63.87-1.3 1.22-1.99a.08.08 0 0 0-.04-.1 13.1 13.1 0 0 1-1.87-.9.08.08 0 0 1 0-.12l.37-.3a.07.07 0 0 1 .08 0c3.93 1.8 8.18 1.8 12.06 0a.07.07 0 0 1 .08 0l.37.3a.08.08 0 0 1 0 .12c-.6.35-1.22.65-1.87.9a.08.08 0 0 0-.04.1c.36.7.77 1.36 1.22 1.99a.08.08 0 0 0 .09.03 19.8 19.8 0 0 0 6-3.03.08.08 0 0 0 .03-.05c.5-5.18-.84-9.68-3.55-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.95 2.42-2.16 2.42Z"/></svg></span>
+          <h3>Discordで気軽にどうぞ。</h3>
+          <p>新しいバージョンをいち早く。Ombraを使っている人に質問でき、テーマやチャットボックスのレイアウトも交換できます。</p>
+          <a class="btn btn-discord" href="https://discord.gg/vFejerFCWA" target="_blank" rel="noopener"><svg class="i-discord" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52.07.07 0 0 0-.08.04c-.21.37-.44.86-.6 1.25a18.3 18.3 0 0 0-5.49 0 12.6 12.6 0 0 0-.62-1.25.08.08 0 0 0-.08-.04 19.7 19.7 0 0 0-4.88 1.52.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 5.99 3.03.08.08 0 0 0 .09-.03c.46-.63.87-1.3 1.22-1.99a.08.08 0 0 0-.04-.1 13.1 13.1 0 0 1-1.87-.9.08.08 0 0 1 0-.12l.37-.3a.07.07 0 0 1 .08 0c3.93 1.8 8.18 1.8 12.06 0a.07.07 0 0 1 .08 0l.37.3a.08.08 0 0 1 0 .12c-.6.35-1.22.65-1.87.9a.08.08 0 0 0-.04.1c.36.7.77 1.36 1.22 1.99a.08.08 0 0 0 .09.03 19.8 19.8 0 0 0 6-3.03.08.08 0 0 0 .03-.05c.5-5.18-.84-9.68-3.55-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.95 2.42-2.16 2.42Z"/></svg>Discordに参加</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="install" aria-labelledby="install-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id="install-title">4ステップでインストール。</h2>
+      <p>Windows 10または11（64ビット）とSteamVR。GXドングルとHaritoraX 2・2 Pro・ワイヤレス、またはSlimeVR互換トラッカー。</p>
+    </header>
+    <ol class="steps">
+      <li><h3>インストーラーをダウンロード</h3><p>ファイルは<code>Ombra-Setup.exe</code>ひとつだけ。下のボタンからは、いつでも最新バージョンが手に入ります。</p></li>
+      <li><h3>SteamVRと他のトラッカーアプリを終了</h3><p>ドングルを使えるのは、一度にひとつのアプリだけです。</p></li>
+      <li><h3>セットアップを実行</h3><p>管理者権限は不要で、SteamVRドライバーを登録します。Windowsに警告されたら、下のよくある質問をご覧ください。</p></li>
+      <li><h3>キャリブレーション</h3><p>トラッカーの電源を入れてSteamVRを起動し、トラッカーを装着して<b>キャリブレーション</b>を押します。</p></li>
+    </ol>
+    <div class="install-cta">
+      <a class="btn btn-primary btn-lg js-download" href="https://github.com/thadoom/ombra/releases/latest/download/Ombra-Setup.exe" download>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+        Ombraをダウンロード
+      </a>
+      <p><span class="js-release">最新バージョン</span>。<a href="https://github.com/thadoom/ombra/releases">すべてのリリースと変更内容</a><br>リリースごとにMicrosoft Defenderでスキャンし、VirusTotalにもアップロードしています。<a href="../vt/">レポートを見る</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-wrap">
+    <header class="section-head">
+      <h2 id="faq-title">よくある質問</h2>
+      <p>知りたいことが見つからないときは、<a href="https://github.com/thadoom/ombra/discussions">GitHubで質問</a>してください。</p>
+    </header>
+    <div class="faq">
+      <details><summary>トラッカー用に別のアプリは必要ですか？</summary><div class="answer"><p>いいえ。Ombraはドングルを直接読み取り、トラッカーのペアリングや、Shiftall純正ファイルでのファームウェア更新も行います。Ombraの使用中は、ほかのトラッカーアプリを閉じておいてください。</p></div></details>
+      <details><summary>どのトラッカーとドングルに対応していますか？</summary><div class="answer"><p>GX2またはGX6ドングル経由のHaritoraX 2、2 Pro、Wireless、そしてWi-FiまたはUSBレシーバー経由のSlimeVR互換トラッカー（ButterflyやSmol Slimeなど）。Viveトラッカーなどのベースステーション式トラッカーはQuestに位置合わせでき、SteamVRにある他のIMUトラッカーもなめらかにできます。HaritoraX 1（有線）には対応していません。</p></div></details>
+      <details><summary>Questでも使えますか？</summary><div class="answer"><p>はい。PCにつなぐ場合はSteamVR経由で、有線でも無線でも使えます。Quest単体でVRChatを動かしている場合は、OmbraがPCからOSCで体の動きを送るので、SteamVRは不要です。</p></div></details>
+      <details><summary>インストーラーでWindowsの警告が出るのはなぜですか？</summary><div class="answer"><p>インストーラーはまだコード署名されていないため、SmartScreenに認識されません。<b>詳細情報</b>をクリックしてから<b>実行</b>を押してください。セットアップはユーザーフォルダーにインストールされるので、管理者権限は不要です。</p></div></details>
+      <details><summary>SteamVRではOmbraはどう表示されますか？</summary><div class="answer"><p>セットアップでOmbra専用のSteamVRドライバーがインストールされます。トラッカーは役割（腰、胸、ひざ、足、ひじ）が設定済みの状態でSteamVRに表示され、Ombraの起動もSteamVRが自動で行います。</p></div></details>
+      <details><summary>ヘッドセットやコントローラー、ベースステーションに影響はありますか？</summary><div class="answer"><p>ありません。Lighthouseデバイス、ヘッドセット、コントローラーは一切変更しません。ドライバーが作るのはOmbraの仮想トラッカーだけで、ほかのIMUトラッカーのスムージングも、オンにした場合にしか行いません。</p></div></details>
+      <details><summary>トラッカーは必要ですか？</summary><div class="answer"><p>いいえ。チャットボックス、VRChat用ツール、ヘッドセットから作る体のためだけにOmbraを使う人もたくさんいます。インストール時に<b>トラッカーなし</b>を選べば、ドングルを求められることはありません。</p></div></details>
+      <details><summary>トラッカーなしで試せますか？</summary><div class="answer"><p>はい。<code>Ombra.exe --demo</code>を実行すると、GX2とGX6につながった8個のデモトラッカーで試せます。デモモードはCOMポート、Bluetooth、SteamVR、設定に一切触れません。</p></div></details>
+      <details><summary>Ombraは何語に対応していますか？</summary><div class="answer"><p>アプリとこのサイトは、英語、イタリア語、ドイツ語、フランス語、スペイン語、ブラジルポルトガル語、日本語、韓国語、簡体字中国語、ロシア語に対応しています。OmbraはWindowsの言語に合わせて表示され、設定から変更することもできます。</p></div></details>
+      <details><summary>ShiftallやValveと関係がありますか？</summary><div class="answer"><p>いいえ。Ombraは独立したプロジェクトで、無料でダウンロードして使えます。ソースコードは公開していませんが、機能や拡張、翻訳の提案はGitHubで受け付けています。</p></div></details>
+      <details><summary>Ombraの開発にAIは使われていますか？</summary><div class="answer"><p>はい。Ombraは一人の開発者がAIツール（主にAnthropicのClaude）を使って作っています。用途は調査、コード、テスト、翻訳です。Ombraの機能を決め、すべてのリリースを承認するのは開発者本人です。画像生成AIは使っていません。スクリーンショットはすべて実際のアプリの画面です。Ombraの中でAIを使うのは、オプションの音声チャットボックス入力だけです。Whisperモデルはお使いのPC上で動作し、音声が外部に送られることはありません。</p></div></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <a class="brand" href="#top"><img src="../assets/logo.svg" alt="" width="28" height="28"><span>Ombra</span></a>
+      <p>イタリア発の、独立した無料アプリです。</p>
+    </div>
+    <ul class="foot-links">
+      <li><a class="js-star" href="https://github.com/thadoom/ombra" rel="noopener" target="_blank">GitHubでスター</a></li>
+      <li><a href="https://github.com/thadoom/ombra/releases">リリース</a></li>
+      <li><a href="https://github.com/thadoom/ombra/issues/new/choose">不具合の報告・機能の提案</a></li>
+      <li><a href="https://discord.gg/vFejerFCWA" target="_blank" rel="noopener">Discord</a></li>
+      <li><a href="../legal.html#license">ライセンス</a></li>
+      <li><a href="../legal.html#privacy">プライバシー</a></li>
+      <li><a href="../legal.html#notices">サードパーティーのライセンス表記</a></li>
+    </ul>
+    <p class="fine">無料で使えるクローズドソースのソフトウェアです。Shiftall Inc.およびValve Corporationとは提携しておらず、承認も受けていません。HaritoraX、SlimeVR、SteamVR、VRChatは、それぞれの権利者の商標です。</p>
+  </div>
+  <div class="foot-mark" aria-hidden="true">Ombra</div>
+</footer>
+
+<dialog class="theater" id="theater" aria-label="動画を見る">
+  <video controls playsinline preload="none" width="1920" height="1080"></video>
+  <button class="dl-close theater-close" type="button" aria-label="閉じる">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+  </button>
+</dialog>
+
+<div class="dl-toast" id="dl-toast" role="status" aria-live="polite" hidden>
+  <div class="dl-card">
+    <p class="dl-title">Ombra-Setup.exeをダウンロードしています</p>
+    <p>Windowsに「PCが保護されました」と表示されたら、<b>詳細情報</b>をクリックしてから<b>実行</b>を押してください。インストーラーはまだコード署名されていないため、SmartScreenに認識されません。</p>
+    <p class="dl-star">Ombraを気に入っていただけたら、GitHubでスターをお願いします。ほかの人がOmbraを見つける手助けになります。</p>
+    <a class="btn btn-quiet btn-sm js-star" href="https://github.com/thadoom/ombra" target="_blank" rel="noopener">
+      <svg class="i-star" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="m12 3.2 2.7 5.5 6 .9-4.35 4.25 1.03 6-5.38-2.83-5.38 2.83 1.03-6L3.3 9.6l6-.9Z"/></svg>
+      GitHubでスター
+    </a>
+    <button class="dl-close" type="button" aria-label="閉じる">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- the goodbye at the end of the page: the mark comes forward and waves (main.js, wide screens with a pointer) -->
+<div class="spot" hidden aria-hidden="true"></div>
+<aside class="bye" id="bye" aria-label="またね！" hidden>
+  <p class="bye-hi">またね！</p>
+  <p>最後まで読んでくれてありがとう。VRで会いましょう。</p>
+  <a class="btn btn-sm btn-discord" href="https://discord.gg/vFejerFCWA" target="_blank" rel="noopener"><svg class="i-discord" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52.07.07 0 0 0-.08.04c-.21.37-.44.86-.6 1.25a18.3 18.3 0 0 0-5.49 0 12.6 12.6 0 0 0-.62-1.25.08.08 0 0 0-.08-.04 19.7 19.7 0 0 0-4.88 1.52.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 5.99 3.03.08.08 0 0 0 .09-.03c.46-.63.87-1.3 1.22-1.99a.08.08 0 0 0-.04-.1 13.1 13.1 0 0 1-1.87-.9.08.08 0 0 1 0-.12l.37-.3a.07.07 0 0 1 .08 0c3.93 1.8 8.18 1.8 12.06 0a.07.07 0 0 1 .08 0l.37.3a.08.08 0 0 1 0 .12c-.6.35-1.22.65-1.87.9a.08.08 0 0 0-.04.1c.36.7.77 1.36 1.22 1.99a.08.08 0 0 0 .09.03 19.8 19.8 0 0 0 6-3.03.08.08 0 0 0 .03-.05c.5-5.18-.84-9.68-3.55-13.66a.06.06 0 0 0-.03-.03ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.95 2.42-2.16 2.42Z"/></svg>Discordに参加</a>
+  <button class="dl-close bye-close" type="button" aria-label="閉じる">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+  </button>
+</aside>
+
+<script src="../main.js?v=20" defer></script>
+</body>
+</html>

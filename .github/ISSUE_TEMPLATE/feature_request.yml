@@ -1,0 +1,46 @@
+name: Feature or extension proposal
+description: Propose a new feature, an extension (output, game integration, tracker type) or an improvement.
+labels: [proposal]
+body:
+  - type: markdown
+    attributes:
+      value: Ombra is closed source, but proposals shape what gets built. Accepted ideas are credited in the release notes.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of proposal
+      options:
+        - New feature
+        - Extension (new output, game or app integration)
+        - New tracker or device support
+        - Calibration or drift improvement
+        - User interface
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: The game, the pose or the moment where tracking falls short.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like Ombra to do?
+      description: How it should work, and how you would notice that it works.
+    validations:
+      required: true
+  - type: textarea
+    id: refs
+    attributes:
+      label: Links, recordings, documentation
+      description: Videos, diagnostics, or the public documentation of a device or protocol.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+      options:
+        - label: I agree that Ombra may use this proposal (LICENSE, section 3).
+          required: true

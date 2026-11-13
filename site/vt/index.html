@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#121816">
+<meta name="robots" content="noindex">
+<title>Ombra on VirusTotal</title>
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css?v=4">
+</head>
+<body class="doc-page">
+<header class="nav" id="top">
+  <div class="wrap nav-in">
+    <a class="brand" href="../" aria-label="Ombra, home">
+      <img src="../assets/logo.svg" alt="" width="30" height="30">
+      <span>Ombra</span>
+    </a>
+    <div class="nav-actions">
+      <a class="btn btn-quiet btn-sm" href="../">Back to Ombra</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="section">
+  <div class="wrap doc">
+    <header class="section-head">
+      <h1 class="doc-title">Ombra on VirusTotal</h1>
+      <p id="status">Looking up the latest installer on GitHub and opening its VirusTotal report.</p>
+    </header>
+    <p id="hash" hidden>SHA-256 of <code>Ombra-Setup.exe</code> <span id="ver"></span>:<br><code id="sha"></code></p>
+    <p id="go" hidden><a class="btn btn-primary" id="link" rel="noopener">Open the VirusTotal report</a></p>
+    <p>GitHub shows the same SHA-256 next to the file on the <a href="https://github.com/thadoom/ombra/releases/latest">release page</a>. To check the file you downloaded, run <code>Get-FileHash .\Ombra-Setup.exe</code> in PowerShell and compare.</p>
+    <noscript><p>This page needs JavaScript to find the latest installer. Without it, copy the SHA-256 from the release page and paste it into the search box on virustotal.com.</p></noscript>
+  </div>
+</main>
+
+<script>
+// The report is per file, so the link is built from the hash GitHub publishes for the latest installer.
+fetch("https://api.github.com/repos/thadoom/ombra/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
+  .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+  .then(function (rel) {
+    var a = (rel.assets || []).filter(function (x) { return x.name === "Ombra-Setup.exe"; })[0];
+    var m = a && /^sha256:([0-9a-f]{64})$/.exec(a.digest || "");
+    if (!m) throw 0;
+    var url = "https://www.virustotal.com/gui/file/" + m[1];
+    document.getElementById("ver").textContent = String(rel.tag_name || "").replace(/^v/, "");
+    document.getElementById("sha").textContent = m[1];
+    document.getElementById("link").href = url;
+    document.getElementById("hash").hidden = false;
+    document.getElementById("go").hidden = false;
+    location.replace(url);
+  })
+  .catch(function () {
+    document.getElementById("status").textContent = "Could not read the latest release from GitHub. Copy the SHA-256 from the release page and paste it into the search box on virustotal.com.";
+  });
+</script>
+</body>
+</html>

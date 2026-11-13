@@ -1,0 +1,125 @@
+# On every Ombra release (tags v*):
+#  1. Defender: the installer is scanned on a Windows runner with fresh signatures (Defender is on
+#     there, unlike on a PC with another antivirus). A detection is reported in the run summary.
+#  2. VirusTotal (optional, secret VT_API_KEY = a free VirusTotal API key): the installer is uploaded
+#     there, which shares it with the antivirus vendors (Microsoft included) and lets them clear a
+#     false positive sooner. The link to the analysis goes in the run summary, and a line with the
+#     SHA-256, the Defender result and that link is added at the end of the release notes.
+#  3. winget: a pull request with the new version goes to microsoft/winget-pkgs (secret WINGET_TOKEN =
+#     a classic GitHub token with public_repo, from an account with a fork of winget-pkgs). Needs
+#     the first version of thadoom.Ombra to be in winget-pkgs already (sent by hand once).
+name: release checks
+
+on:
+  release:
+    types: [released]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to check (e.g. v1.2.0)
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    if: startsWith(github.event.release.tag_name || inputs.tag, 'v')
+    runs-on: windows-latest
+    permissions:
+      contents: write   # to add the scan line to the release notes
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+    steps:
+      - name: Download the installer
+        shell: pwsh
+        run: |
+          $url = "https://github.com/${{ github.repository }}/releases/download/$env:TAG/Ombra-Setup.exe"
+          Invoke-WebRequest $url -OutFile Ombra-Setup.exe
+          $sha = (Get-FileHash Ombra-Setup.exe -Algorithm SHA256).Hash
+          "SHA256=$sha" >> $env:GITHUB_ENV
+          "### Ombra $env:TAG`n`nSHA-256: ``$sha```n" >> $env:GITHUB_STEP_SUMMARY
+
+      - name: Defender scan
+        shell: pwsh
+        run: |
+          Update-MpSignature -ErrorAction SilentlyContinue
+          $sig = (Get-MpComputerStatus).AntivirusSignatureVersion
+          $mp = "$env:ProgramFiles\Windows Defender\MpCmdRun.exe"
+          $out = & $mp -Scan -ScanType 3 -File "$PWD\Ombra-Setup.exe" -DisableRemediation 2>&1 | Out-String
+          Write-Output $out
+          if ($out -match "found [1-9]\d* threat" -or $out -match "Threat\s*:") {
+            "**Defender ($sig): DETECTED.** Submit it as a false positive: https://www.microsoft.com/en-us/wdsi/filesubmission (Software developer).`n" >> $env:GITHUB_STEP_SUMMARY
+            exit 1
+          } elseif ($out -match "found no threats") {
+            "Defender ($sig): clean.`n" >> $env:GITHUB_STEP_SUMMARY
+            "DEFENDER=clean" >> $env:GITHUB_ENV
+          } else {
+            "Defender ($sig): could not scan.`n" >> $env:GITHUB_STEP_SUMMARY
+          }
+
+      - name: VirusTotal upload
+        if: ${{ always() }}
+        shell: pwsh
+        env:
+          VT_API_KEY: ${{ secrets.VT_API_KEY }}
+        run: |
+          if (-not $env:VT_API_KEY) { "VirusTotal: skipped (no VT_API_KEY secret).`n" >> $env:GITHUB_STEP_SUMMARY; exit 0 }
+          $h = @{ "x-apikey" = $env:VT_API_KEY }
+          $up = "https://www.virustotal.com/api/v3/files"
+          # files over 32 MB need an upload URL first
+          if ((Get-Item Ombra-Setup.exe).Length -gt 32MB) { $up = (Invoke-RestMethod -Uri "$up/upload_url" -Headers $h).data }
+          # curl, not Invoke-RestMethod -Form: VirusTotal rejects PowerShell's multipart body
+          $r = curl.exe -sS --fail-with-body -H "x-apikey: $env:VT_API_KEY" -F "file=@Ombra-Setup.exe" $up | ConvertFrom-Json
+          if (-not $r.data.id) { throw "VirusTotal upload failed: $r" }
+          $link = "https://www.virustotal.com/gui/file/$($env:SHA256.ToLower())"
+          "VT_LINK=$link" >> $env:GITHUB_ENV
+          # free API: 4 requests a minute, so poll every 30 s for up to 10 minutes
+          $s = $null
+          foreach ($i in 1..20) {
+            Start-Sleep 30
+            $a = Invoke-RestMethod -Uri "https://www.virustotal.com/api/v3/analyses/$($r.data.id)" -Headers $h
+            if ($a.data.attributes.status -eq "completed") { $s = $a.data.attributes.stats; break }
+          }
+          if ($s) {
+            $n = $s.malicious + $s.suspicious + $s.undetected + $s.harmless
+            "VirusTotal: $($s.malicious) malicious, $($s.suspicious) suspicious out of $n engines: $link`n" >> $env:GITHUB_STEP_SUMMARY
+          } else {
+            "VirusTotal: uploaded, still analysing: $link`n" >> $env:GITHUB_STEP_SUMMARY
+          }
+
+      # Runs only when Defender found nothing and the upload worked. bash, not pwsh: pwsh would
+      # re-encode the notes (emoji, accents) on the way through. The marker lets a re-run replace
+      # the line. The website reads the notes above it and ignores this line.
+      - name: Add the scan line to the release notes
+        if: ${{ env.DEFENDER == 'clean' && env.VT_LINK != '' }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sha=$(echo "$SHA256" | tr 'A-F' 'a-f')
+          line="<!-- scan --><sub>SHA-256 <code>$sha</code> · Microsoft Defender: clean · <a href=\"$VT_LINK\">VirusTotal report</a></sub>"
+          body=$(gh release view "$TAG" -R "$GITHUB_REPOSITORY" --json body --jq .body | tr -d '\r' | grep -v '^<!-- scan -->' || true)
+          test -n "$body"   # never replace the notes with an empty file
+          printf '%s\n\n%s\n' "$body" "$line" > notes.md
+          gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes-file notes.md
+
+  winget:
+    needs: scan
+    if: startsWith(github.event.release.tag_name || inputs.tag, 'v')
+    runs-on: windows-latest
+    env:
+      HAS_TOKEN: ${{ secrets.WINGET_TOKEN != '' }}
+    steps:
+      - name: No WINGET_TOKEN yet
+        if: env.HAS_TOKEN != 'true'
+        shell: pwsh
+        run: '"winget: skipped (no WINGET_TOKEN secret).`n" >> $env:GITHUB_STEP_SUMMARY'
+      - name: Send the new version to winget
+        if: env.HAS_TOKEN == 'true'
+        uses: vedantmgoyal9/winget-releaser@v2
+        with:
+          identifier: thadoom.Ombra
+          installers-regex: 'Ombra-Setup\.exe$'
+          release-tag: ${{ github.event.release.tag_name || inputs.tag }}
+          token: ${{ secrets.WINGET_TOKEN }}

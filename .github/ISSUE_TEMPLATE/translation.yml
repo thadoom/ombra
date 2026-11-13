@@ -1,0 +1,32 @@
+name: Translation
+description: Add a language or improve a translation.
+labels: [translation]
+body:
+  - type: input
+    id: lang
+    attributes:
+      label: Language
+      placeholder: "Español"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is it?
+      options: [A new language, A fix to an existing translation]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: For a fix, the text as it is now, where it appears and your proposal. For a new language, say whether you can translate the whole app (you'll get the list of texts).
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+      options:
+        - label: I agree that Ombra may use this translation (LICENSE, section 3).
+          required: true
